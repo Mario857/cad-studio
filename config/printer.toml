@@ -1,0 +1,78 @@
+# Single source of truth for the printer, materials and audit thresholds.
+# Profile names must match Bambu Studio system presets (resources/profiles/BBL/...).
+
+[printer]
+machine = "Bambu Lab H2C 0.4 nozzle"
+nozzle_mm = 0.4
+# Cool Plate | Engineering Plate | High Temp Plate | Textured PEI Plate | Supertack Plate
+plate = "Textured PEI Plate"
+# Volume reachable by both H2C nozzles (left: x 0-325, right: x 25-330; z 320/325).
+bed_x_mm = 300
+bed_y_mm = 320
+bed_z_mm = 320
+
+[slicer]
+# Pinned Linux build used in cloud sessions (macOS uses the installed app).
+linux_version = "v02.08.02.61"
+linux_asset_ubuntu24 = "BambuStudio_ubuntu24.04-v02.08.02.61-20260820225108.AppImage"
+linux_asset_ubuntu22 = "BambuStudio_ubuntu22.04-v02.08.02.61-20260820225108.AppImage"
+timeout_s = 600
+
+[defaults]
+material = "PLA"
+quality = "standard"
+
+[qualities]
+draft = "0.24mm Standard @BBL H2C"
+standard = "0.20mm Standard @BBL H2C"
+strong = "0.20mm Standard @BBL H2C"
+fine = "0.12mm High Quality @BBL H2C"
+
+# Process overrides applied on top of the quality preset.
+[quality_overrides.strong]
+wall_loops = "4"
+sparse_infill_density = "40%"
+top_shell_layers = "6"
+bottom_shell_layers = "5"
+
+[materials.PLA]
+filament = "Bambu PLA Basic @BBL H2C"
+density = 1.26
+[materials.PLA-MATTE]
+filament = "Bambu PLA Matte @BBL H2C"
+density = 1.32
+[materials.PLA-TOUGH]
+filament = "Bambu PLA Tough+ @BBL H2C"
+density = 1.26
+[materials.PETG]
+filament = "Bambu PETG HF @BBL H2C"
+density = 1.25
+[materials.ABS]
+filament = "Bambu ABS @BBL H2C"
+density = 1.05
+[materials.ASA]
+filament = "Bambu ASA @BBL H2C"
+density = 1.07
+[materials.TPU]
+filament = "Bambu TPU 95A HF @BBL H2C"
+density = 1.22
+[materials.PC]
+filament = "Bambu PC @BBL H2C"
+density = 1.20
+
+[audit]
+# Wall thickness (mm): below fail_ = FAIL, below warn_ = WARN.
+fail_wall_mm = 0.6
+warn_wall_mm = 1.2
+# Down-facing surfaces flatter than this (degrees from horizontal) count as overhang / need support.
+overhang_deg = 45
+support_deg = 30
+# Supports are switched on ("supports = auto") above this support-needing area.
+auto_support_cm2 = 0.5
+# Tip-over angle (degrees) below which a free-standing part gets a WARN / FAIL.
+tip_warn_deg = 12
+tip_fail_deg = 4
+# Printed-mass estimate before slicing: fraction of solid volume (walls + 15% infill).
+fill_fraction = 0.5
+# Bed contact below this area (cm²) adds a brim.
+brim_below_cm2 = 3.0

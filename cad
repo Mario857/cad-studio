@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Entry point for every tool in the repo: ./cad -h
+set -euo pipefail
+cd "$(dirname "$0")"
+export PATH="$HOME/.local/bin:$PATH"
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+command -v uv >/dev/null || bash scripts/setup.sh >/dev/null
+exec uv run --quiet --frozen python -m cadstudio "$@"

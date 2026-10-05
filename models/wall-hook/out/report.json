@@ -1,0 +1,81 @@
+{
+ "model": "wall-hook",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "16.43 cm3, bbox 24x45x70 mm, 1 body, 1636 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 16.43,
+    "triangles": 1636,
+    "bbox_mm": [
+     24.0,
+     45.0,
+     70.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~4.74 mm (p2), median 6.44 mm",
+   "facts": {
+    "p2_mm": 4.74,
+    "median_mm": 6.44,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.0 cm2, overhang 0.3 cm2, contact 6.9 cm2, h 24 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "29m, 16.1 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 1725,
+    "grams": 16.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/wall-hook/out/wall-hook.stl",
+  "step": "models/wall-hook/out/wall-hook.step",
+  "print": "models/wall-hook/out/wall-hook.3mf",
+  "preview": "models/wall-hook/out/preview.png"
+ }
+}

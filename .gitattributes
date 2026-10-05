@@ -1,0 +1,5 @@
+*.3mf binary
+*.stl binary
+*.png binary
+*.step -diff
+uv.lock -diff
