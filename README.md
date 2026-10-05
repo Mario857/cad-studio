@@ -23,7 +23,7 @@ free tools in this repo do the rest and hand back a ~10-line verdict:
 3. Claude iterates until `PASS`, commits `models/<name>/` and pushes a branch.
 4. In the GitHub app, open `models/<name>/out/`: `<name>.stl` renders as a rotatable 3D view,
    `preview.png` shows all views, `<name>.3mf` is the sliced print file
-   (open in Bambu Studio / Bambu Handy and print).
+   (`git pull`, open it in Bambu Studio, press Print — it is already sliced for the H2C).
 
 Other commands: `/tweak <name> <change>`, `/look <name>` (visual review, costs image tokens).
 
