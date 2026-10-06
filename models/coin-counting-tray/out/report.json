@@ -1,0 +1,96 @@
+{
+ "model": "coin-counting-tray",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "253.32 cm3, bbox 208.9x94.9x23.9 mm, 1 body, 36112 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 253.32,
+    "triangles": 36112,
+    "bbox_mm": [
+     208.9,
+     94.9,
+     23.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.62 mm (p2), median 9.64 mm",
+   "facts": {
+    "p2_mm": 0.62,
+    "median_mm": 9.64,
+    "area_pct_below_fail": 0.1,
+    "area_pct_below_warn": 0.7,
+    "thin_example_xyz": [
+     95.3,
+     0.6,
+     0.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 76.3 deg toward +Y (COM margin 43.7 mm)",
+   "facts": {
+    "part_g": 88.8,
+    "com_mm": [
+     -7.9,
+     21.7,
+     10.7
+    ],
+    "tip_deg": 76.3,
+    "margin_mm": 43.7,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.6 cm2, contact 155.7 cm2, h 24 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h49m, 88.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10128,
+    "grams": 88.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coin-counting-tray/out/coin-counting-tray.stl",
+  "step": "models/coin-counting-tray/out/coin-counting-tray.step",
+  "print": "models/coin-counting-tray/out/coin-counting-tray.3mf",
+  "preview": "models/coin-counting-tray/out/preview.png"
+ }
+}
