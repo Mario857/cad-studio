@@ -1,0 +1,86 @@
+{
+ "model": "kazoo",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "40.89 cm3, bbox 112.1x62.9x35 mm, 2 body, 4336 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 40.89,
+    "triangles": 4336,
+    "bbox_mm": [
+     112.1,
+     62.9,
+     35.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.25 mm (p2), median 4.0 mm",
+   "facts": {
+    "p2_mm": 1.25,
+    "median_mm": 4.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     74.4,
+     -1.0,
+     23.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.2 cm2, overhang 15.9 cm2, contact 16.7 cm2, h 35 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h04m, 25.1 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 7423,
+    "grams": 25.1,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/kazoo/out/kazoo.stl",
+  "step": "models/kazoo/out/kazoo.step",
+  "print": "models/kazoo/out/kazoo.3mf",
+  "preview": "models/kazoo/out/preview.png"
+ }
+}
