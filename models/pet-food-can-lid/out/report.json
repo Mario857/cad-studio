@@ -1,0 +1,86 @@
+{
+ "model": "pet-food-can-lid",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "24.88 cm3, bbox 99.6x89.6x26 mm, 1 body, 10090 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 24.88,
+    "triangles": 10090,
+    "bbox_mm": [
+     99.6,
+     89.6,
+     26.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.98 mm (p2), median 2.0 mm",
+   "facts": {
+    "p2_mm": 1.98,
+    "median_mm": 2.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     43.0,
+     0.0,
+     13.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.0 cm2, overhang 9.7 cm2, contact 44.8 cm2, h 26 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "51m, 23.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3073,
+    "grams": 23.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/pet-food-can-lid/out/pet-food-can-lid.stl",
+  "step": "models/pet-food-can-lid/out/pet-food-can-lid.step",
+  "print": "models/pet-food-can-lid/out/pet-food-can-lid.3mf",
+  "preview": "models/pet-food-can-lid/out/preview.png"
+ }
+}
