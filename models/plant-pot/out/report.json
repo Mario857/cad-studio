@@ -1,0 +1,81 @@
+{
+ "model": "plant-pot",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "138.17 cm3, bbox 242.2x120.2x100 mm, 2 body, 4872 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 138.17,
+    "triangles": 4872,
+    "bbox_mm": [
+     242.2,
+     120.2,
+     100.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.17 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 2.17,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 2.9 cm2, contact 140.8 cm2, h 100 mm [next: stable face 328.5; stable face 328.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 0.41
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h25m, 123.1 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 12277,
+    "grams": 123.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/plant-pot/out/plant-pot.stl",
+  "step": "models/plant-pot/out/plant-pot.step",
+  "print": "models/plant-pot/out/plant-pot.3mf",
+  "preview": "models/plant-pot/out/preview.png"
+ }
+}
