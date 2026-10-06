@@ -1,0 +1,96 @@
+{
+ "model": "piggy-bank",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "141.47 cm3, bbox 144x156x94.1 mm, 2 body, 9154 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 141.47,
+    "triangles": 9154,
+    "bbox_mm": [
+     144.0,
+     156.0,
+     94.1
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.50 mm (p2), median 6.34 mm",
+   "facts": {
+    "p2_mm": 1.5,
+    "median_mm": 6.34,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -15.3,
+     95.8,
+     19.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 63.5 deg toward -Y incl. 600 g load (COM margin 42.3 mm)",
+   "facts": {
+    "part_g": 98.7,
+    "com_mm": [
+     -4.5,
+     1.1,
+     21.1
+    ],
+    "tip_deg": 63.5,
+    "margin_mm": 42.3,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 3.0 cm2, overhang 12.8 cm2, contact 68.3 cm2, h 94 mm [next: stable face 386.0; stable face 392.0]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 38.84
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 3.0 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h41m, 98.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 13250,
+    "grams": 98.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/piggy-bank/out/piggy-bank.stl",
+  "step": "models/piggy-bank/out/piggy-bank.step",
+  "print": "models/piggy-bank/out/piggy-bank.3mf",
+  "preview": "models/piggy-bank/out/preview.png"
+ }
+}
