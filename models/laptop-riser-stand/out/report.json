@@ -1,0 +1,81 @@
+{
+ "model": "laptop-riser-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "349.95 cm3, bbox 270x299x15 mm, 7 body, 19916 tris \u2014 7 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 7,
+    "volume_cm3": 349.95,
+    "triangles": 19916,
+    "bbox_mm": [
+     270.0,
+     299.0,
+     15.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~4.64 mm (p2), median 5.8 mm",
+   "facts": {
+    "p2_mm": 4.64,
+    "median_mm": 5.8,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 4.8 cm2, contact 538.3 cm2, h 15 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h46m, 198.4 g (0.20mm Standard @BBL H2C + Bambu PLA Tough+ @BBL H2C)",
+   "facts": {
+    "seconds": 17178,
+    "grams": 198.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Tough+ @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/laptop-riser-stand/out/laptop-riser-stand.stl",
+  "step": "models/laptop-riser-stand/out/laptop-riser-stand.step",
+  "print": "models/laptop-riser-stand/out/laptop-riser-stand.3mf",
+  "preview": "models/laptop-riser-stand/out/preview.png"
+ }
+}
