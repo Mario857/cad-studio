@@ -1,0 +1,96 @@
+{
+ "model": "stamp-rack",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "541.76 cm3, bbox 162x200x27 mm, 1 body, 16136 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 541.76,
+    "triangles": 16136,
+    "bbox_mm": [
+     162.0,
+     200.0,
+     27.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.00 mm (p2), median 27.0 mm",
+   "facts": {
+    "p2_mm": 3.0,
+    "median_mm": 27.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -52.6,
+     -2.0,
+     26.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 54.9 deg toward +Y incl. 600 g load (COM margin 71.3 mm)",
+   "facts": {
+    "part_g": 154.9,
+    "com_mm": [
+     -0.0,
+     28.3,
+     50.1
+    ],
+    "tip_deg": 54.9,
+    "margin_mm": 71.3,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.9 cm2, contact 320.8 cm2, h 27 mm [next: -X down 269.8; +X down 270.0]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -4.1
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h15m, 154.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 15280,
+    "grams": 154.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/stamp-rack/out/stamp-rack.stl",
+  "step": "models/stamp-rack/out/stamp-rack.step",
+  "print": "models/stamp-rack/out/stamp-rack.3mf",
+  "preview": "models/stamp-rack/out/preview.png"
+ }
+}
