@@ -1,0 +1,96 @@
+{
+ "model": "euro-coin-sorter",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "102.98 cm3, bbox 150x304x24 mm, 2 body, 26830 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 102.98,
+    "triangles": 26830,
+    "bbox_mm": [
+     150.0,
+     304.0,
+     24.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 2.86 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 2.86,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -3.4,
+     80.3,
+     14.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 83.2 deg toward +X (COM margin 72.2 mm)",
+   "facts": {
+    "part_g": 77.5,
+    "com_mm": [
+     0.0,
+     78.3,
+     8.6
+    ],
+    "tip_deg": 83.2,
+    "margin_mm": 72.2,
+    "weak_side": "+X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.6 cm2, overhang 0.8 cm2, contact 151.8 cm2, h 24 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 0.6 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h50m, 77.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10199,
+    "grams": 77.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/euro-coin-sorter/out/euro-coin-sorter.stl",
+  "step": "models/euro-coin-sorter/out/euro-coin-sorter.step",
+  "print": "models/euro-coin-sorter/out/euro-coin-sorter.3mf",
+  "preview": "models/euro-coin-sorter/out/preview.png"
+ }
+}
