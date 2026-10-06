@@ -1,0 +1,91 @@
+{
+ "model": "card-display-tree",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "587.77 cm3, bbox 266x148x175 mm, 1 body, 440 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 587.77,
+    "triangles": 440,
+    "bbox_mm": [
+     266.0,
+     148.0,
+     175.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.20 mm (p2), median 20.22 mm",
+   "facts": {
+    "p2_mm": 3.2,
+    "median_mm": 20.22,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 21.4 deg toward -Y incl. 400 g load (COM margin 42.2 mm)",
+   "facts": {
+    "part_g": 228.4,
+    "com_mm": [
+     0.0,
+     42.6,
+     107.3
+    ],
+    "tip_deg": 21.4,
+    "margin_mm": 42.2,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.0 cm2, contact 390.4 cm2, h 175 mm [next: stable face 117.6; stable face 117.6]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -1.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "7h18m, 228.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 26283,
+    "grams": 228.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/card-display-tree/out/card-display-tree.stl",
+  "step": "models/card-display-tree/out/card-display-tree.step",
+  "print": "models/card-display-tree/out/card-display-tree.3mf",
+  "preview": "models/card-display-tree/out/preview.png"
+ }
+}
