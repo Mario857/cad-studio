@@ -1,0 +1,91 @@
+{
+ "model": "gift-box-hex",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "136.87 cm3, bbox 242.9x100x56.3 mm, 2 body, 152 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 136.87,
+    "triangles": 152,
+    "bbox_mm": [
+     242.9,
+     100.0,
+     56.3
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 9.0 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 9.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 76.0 deg toward +Y (COM margin 48.7 mm)",
+   "facts": {
+    "part_g": 79.9,
+    "com_mm": [
+     70.4,
+     0.0,
+     12.2
+    ],
+    "tip_deg": 76.0,
+    "margin_mm": 48.7,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 10.0 cm2, contact 161.6 cm2, h 56 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h27m, 79.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8795,
+    "grams": 79.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/gift-box-hex/out/gift-box-hex.stl",
+  "step": "models/gift-box-hex/out/gift-box-hex.step",
+  "print": "models/gift-box-hex/out/gift-box-hex.3mf",
+  "preview": "models/gift-box-hex/out/preview.png"
+ }
+}
