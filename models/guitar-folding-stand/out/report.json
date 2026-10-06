@@ -1,0 +1,96 @@
+{
+ "model": "guitar-folding-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "913.33 cm3, bbox 231.6x314.9x259 mm, 2 body, 11964 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 913.33,
+    "triangles": 11964,
+    "bbox_mm": [
+     231.6,
+     314.9,
+     259.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.08 mm (p2), median 16.73 mm",
+   "facts": {
+    "p2_mm": 3.08,
+    "median_mm": 16.73,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     87.0,
+     -58.2,
+     68.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 18.7 deg toward -X incl. 4000 g load (COM margin 109.3 mm)",
+   "facts": {
+    "part_g": 452.2,
+    "com_mm": [
+     -0.0,
+     -44.7,
+     322.0
+    ],
+    "tip_deg": 18.7,
+    "margin_mm": 109.3,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 3.3 cm2, contact 185.6 cm2, h 259 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "16h41m, 452.2 g (Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 60042,
+    "grams": 452.2,
+    "warnings": [],
+    "preset": "Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/guitar-folding-stand/out/guitar-folding-stand.stl",
+  "step": "models/guitar-folding-stand/out/guitar-folding-stand.step",
+  "print": "models/guitar-folding-stand/out/guitar-folding-stand.3mf",
+  "preview": "models/guitar-folding-stand/out/preview.png"
+ }
+}
