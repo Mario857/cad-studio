@@ -1,0 +1,86 @@
+{
+ "model": "invoice-inbox-wall",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "539.71 cm3, bbox 241x87.6x239.8 mm, 1 body, 3530 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 539.71,
+    "triangles": 3530,
+    "bbox_mm": [
+     241.0,
+     87.6,
+     239.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.13 mm (p2), median 2.5 mm",
+   "facts": {
+    "p2_mm": 1.13,
+    "median_mm": 2.5,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     7.2,
+     -59.9,
+     113.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.3 cm2, overhang 0.5 cm2, contact 20.9 cm2, h 240 mm [next: top down 227.5; +X down 947.6]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 5.76
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "11h16m, 372.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 40545,
+    "grams": 372.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/invoice-inbox-wall/out/invoice-inbox-wall.stl",
+  "step": "models/invoice-inbox-wall/out/invoice-inbox-wall.step",
+  "print": "models/invoice-inbox-wall/out/invoice-inbox-wall.3mf",
+  "preview": "models/invoice-inbox-wall/out/preview.png"
+ }
+}
