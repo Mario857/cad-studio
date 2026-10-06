@@ -1,0 +1,86 @@
+{
+ "model": "shoe-horn",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "38.05 cm3, bbox 280x45x11 mm, 1 body, 1064 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 38.05,
+    "triangles": 1064,
+    "bbox_mm": [
+     280.0,
+     45.0,
+     11.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.00 mm (p2), median 4.76 mm",
+   "facts": {
+    "p2_mm": 3.0,
+    "median_mm": 4.76,
+    "area_pct_below_fail": 0.1,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     77.5,
+     22.4,
+     7.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 93.8 cm2, h 11 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h00m, 40.5 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 3605,
+    "grams": 40.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/shoe-horn/out/shoe-horn.stl",
+  "step": "models/shoe-horn/out/shoe-horn.step",
+  "print": "models/shoe-horn/out/shoe-horn.3mf",
+  "preview": "models/shoe-horn/out/preview.png"
+ }
+}
