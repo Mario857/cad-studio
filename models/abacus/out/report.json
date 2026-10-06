@@ -1,0 +1,86 @@
+{
+ "model": "abacus",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "274.42 cm3, bbox 288.2x218x12 mm, 104 body, 141368 tris \u2014 104 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 104,
+    "volume_cm3": 274.42,
+    "triangles": 141368,
+    "bbox_mm": [
+     288.2,
+     218.0,
+     12.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.58 mm (p2), median 5.2 mm",
+   "facts": {
+    "p2_mm": 3.58,
+    "median_mm": 5.2,
+    "area_pct_below_fail": 0.5,
+    "area_pct_below_warn": 0.5,
+    "thin_example_xyz": [
+     -102.3,
+     93.0,
+     8.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 29.8 cm2, contact 179.6 cm2, h 12 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h57m, 129.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 21402,
+    "grams": 129.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/abacus/out/abacus.stl",
+  "step": "models/abacus/out/abacus.step",
+  "print": "models/abacus/out/abacus.3mf",
+  "preview": "models/abacus/out/preview.png"
+ }
+}
