@@ -1,0 +1,86 @@
+{
+ "model": "pole-tip-covers",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "5.69 cm3, bbox 17x17x39 mm, 1 body, 6712 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 5.69,
+    "triangles": 6712,
+    "bbox_mm": [
+     17.0,
+     17.0,
+     39.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.63 mm (p2), median 3.3 mm",
+   "facts": {
+    "p2_mm": 1.63,
+    "median_mm": 3.3,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 2.8,
+    "thin_example_xyz": [
+     0.3,
+     -2.8,
+     1.2
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 2.1 cm2, h 39 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "40m, 3.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2429,
+    "grams": 3.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/pole-tip-covers/out/pole-tip-covers.stl",
+  "step": "models/pole-tip-covers/out/pole-tip-covers.step",
+  "print": "models/pole-tip-covers/out/pole-tip-covers.3mf",
+  "preview": "models/pole-tip-covers/out/preview.png"
+ }
+}
