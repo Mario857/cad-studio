@@ -1,0 +1,81 @@
+{
+ "model": "napkin-ring-star",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "9.87 cm3, bbox 51x51x25 mm, 1 body, 2400 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 9.87,
+    "triangles": 2400,
+    "bbox_mm": [
+     51.0,
+     51.0,
+     25.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.99 mm (p2), median 3.87 mm",
+   "facts": {
+    "p2_mm": 2.99,
+    "median_mm": 3.87,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.6 cm2, contact 3.3 cm2, h 25 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h56m, 39.3 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 6941,
+    "grams": 39.3,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/napkin-ring-star/out/napkin-ring-star.stl",
+  "step": "models/napkin-ring-star/out/napkin-ring-star.step",
+  "print": "models/napkin-ring-star/out/napkin-ring-star.3mf",
+  "preview": "models/napkin-ring-star/out/preview.png"
+ }
+}
