@@ -1,5 +1,5 @@
 {
- "model": "bag-clip",
+ "model": "bag-clip-rod",
  "verdict": "PASS",
  "checks": [
   {
@@ -78,9 +78,9 @@
   }
  ],
  "files": {
-  "stl": "models/bag-clip/out/bag-clip.stl",
-  "step": "models/bag-clip/out/bag-clip.step",
-  "print": "models/bag-clip/out/bag-clip.3mf",
-  "preview": "models/bag-clip/out/preview.png"
+  "stl": "models/bag-clip-rod/out/bag-clip-rod.stl",
+  "step": "models/bag-clip-rod/out/bag-clip-rod.step",
+  "print": "models/bag-clip-rod/out/bag-clip-rod.3mf",
+  "preview": "models/bag-clip-rod/out/preview.png"
  }
 }

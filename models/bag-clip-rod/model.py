@@ -1,4 +1,4 @@
-"""bag-clip: two-part slide-on food bag sealing clip, 110 mm long.
+"""bag-clip-rod: two-part slide-on food bag sealing clip, 110 mm long.
 
 Spec: a C-channel (bore + side slot) and a round rod. Fold the bag edge, wrap it round the
 rod, push the bag edge through the slot and slide the rod (with the bag wrapped round it) into the

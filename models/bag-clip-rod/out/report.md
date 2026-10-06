@@ -1,4 +1,4 @@
-# bag-clip — PASS (1 warn)
+# bag-clip-rod — PASS (1 warn)
 
 | check | status | result |
 |---|---|---|
@@ -12,7 +12,7 @@
 
 ## Files
 
-- **stl**: `bag-clip.stl`
-- **step**: `bag-clip.step`
-- **print**: `bag-clip.3mf`
+- **stl**: `bag-clip-rod.stl`
+- **step**: `bag-clip-rod.step`
+- **print**: `bag-clip-rod.3mf`
 - **preview**: `preview.png`
