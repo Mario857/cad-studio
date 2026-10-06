@@ -1,0 +1,86 @@
+{
+ "model": "stink-bug-trap",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "165.54 cm3, bbox 252x240x65 mm, 3 body, 4906 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 165.54,
+    "triangles": 4906,
+    "bbox_mm": [
+     252.0,
+     240.0,
+     65.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 3.87 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 3.87,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     84.3,
+     -0.9,
+     43.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 2.0 cm2, overhang 6.8 cm2, contact 168.4 cm2, h 65 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports ON (tree), brim off for 2.0 cm2 \u2014 redesign (chamfers <=45 deg, teardrops) to avoid",
+   "facts": {
+    "supports": true,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h07m, 117.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14800,
+    "grams": 117.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/stink-bug-trap/out/stink-bug-trap.stl",
+  "step": "models/garden/stink-bug-trap/out/stink-bug-trap.step",
+  "print": "models/garden/stink-bug-trap/out/stink-bug-trap.3mf",
+  "preview": "models/garden/stink-bug-trap/out/preview.png"
+ }
+}
