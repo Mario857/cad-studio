@@ -1,0 +1,86 @@
+{
+ "model": "jaw-harp",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "4.26 cm3, bbox 86.4x30x4 mm, 1 body, 868 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 4.26,
+    "triangles": 868,
+    "bbox_mm": [
+     86.4,
+     30.0,
+     4.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~1.02 mm (p2), median 5.32 mm; 11.0% of surface < 1.2 mm near [14.5, 0.7, 0.9]",
+   "facts": {
+    "p2_mm": 1.02,
+    "median_mm": 5.32,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 11.0,
+    "thin_example_xyz": [
+     14.5,
+     0.7,
+     0.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 10.9 cm2, h 4 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "17m, 3.4 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1002,
+    "grams": 3.4,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/jaw-harp/out/jaw-harp.stl",
+  "step": "models/jaw-harp/out/jaw-harp.step",
+  "print": "models/jaw-harp/out/jaw-harp.3mf",
+  "preview": "models/jaw-harp/out/preview.png"
+ }
+}
