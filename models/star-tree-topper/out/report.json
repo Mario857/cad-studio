@@ -1,0 +1,86 @@
+{
+ "model": "star-tree-topper",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "96.73 cm3, bbox 190.8x293.3x107.5 mm, 3 body, 6384 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 96.73,
+    "triangles": 6384,
+    "bbox_mm": [
+     190.8,
+     293.3,
+     107.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.41 mm (p2), median 3.06 mm",
+   "facts": {
+    "p2_mm": 2.41,
+    "median_mm": 3.06,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -4.7,
+     -33.1,
+     1.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.2 cm2, overhang 3.4 cm2, contact 133.5 cm2, h 108 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h43m, 47.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 9759,
+    "grams": 47.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/star-tree-topper/out/star-tree-topper.stl",
+  "step": "models/star-tree-topper/out/star-tree-topper.step",
+  "print": "models/star-tree-topper/out/star-tree-topper.3mf",
+  "preview": "models/star-tree-topper/out/preview.png"
+ }
+}
