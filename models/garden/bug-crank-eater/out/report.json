@@ -1,0 +1,86 @@
+{
+ "model": "bug-crank-eater",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "423.77 cm3, bbox 264x247.3x136 mm, 5 body, 4700 tris \u2014 5 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 5,
+    "volume_cm3": 423.77,
+    "triangles": 4700,
+    "bbox_mm": [
+     264.0,
+     247.3,
+     136.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.67 mm (p2), median 6.0 mm",
+   "facts": {
+    "p2_mm": 1.67,
+    "median_mm": 6.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -59.0,
+     40.4,
+     88.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.1 cm2, overhang 6.1 cm2, contact 309.9 cm2, h 136 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h44m, 209.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 24225,
+    "grams": 209.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/bug-crank-eater/out/bug-crank-eater.stl",
+  "step": "models/garden/bug-crank-eater/out/bug-crank-eater.step",
+  "print": "models/garden/bug-crank-eater/out/bug-crank-eater.3mf",
+  "preview": "models/garden/bug-crank-eater/out/preview.png"
+ }
+}
