@@ -1,0 +1,96 @@
+{
+ "model": "photo-frame",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "96.63 cm3, bbox 121x64.7x158.4 mm, 1 body, 456 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 96.63,
+    "triangles": 456,
+    "bbox_mm": [
+     121.0,
+     64.7,
+     158.4
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.06 mm (p2), median 6.84 mm",
+   "facts": {
+    "p2_mm": 1.06,
+    "median_mm": 6.84,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     35.6,
+     64.8,
+     0.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 21.4 deg toward -Y (COM margin 25.2 mm)",
+   "facts": {
+    "part_g": 59.2,
+    "com_mm": [
+     0.0,
+     25.6,
+     64.3
+    ],
+    "tip_deg": 21.4,
+    "margin_mm": 25.2,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.7 cm2, contact 10.5 cm2, h 158 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h07m, 59.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 11208,
+    "grams": 59.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/photo-frame/out/photo-frame.stl",
+  "step": "models/photo-frame/out/photo-frame.step",
+  "print": "models/photo-frame/out/photo-frame.3mf",
+  "preview": "models/photo-frame/out/preview.png"
+ }
+}
