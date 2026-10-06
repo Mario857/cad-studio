@@ -1,0 +1,96 @@
+{
+ "model": "coworking-desk-sign",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "41.06 cm3, bbox 198.8x132x3.6 mm, 2 body, 12782 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 41.06,
+    "triangles": 12782,
+    "bbox_mm": [
+     198.8,
+     132.0,
+     3.6
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.55 mm (p2), median 3.0 mm; 6.6% of surface < 1.2 mm near [-64.3, -2.1, 0.0]",
+   "facts": {
+    "p2_mm": 0.55,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 6.6,
+    "thin_example_xyz": [
+     -64.3,
+     -2.1,
+     0.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 88.7 deg toward -X (COM margin 64.5 mm)",
+   "facts": {
+    "part_g": 34.8,
+    "com_mm": [
+     -30.1,
+     0.0,
+     1.5
+    ],
+    "tip_deg": 88.7,
+    "margin_mm": 64.5,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.2 cm2, contact 141.3 cm2, h 4 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "46m, 34.8 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 2762,
+    "grams": 34.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coworking-desk-sign/out/coworking-desk-sign.stl",
+  "step": "models/coworking-desk-sign/out/coworking-desk-sign.step",
+  "print": "models/coworking-desk-sign/out/coworking-desk-sign.3mf",
+  "preview": "models/coworking-desk-sign/out/preview.png"
+ }
+}
