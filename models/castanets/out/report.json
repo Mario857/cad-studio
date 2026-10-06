@@ -1,0 +1,80 @@
+{
+ "model": "castanets",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "59.8 cm3, bbox 130x140.5x14 mm, 4 body, 10280 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 59.8,
+    "triangles": 10280,
+    "bbox_mm": [
+     130.0,
+     140.5,
+     14.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.50 mm (p2), median 4.84 mm",
+   "facts": {
+    "p2_mm": 2.5,
+    "median_mm": 4.84,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -43.9,
+     60.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 19.3 cm2, contact 64.5 cm2, h 14 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "SKIP",
+   "summary": "--no-slice",
+   "facts": {}
+  }
+ ],
+ "files": {
+  "stl": "models/castanets/out/castanets.stl",
+  "step": "models/castanets/out/castanets.step",
+  "preview": "models/castanets/out/preview.png"
+ }
+}
