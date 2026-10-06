@@ -1,0 +1,96 @@
+{
+ "model": "cash-envelope-box",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "220.92 cm3, bbox 176.8x168.5x70.4 mm, 12 body, 21282 tris \u2014 12 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 12,
+    "volume_cm3": 220.92,
+    "triangles": 21282,
+    "bbox_mm": [
+     176.8,
+     168.5,
+     70.4
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.79 mm (p2), median 2.0 mm",
+   "facts": {
+    "p2_mm": 0.79,
+    "median_mm": 2.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -43.3,
+     -55.8,
+     15.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 68.1 deg toward -Y incl. 150 g load (COM margin 76.6 mm)",
+   "facts": {
+    "part_g": 184.4,
+    "com_mm": [
+     -0.7,
+     8.9,
+     30.8
+    ],
+    "tip_deg": 68.1,
+    "margin_mm": 76.6,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 1.4 cm2, overhang 3.3 cm2, contact 215.4 cm2, h 70 mm [next: stable face 291.6; +X down 1191.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 11.12
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 1.4 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h32m, 184.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 19932,
+    "grams": 184.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cash-envelope-box/out/cash-envelope-box.stl",
+  "step": "models/cash-envelope-box/out/cash-envelope-box.step",
+  "print": "models/cash-envelope-box/out/cash-envelope-box.3mf",
+  "preview": "models/cash-envelope-box/out/preview.png"
+ }
+}
