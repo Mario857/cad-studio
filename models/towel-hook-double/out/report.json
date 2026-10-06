@@ -1,0 +1,81 @@
+{
+ "model": "towel-hook-double",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "41.83 cm3, bbox 25x55x100 mm, 1 body, 1924 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 41.83,
+    "triangles": 1924,
+    "bbox_mm": [
+     25.0,
+     55.0,
+     100.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~6.00 mm (p2), median 17.74 mm",
+   "facts": {
+    "p2_mm": 6.0,
+    "median_mm": 17.74,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.0 cm2, overhang 0.1 cm2, contact 16.8 cm2, h 25 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "54m, 29.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3251,
+    "grams": 29.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/towel-hook-double/out/towel-hook-double.stl",
+  "step": "models/towel-hook-double/out/towel-hook-double.step",
+  "print": "models/towel-hook-double/out/towel-hook-double.3mf",
+  "preview": "models/towel-hook-double/out/preview.png"
+ }
+}
