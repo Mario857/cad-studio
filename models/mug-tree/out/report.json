@@ -1,0 +1,91 @@
+{
+ "model": "mug-tree",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "291.85 cm3, bbox 205.8x234x289.8 mm, 1 body, 24670 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 291.85,
+    "triangles": 24670,
+    "bbox_mm": [
+     205.8,
+     234.0,
+     289.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.00 mm (p2), median 12.0 mm",
+   "facts": {
+    "p2_mm": 3.0,
+    "median_mm": 12.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 34.7 deg toward +Y incl. 2100 g load (COM margin 102.5 mm)",
+   "facts": {
+    "part_g": 97.7,
+    "com_mm": [
+     0.0,
+     0.0,
+     148.3
+    ],
+    "tip_deg": 34.7,
+    "margin_mm": 102.5,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.4 cm2, contact 65.8 cm2, h 290 mm [next: top down 764.5; stable face 789.4]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 5.69
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h01m, 97.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 21651,
+    "grams": 97.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/mug-tree/out/mug-tree.stl",
+  "step": "models/mug-tree/out/mug-tree.step",
+  "print": "models/mug-tree/out/mug-tree.3mf",
+  "preview": "models/mug-tree/out/preview.png"
+ }
+}
