@@ -1,0 +1,86 @@
+{
+ "model": "bottle-drip-spike",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "32.12 cm3, bbox 91.2x34.4x151.4 mm, 5 body, 13718 tris \u2014 5 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 5,
+    "volume_cm3": 32.12,
+    "triangles": 13718,
+    "bbox_mm": [
+     91.2,
+     34.4,
+     151.4
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.20 mm (p2), median 4.76 mm",
+   "facts": {
+    "p2_mm": 1.2,
+    "median_mm": 4.76,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     51.9,
+     -4.3,
+     150.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.1 cm2, overhang 1.6 cm2, contact 6.2 cm2, h 151 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h34m, 47.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 12849,
+    "grams": 47.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/bottle-drip-spike/out/bottle-drip-spike.stl",
+  "step": "models/bottle-drip-spike/out/bottle-drip-spike.step",
+  "print": "models/bottle-drip-spike/out/bottle-drip-spike.3mf",
+  "preview": "models/bottle-drip-spike/out/preview.png"
+ }
+}
