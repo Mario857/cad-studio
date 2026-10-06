@@ -1,0 +1,96 @@
+{
+ "model": "spiral-tree",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "98.01 cm3, bbox 124x124x180 mm, 1 body, 3524 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 98.01,
+    "triangles": 3524,
+    "bbox_mm": [
+     124.0,
+     124.0,
+     180.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.68 mm (p2), median 2.33 mm",
+   "facts": {
+    "p2_mm": 1.68,
+    "median_mm": 2.33,
+    "area_pct_below_fail": 0.2,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     13.8,
+     4.0,
+     144.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 43.2 deg toward -X (COM margin 56.9 mm)",
+   "facts": {
+    "part_g": 88.0,
+    "com_mm": [
+     -0.0,
+     0.0,
+     60.6
+    ],
+    "tip_deg": 43.2,
+    "margin_mm": 56.9,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.1 cm2, overhang 0.1 cm2, contact 11.1 cm2, h 180 mm [next: top down 65.6; stable face 1006.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 4.28
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h59m, 88.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14328,
+    "grams": 88.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/spiral-tree/out/spiral-tree.stl",
+  "step": "models/spiral-tree/out/spiral-tree.step",
+  "print": "models/spiral-tree/out/spiral-tree.3mf",
+  "preview": "models/spiral-tree/out/preview.png"
+ }
+}
