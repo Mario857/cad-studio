@@ -40,10 +40,10 @@ class BuildResult:
 def load_module(name: str):
     path = model_dir(name) / "model.py"
     if not path.exists():
-        raise BuildError(f"no such model: models/{name}/model.py (run ./cad new {name})")
+        raise BuildError(f"no such model: {name} (looked for models/*/{name}/model.py; run ./cad new {name} --category <dir>)")
     if str(REPO) not in sys.path:
         sys.path.insert(0, str(REPO))
-    spec = importlib.util.spec_from_file_location(f"models.{name.replace('-', '_')}", path)
+    spec = importlib.util.spec_from_file_location(f"models.{name.split('/')[-1].replace('-', '_')}", path)
     module = importlib.util.module_from_spec(spec)
     try:
         spec.loader.exec_module(module)

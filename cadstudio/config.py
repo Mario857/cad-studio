@@ -51,7 +51,12 @@ def slicer_install() -> SlicerInstall | None:
 
 
 def model_dir(name: str) -> Path:
-    return MODELS_DIR / name
+    """models/<category>/<name>; `name` may also be `<category>/<name>`."""
+    direct = MODELS_DIR / name
+    if (direct / "model.py").exists():
+        return direct
+    found = sorted(MODELS_DIR.glob(f"*/{name}"))
+    return found[0] if found else direct
 
 
 def out_dir(name: str) -> Path:

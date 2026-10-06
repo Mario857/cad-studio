@@ -18,15 +18,20 @@ def rel(path) -> str:
 
 
 def cmd_new(args) -> int:
-    if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", args.name):
+    if not re.fullmatch(r"[a-z0-9][a-z0-9-]*(/[a-z0-9][a-z0-9-]*)?", args.name):
         print("name must be kebab-case: lowercase letters, digits, dashes")
         return 2
-    target = model_dir(args.name) / "model.py"
+    if "/" not in args.name and list(MODELS_DIR.glob(f"*/{args.name}/model.py")):
+        print(f"exists: {args.name}")
+        return 1
+    if "/" not in args.name:
+        args.name = f"{args.category}/{args.name}"
+    target = MODELS_DIR / args.name / "model.py"
     if target.exists():
         print(f"exists: {rel(target)}")
         return 1
     target.parent.mkdir(parents=True)
-    target.write_text(TEMPLATE.read_text().replace("{{NAME}}", args.name))
+    target.write_text(TEMPLATE.read_text().replace("{{NAME}}", args.name.split("/")[-1]))
     print(f"created {rel(target)}")
     return 0
 
@@ -104,11 +109,11 @@ def cmd_preview(args) -> int:
 
 
 def cmd_list(_args) -> int:
-    for path in sorted(MODELS_DIR.glob("*/model.py")):
+    for path in sorted(MODELS_DIR.glob("*/*/model.py")):
         report = path.parent / "out" / "report.json"
         verdict = json.loads(report.read_text())["verdict"] if report.exists() else "-"
         doc = (path.read_text().split('"""')[1].strip().splitlines() or [""])[0] if '"""' in path.read_text() else ""
-        print(f"{path.parent.name:<28} {verdict:<5} {doc}")
+        print(f"{path.parent.parent.name + "/" + path.parent.name:<36} {verdict:<5} {doc}")
     return 0
 
 
@@ -169,7 +174,8 @@ def main() -> int:
     commands = parser.add_subparsers(dest="command", required=True)
 
     new = commands.add_parser("new", help="scaffold models/<name>/model.py")
-    new.add_argument("name")
+    new.add_argument("name", help="kebab-case name, or <category>/<name>")
+    new.add_argument("--category", default="misc", help="subfolder of models/ (default: misc)")
     new.set_defaults(run=cmd_new)
 
     check = commands.add_parser("check", help="build + mesh/walls/gravity audit + orient + slice + preview")
