@@ -10,7 +10,7 @@ Tick height for k coins = k x coin thickness (+ STACK_ALLOW per coin for burrs/a
 
 MEASURE BEFORE PRINTING (calipers, thickness mm): 1c 1.67, 2c 1.67, 5c 1.67, 10c 1.93,
 20c 2.14, 50c 2.38, €1 2.33, €2 2.20 — or better: measure a stack of 10 of each and set
-THICK accordingly (worn coins are thinner).
+the thickness in COINS accordingly (worn coins are thinner).
 
 Assumptions: 120 mm scale (≈ 50-70 coins per column); values in € without trailing zeros
 except for cents ("€0.10").
