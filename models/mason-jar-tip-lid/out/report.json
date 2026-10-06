@@ -1,0 +1,86 @@
+{
+ "model": "mason-jar-tip-lid",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "20.87 cm3, bbox 159.6x77x14 mm, 2 body, 6406 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 20.87,
+    "triangles": 6406,
+    "bbox_mm": [
+     159.6,
+     77.0,
+     14.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.56 mm (p2), median 2.6 mm",
+   "facts": {
+    "p2_mm": 0.56,
+    "median_mm": 2.6,
+    "area_pct_below_fail": 0.3,
+    "area_pct_below_warn": 0.9,
+    "thin_example_xyz": [
+     25.7,
+     -23.0,
+     13.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 1.3 cm2, overhang 5.9 cm2, contact 48.9 cm2, h 14 mm [next: +X down 160.6; -X down 162.0]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 12.05
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 1.3 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "43m, 16.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2563,
+    "grams": 16.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/mason-jar-tip-lid/out/mason-jar-tip-lid.stl",
+  "step": "models/mason-jar-tip-lid/out/mason-jar-tip-lid.step",
+  "print": "models/mason-jar-tip-lid/out/mason-jar-tip-lid.3mf",
+  "preview": "models/mason-jar-tip-lid/out/preview.png"
+ }
+}
