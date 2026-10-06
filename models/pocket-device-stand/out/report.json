@@ -1,0 +1,96 @@
+{
+ "model": "pocket-device-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "20.28 cm3, bbox 68x68x38.5 mm, 2 body, 1312 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 20.28,
+    "triangles": 1312,
+    "bbox_mm": [
+     68.0,
+     68.0,
+     38.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.14 mm (p2), median 6.0 mm",
+   "facts": {
+    "p2_mm": 2.14,
+    "median_mm": 6.0,
+    "area_pct_below_fail": 0.1,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     8.5,
+     -11.7,
+     4.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 49.2 deg toward -Y incl. 500 g load (COM margin 11.6 mm)",
+   "facts": {
+    "part_g": 17.1,
+    "com_mm": [
+     0.0,
+     -22.4,
+     10.0
+    ],
+    "tip_deg": 49.2,
+    "margin_mm": 11.6,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 5.8 cm2, contact 19.3 cm2, h 39 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "50m, 17.1 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 2980,
+    "grams": 17.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/pocket-device-stand/out/pocket-device-stand.stl",
+  "step": "models/pocket-device-stand/out/pocket-device-stand.step",
+  "print": "models/pocket-device-stand/out/pocket-device-stand.3mf",
+  "preview": "models/pocket-device-stand/out/preview.png"
+ }
+}
