@@ -1,0 +1,86 @@
+{
+ "model": "train-whistle",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "170.93 cm3, bbox 97.6x127.2x210.9 mm, 5 body, 3848 tris \u2014 5 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 5,
+    "volume_cm3": 170.93,
+    "triangles": 3848,
+    "bbox_mm": [
+     97.6,
+     127.2,
+     210.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.42 mm (p2), median 3.08 mm",
+   "facts": {
+    "p2_mm": 1.42,
+    "median_mm": 3.08,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     7.0,
+     18.7,
+     152.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.1 cm2, contact 43.3 cm2, h 211 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "10h11m, 110.2 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 36638,
+    "grams": 110.2,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/train-whistle/out/train-whistle.stl",
+  "step": "models/train-whistle/out/train-whistle.step",
+  "print": "models/train-whistle/out/train-whistle.3mf",
+  "preview": "models/train-whistle/out/preview.png"
+ }
+}
