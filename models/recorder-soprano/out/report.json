@@ -1,0 +1,86 @@
+{
+ "model": "recorder-soprano",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "75.38 cm3, bbox 91.5x23x143.3 mm, 3 body, 13768 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 75.38,
+    "triangles": 13768,
+    "bbox_mm": [
+     91.5,
+     23.0,
+     143.3
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.96 mm (p2), median 4.58 mm",
+   "facts": {
+    "p2_mm": 1.96,
+    "median_mm": 4.58,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     2.8,
+     9.6,
+     118.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.1 cm2, overhang 3.1 cm2, contact 4.9 cm2, h 143 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; wobbly on bed (tips at 10 deg)",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h50m, 42.3 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 17391,
+    "grams": 42.3,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/recorder-soprano/out/recorder-soprano.stl",
+  "step": "models/recorder-soprano/out/recorder-soprano.step",
+  "print": "models/recorder-soprano/out/recorder-soprano.3mf",
+  "preview": "models/recorder-soprano/out/preview.png"
+ }
+}
