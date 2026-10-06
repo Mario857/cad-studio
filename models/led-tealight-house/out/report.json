@@ -1,0 +1,81 @@
+{
+ "model": "led-tealight-house",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "79.79 cm3, bbox 170x70x106 mm, 2 body, 1888 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 79.79,
+    "triangles": 1888,
+    "bbox_mm": [
+     170.0,
+     70.0,
+     106.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 4.0 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 4.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.5 cm2, contact 59.4 cm2, h 106 mm [next: stable face 149.8; stable face 149.8]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -1.53
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h32m, 69.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 9126,
+    "grams": 69.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/led-tealight-house/out/led-tealight-house.stl",
+  "step": "models/led-tealight-house/out/led-tealight-house.step",
+  "print": "models/led-tealight-house/out/led-tealight-house.3mf",
+  "preview": "models/led-tealight-house/out/preview.png"
+ }
+}
