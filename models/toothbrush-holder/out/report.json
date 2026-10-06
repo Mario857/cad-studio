@@ -1,0 +1,91 @@
+{
+ "model": "toothbrush-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "205.71 cm3, bbox 106x68x56 mm, 1 body, 6344 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 205.71,
+    "triangles": 6344,
+    "bbox_mm": [
+     106.0,
+     68.0,
+     56.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.89 mm (p2), median 14.3 mm",
+   "facts": {
+    "p2_mm": 2.89,
+    "median_mm": 14.3,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 27.3 deg toward +Y incl. 80 g load (COM margin 33.6 mm)",
+   "facts": {
+    "part_g": 84.8,
+    "com_mm": [
+     -9.5,
+     0.0,
+     65.1
+    ],
+    "tip_deg": 27.3,
+    "margin_mm": 33.6,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 7.4 cm2, contact 54.1 cm2, h 56 mm [next: top down 340.1; +X down 497.4]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 5.3
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h02m, 84.8 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 7303,
+    "grams": 84.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/toothbrush-holder/out/toothbrush-holder.stl",
+  "step": "models/toothbrush-holder/out/toothbrush-holder.step",
+  "print": "models/toothbrush-holder/out/toothbrush-holder.3mf",
+  "preview": "models/toothbrush-holder/out/preview.png"
+ }
+}
