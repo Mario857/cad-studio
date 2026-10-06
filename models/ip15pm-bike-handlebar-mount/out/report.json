@@ -1,0 +1,81 @@
+{
+ "model": "ip15pm-bike-handlebar-mount",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "110.52 cm3, bbox 198.7x118.4x25.9 mm, 3 body, 5204 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 110.52,
+    "triangles": 5204,
+    "bbox_mm": [
+     198.7,
+     118.4,
+     25.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.49 mm (p2), median 9.83 mm",
+   "facts": {
+    "p2_mm": 3.49,
+    "median_mm": 9.83,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.1 cm2, overhang 0.4 cm2, contact 128.3 cm2, h 26 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h28m, 81.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8887,
+    "grams": 81.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-bike-handlebar-mount/out/ip15pm-bike-handlebar-mount.stl",
+  "step": "models/ip15pm-bike-handlebar-mount/out/ip15pm-bike-handlebar-mount.step",
+  "print": "models/ip15pm-bike-handlebar-mount/out/ip15pm-bike-handlebar-mount.3mf",
+  "preview": "models/ip15pm-bike-handlebar-mount/out/preview.png"
+ }
+}
