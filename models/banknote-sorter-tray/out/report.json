@@ -1,0 +1,96 @@
+{
+ "model": "banknote-sorter-tray",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "734.6 cm3, bbox 164x122x68.2 mm, 1 body, 3920 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 734.6,
+    "triangles": 3920,
+    "bbox_mm": [
+     164.0,
+     122.0,
+     68.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.28 mm (p2), median 20.5 mm",
+   "facts": {
+    "p2_mm": 0.28,
+    "median_mm": 20.5,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     0.1,
+     -56.0,
+     22.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 64.0 deg toward +Y (COM margin 46.8 mm)",
+   "facts": {
+    "part_g": 196.5,
+    "com_mm": [
+     -0.0,
+     13.8,
+     22.8
+    ],
+    "tip_deg": 64.0,
+    "margin_mm": 46.8,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.6 cm2, contact 197.8 cm2, h 68 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h14m, 196.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 18830,
+    "grams": 196.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/banknote-sorter-tray/out/banknote-sorter-tray.stl",
+  "step": "models/banknote-sorter-tray/out/banknote-sorter-tray.step",
+  "print": "models/banknote-sorter-tray/out/banknote-sorter-tray.3mf",
+  "preview": "models/banknote-sorter-tray/out/preview.png"
+ }
+}
