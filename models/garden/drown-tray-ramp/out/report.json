@@ -1,0 +1,86 @@
+{
+ "model": "drown-tray-ramp",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "221.97 cm3, bbox 200x316x35 mm, 2 body, 2588 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 221.97,
+    "triangles": 2588,
+    "bbox_mm": [
+     200.0,
+     316.0,
+     35.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     11.4,
+     -93.9,
+     0.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 167.0 cm2, contact 441.7 cm2, h 35 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h24m, 184.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 23027,
+    "grams": 184.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/drown-tray-ramp/out/drown-tray-ramp.stl",
+  "step": "models/garden/drown-tray-ramp/out/drown-tray-ramp.step",
+  "print": "models/garden/drown-tray-ramp/out/drown-tray-ramp.3mf",
+  "preview": "models/garden/drown-tray-ramp/out/preview.png"
+ }
+}
