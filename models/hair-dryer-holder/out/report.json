@@ -1,0 +1,81 @@
+{
+ "model": "hair-dryer-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "97.01 cm3, bbox 90x83x110 mm, 1 body, 1350 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 97.01,
+    "triangles": 1350,
+    "bbox_mm": [
+     90.0,
+     83.0,
+     110.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~5.00 mm (p2), median 11.05 mm",
+   "facts": {
+    "p2_mm": 5.0,
+    "median_mm": 11.05,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.3 cm2, contact 24.8 cm2, h 110 mm [next: -Y down 59.6; stable face 180.1]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -3.07
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h50m, 71.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10219,
+    "grams": 71.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/hair-dryer-holder/out/hair-dryer-holder.stl",
+  "step": "models/hair-dryer-holder/out/hair-dryer-holder.step",
+  "print": "models/hair-dryer-holder/out/hair-dryer-holder.3mf",
+  "preview": "models/hair-dryer-holder/out/preview.png"
+ }
+}
