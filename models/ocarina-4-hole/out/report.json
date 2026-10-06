@@ -1,0 +1,86 @@
+{
+ "model": "ocarina-4-hole",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "30.11 cm3, bbox 162.9x38.3x38.9 mm, 2 body, 10622 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 30.11,
+    "triangles": 10622,
+    "bbox_mm": [
+     162.9,
+     38.3,
+     38.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.92 mm (p2), median 3.44 mm",
+   "facts": {
+    "p2_mm": 0.92,
+    "median_mm": 3.44,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.7,
+    "thin_example_xyz": [
+     -4.7,
+     -2.3,
+     0.6
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 15.0 cm2, h 39 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h14m, 24.1 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8046,
+    "grams": 24.1,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ocarina-4-hole/out/ocarina-4-hole.stl",
+  "step": "models/ocarina-4-hole/out/ocarina-4-hole.step",
+  "print": "models/ocarina-4-hole/out/ocarina-4-hole.3mf",
+  "preview": "models/ocarina-4-hole/out/preview.png"
+ }
+}
