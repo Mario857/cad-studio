@@ -1,0 +1,81 @@
+{
+ "model": "raised-bed-corner",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "154.67 cm3, bbox 76x76x295 mm, 1 body, 4488 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 154.67,
+    "triangles": 4488,
+    "bbox_mm": [
+     76.0,
+     76.0,
+     295.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~5.90 mm (p2), median 8.11 mm",
+   "facts": {
+    "p2_mm": 5.9,
+    "median_mm": 8.11,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.3 cm2, overhang 2.1 cm2, contact 7.6 cm2, h 295 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "12h38m, 364.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 45489,
+    "grams": 364.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/raised-bed-corner/out/raised-bed-corner.stl",
+  "step": "models/raised-bed-corner/out/raised-bed-corner.step",
+  "print": "models/raised-bed-corner/out/raised-bed-corner.3mf",
+  "preview": "models/raised-bed-corner/out/preview.png"
+ }
+}
