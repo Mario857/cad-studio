@@ -1,0 +1,96 @@
+{
+ "model": "loyalty-card-box",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "115.45 cm3, bbox 274x227.4x44 mm, 7 body, 19492 tris \u2014 7 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 7,
+    "volume_cm3": 115.45,
+    "triangles": 19492,
+    "bbox_mm": [
+     274.0,
+     227.4,
+     44.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.91 mm (p2), median 1.97 mm",
+   "facts": {
+    "p2_mm": 0.91,
+    "median_mm": 1.97,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -34.2,
+     -137.5,
+     2.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 59.6 deg toward +Y incl. 330 g load (COM margin 42.7 mm)",
+   "facts": {
+    "part_g": 105.5,
+    "com_mm": [
+     8.6,
+     -9.9,
+     25.0
+    ],
+    "tip_deg": 59.6,
+    "margin_mm": 42.7,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.2 cm2, overhang 3.2 cm2, contact 353.8 cm2, h 44 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h01m, 105.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10846,
+    "grams": 105.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/loyalty-card-box/out/loyalty-card-box.stl",
+  "step": "models/loyalty-card-box/out/loyalty-card-box.step",
+  "print": "models/loyalty-card-box/out/loyalty-card-box.3mf",
+  "preview": "models/loyalty-card-box/out/preview.png"
+ }
+}
