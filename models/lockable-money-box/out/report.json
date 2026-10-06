@@ -1,0 +1,96 @@
+{
+ "model": "lockable-money-box",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "379.71 cm3, bbox 295x308x65 mm, 4 body, 7680 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 379.71,
+    "triangles": 7680,
+    "bbox_mm": [
+     295.0,
+     308.0,
+     65.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -65.0,
+     -31.3,
+     36.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 77.6 deg toward +X incl. 1000 g load (COM margin 83.2 mm)",
+   "facts": {
+    "part_g": 363.6,
+    "com_mm": [
+     -13.6,
+     5.6,
+     18.3
+    ],
+    "tip_deg": 77.6,
+    "margin_mm": 83.2,
+    "weak_side": "+X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 3.3 cm2, overhang 9.0 cm2, contact 670.2 cm2, h 65 mm [next: -Y down 1778.4; +X down 2223.3]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 34.39
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 3.3 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "9h24m, 363.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 33846,
+    "grams": 363.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/lockable-money-box/out/lockable-money-box.stl",
+  "step": "models/lockable-money-box/out/lockable-money-box.step",
+  "print": "models/lockable-money-box/out/lockable-money-box.3mf",
+  "preview": "models/lockable-money-box/out/preview.png"
+ }
+}
