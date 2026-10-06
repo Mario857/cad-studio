@@ -1,0 +1,86 @@
+{
+ "model": "radius-gauge-set",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "37.5 cm3, bbox 148x121x3 mm, 6 body, 78246 tris \u2014 6 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 6,
+    "volume_cm3": 37.5,
+    "triangles": 78246,
+    "bbox_mm": [
+     148.0,
+     121.0,
+     3.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.24 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 1.24,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     42.0,
+     110.1,
+     2.6
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.3 cm2, contact 119.7 cm2, h 3 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h18m, 32.7 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8281,
+    "grams": 32.7,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/radius-gauge-set/out/radius-gauge-set.stl",
+  "step": "models/radius-gauge-set/out/radius-gauge-set.step",
+  "print": "models/radius-gauge-set/out/radius-gauge-set.3mf",
+  "preview": "models/radius-gauge-set/out/preview.png"
+ }
+}
