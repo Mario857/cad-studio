@@ -1,0 +1,81 @@
+{
+ "model": "cat-wall-shelf",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "1197.33 cm3, bbox 280x200x140 mm, 1 body, 6240 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 1197.33,
+    "triangles": 6240,
+    "bbox_mm": [
+     280.0,
+     200.0,
+     140.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~8.00 mm (p2), median 12.0 mm",
+   "facts": {
+    "p2_mm": 8.0,
+    "median_mm": 12.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (-90, 0, 0): support 0.3 cm2, overhang 1.6 cm2, contact 385.2 cm2, h 200 mm",
+   "facts": {
+    "chosen": "fixed rot (-90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "20h31m, 751.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 73883,
+    "grams": 751.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cat-wall-shelf/out/cat-wall-shelf.stl",
+  "step": "models/cat-wall-shelf/out/cat-wall-shelf.step",
+  "print": "models/cat-wall-shelf/out/cat-wall-shelf.3mf",
+  "preview": "models/cat-wall-shelf/out/preview.png"
+ }
+}
