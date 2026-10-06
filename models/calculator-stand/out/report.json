@@ -1,0 +1,91 @@
+{
+ "model": "calculator-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "534.27 cm3, bbox 112x177.2x65.7 mm, 1 body, 280 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 534.27,
+    "triangles": 280,
+    "bbox_mm": [
+     112.0,
+     177.2,
+     65.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~4.20 mm (p2), median 112.0 mm",
+   "facts": {
+    "p2_mm": 4.2,
+    "median_mm": 112.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 54.2 deg toward -X incl. 400 g load (COM margin 55.6 mm)",
+   "facts": {
+    "part_g": 154.9,
+    "com_mm": [
+     0.0,
+     14.8,
+     40.0
+    ],
+    "tip_deg": 54.2,
+    "margin_mm": 55.6,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "+X down: support 0.0 cm2, overhang 0.0 cm2, contact 47.0 cm2, h 112 mm [next: -X down -3.0; as modeled 54.1]",
+   "facts": {
+    "chosen": "+X down",
+    "score": -3.02
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h38m, 154.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 16665,
+    "grams": 154.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/calculator-stand/out/calculator-stand.stl",
+  "step": "models/calculator-stand/out/calculator-stand.step",
+  "print": "models/calculator-stand/out/calculator-stand.3mf",
+  "preview": "models/calculator-stand/out/preview.png"
+ }
+}
