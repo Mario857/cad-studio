@@ -1,0 +1,91 @@
+{
+ "model": "sponge-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "50.37 cm3, bbox 124.8x89.8x25 mm, 1 body, 3944 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 50.37,
+    "triangles": 3944,
+    "bbox_mm": [
+     124.8,
+     89.8,
+     25.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.75 mm (p2), median 4.0 mm",
+   "facts": {
+    "p2_mm": 1.75,
+    "median_mm": 4.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 75.0 deg toward +Y incl. 60 g load (COM margin 44.5 mm)",
+   "facts": {
+    "part_g": 38.5,
+    "com_mm": [
+     0.0,
+     0.0,
+     11.9
+    ],
+    "tip_deg": 75.0,
+    "margin_mm": 44.5,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.9 cm2, contact 62.9 cm2, h 25 mm [next: -X down 197.0; +X down 197.0]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -5.63
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h26m, 38.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 5182,
+    "grams": 38.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/sponge-holder/out/sponge-holder.stl",
+  "step": "models/sponge-holder/out/sponge-holder.step",
+  "print": "models/sponge-holder/out/sponge-holder.3mf",
+  "preview": "models/sponge-holder/out/preview.png"
+ }
+}
