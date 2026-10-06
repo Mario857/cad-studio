@@ -1,0 +1,81 @@
+{
+ "model": "stocking-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "98.93 cm3, bbox 40x92x123.8 mm, 1 body, 1900 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 98.93,
+    "triangles": 1900,
+    "bbox_mm": [
+     40.0,
+     92.0,
+     123.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~8.01 mm (p2), median 20.84 mm",
+   "facts": {
+    "p2_mm": 8.01,
+    "median_mm": 20.84,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.3 cm2, overhang 1.3 cm2, contact 23.1 cm2, h 40 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h50m, 63.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 6614,
+    "grams": 63.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/stocking-holder/out/stocking-holder.stl",
+  "step": "models/stocking-holder/out/stocking-holder.step",
+  "print": "models/stocking-holder/out/stocking-holder.3mf",
+  "preview": "models/stocking-holder/out/preview.png"
+ }
+}
