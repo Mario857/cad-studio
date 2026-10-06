@@ -1,0 +1,81 @@
+{
+ "model": "egg-shakers",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "67.83 cm3, bbox 158x75.9x24.9 mm, 8 body, 26604 tris \u2014 8 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 8,
+    "volume_cm3": 67.83,
+    "triangles": 26604,
+    "bbox_mm": [
+     158.0,
+     75.9,
+     24.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.50 mm (p2), median 5.59 mm",
+   "facts": {
+    "p2_mm": 1.5,
+    "median_mm": 5.59,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.3 cm2, overhang 0.3 cm2, contact 10.2 cm2, h 25 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h41m, 37.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 6040,
+    "grams": 37.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/egg-shakers/out/egg-shakers.stl",
+  "step": "models/egg-shakers/out/egg-shakers.step",
+  "print": "models/egg-shakers/out/egg-shakers.3mf",
+  "preview": "models/egg-shakers/out/preview.png"
+ }
+}
