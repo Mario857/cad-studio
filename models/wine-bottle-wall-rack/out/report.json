@@ -1,0 +1,81 @@
+{
+ "model": "wine-bottle-wall-rack",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "96.37 cm3, bbox 38x105x270 mm, 1 body, 3904 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 96.37,
+    "triangles": 3904,
+    "bbox_mm": [
+     38.0,
+     105.0,
+     270.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.97 mm (p2), median 6.39 mm",
+   "facts": {
+    "p2_mm": 3.97,
+    "median_mm": 6.39,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.0 cm2, overhang 1.9 cm2, contact 84.6 cm2, h 38 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h18m, 76.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8287,
+    "grams": 76.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/wine-bottle-wall-rack/out/wine-bottle-wall-rack.stl",
+  "step": "models/wine-bottle-wall-rack/out/wine-bottle-wall-rack.step",
+  "print": "models/wine-bottle-wall-rack/out/wine-bottle-wall-rack.3mf",
+  "preview": "models/wine-bottle-wall-rack/out/preview.png"
+ }
+}
