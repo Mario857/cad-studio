@@ -1,0 +1,91 @@
+{
+ "model": "medicine-cabinet-riser",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "212.47 cm3, bbox 250x100x86 mm, 1 body, 118 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 212.47,
+    "triangles": 118,
+    "bbox_mm": [
+     250.0,
+     100.0,
+     86.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 2.64 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 2.64,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 39.9 deg toward +Y incl. 600 g load (COM margin 48.1 mm)",
+   "facts": {
+    "part_g": 213.8,
+    "com_mm": [
+     0.0,
+     51.9,
+     57.4
+    ],
+    "tip_deg": 39.9,
+    "margin_mm": 48.1,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.0 cm2, overhang 0.0 cm2, contact 8.5 cm2, h 250 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h22m, 213.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 19306,
+    "grams": 213.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/medicine-cabinet-riser/out/medicine-cabinet-riser.stl",
+  "step": "models/medicine-cabinet-riser/out/medicine-cabinet-riser.step",
+  "print": "models/medicine-cabinet-riser/out/medicine-cabinet-riser.3mf",
+  "preview": "models/medicine-cabinet-riser/out/preview.png"
+ }
+}
