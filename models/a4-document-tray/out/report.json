@@ -1,0 +1,96 @@
+{
+ "model": "a4-document-tray",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "228.75 cm3, bbox 240.8x311.8x75 mm, 1 body, 10892 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 228.75,
+    "triangles": 10892,
+    "bbox_mm": [
+     240.8,
+     311.8,
+     75.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.33 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 2.33,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -119.5,
+     -135.2,
+     4.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 82.7 deg toward -X incl. 1500 g load (COM margin 120.0 mm)",
+   "facts": {
+    "part_g": 171.6,
+    "com_mm": [
+     -0.0,
+     0.4,
+     15.3
+    ],
+    "tip_deg": 82.7,
+    "margin_mm": 120.0,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.7 cm2, contact 344.1 cm2, h 75 mm [next: +Y down 1047.3; -Y down 1267.1]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -2.27
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h28m, 171.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 19655,
+    "grams": 171.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/a4-document-tray/out/a4-document-tray.stl",
+  "step": "models/a4-document-tray/out/a4-document-tray.step",
+  "print": "models/a4-document-tray/out/a4-document-tray.3mf",
+  "preview": "models/a4-document-tray/out/preview.png"
+ }
+}
