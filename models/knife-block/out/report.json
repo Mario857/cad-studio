@@ -1,0 +1,91 @@
+{
+ "model": "knife-block",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "356.82 cm3, bbox 132x100x230 mm, 1 body, 13112 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 356.82,
+    "triangles": 13112,
+    "bbox_mm": [
+     132.0,
+     100.0,
+     230.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 13.4 deg toward +Y incl. 1200 g load (COM margin 49.6 mm)",
+   "facts": {
+    "part_g": 346.9,
+    "com_mm": [
+     -0.1,
+     0.0,
+     208.0
+    ],
+    "tip_deg": 13.4,
+    "margin_mm": 49.6,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.2 cm2, contact 120.0 cm2, h 230 mm [next: top down 1282.9; stable face 1922.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 2.96
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "8h41m, 346.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 31243,
+    "grams": 346.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/knife-block/out/knife-block.stl",
+  "step": "models/knife-block/out/knife-block.step",
+  "print": "models/knife-block/out/knife-block.3mf",
+  "preview": "models/knife-block/out/preview.png"
+ }
+}
