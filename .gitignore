@@ -3,4 +3,4 @@ __pycache__/
 *.pyc
 .cache/
 .DS_Store
-models/*/out/.work/
+models/**/out/.work/

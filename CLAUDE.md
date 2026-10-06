@@ -1,7 +1,7 @@
 # cad-studio
 
 Code-first design of FDM parts for a **Bambu Lab H2C** (0.4 mm nozzle, 300×320×320 mm usable).
-Each part is one parametric build123d script: `models/<name>/model.py`. `./cad check <name>` does
+Each part is one parametric build123d script: `models/<category>/<name>/model.py`. `./cad check <name>` does
 everything else (build, mesh + wall checks, gravity audit, print orientation, supports, Bambu Studio slice).
 
 ## Token budget rules (important — sessions are paid per token)
@@ -19,10 +19,10 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
 
 ## Workflow
 
-1. `./cad new <kebab-name>` → edit `models/<name>/model.py` (docstring spec, `META`, params, `build()`).
+1. `./cad new <kebab-name> --category <dir>` (dirs: bathroom christmas garden home kitchen money music office outdoor pet phone) → edit `models/<category>/<name>/model.py` (docstring spec, `META`, params, `build()`).
 2. `./cad check <name> --no-slice` → fix every FAIL; fix WARNs unless the reason is stated in META/docstring.
 3. `./cad check <name>` (slices; first run on a fresh cloud session may wait for the slicer install).
-4. Commit `models/<name>/` including `out/` (`.3mf` is the print file) with message
+4. Commit `models/<category>/<name>/` including `out/` (`.3mf` is the print file) with message
    `<name>: <what changed>` and push. One commit per finished design, not per iteration.
 
 ## Model contract

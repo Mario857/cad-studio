@@ -7,7 +7,7 @@ free tools in this repo do the rest and hand back a ~10-line verdict:
 
 | stage | what it checks / does |
 |---|---|
-| build | runs `models/<name>/model.py`, exports STEP + STL, B-rep validity |
+| build | runs `models/<category>/<name>/model.py`, exports STEP + STL, B-rep validity |
 | mesh | watertight, winding, separate bodies, volume, size |
 | walls | ray-cast wall thickness (fail < 0.6 mm, warn < 1.2 mm) |
 | use (gravity) | in-use tip-over angle incl. carried loads, weak side to widen |
@@ -20,8 +20,8 @@ free tools in this repo do the rest and hand back a ~10-line verdict:
 
 1. Open the Claude app → **Code** → choose this GitHub repo.
 2. Type `/design wall bracket for a 25 mm pipe, two M4 screws` (or just describe it).
-3. Claude iterates until `PASS`, commits `models/<name>/` and pushes a branch.
-4. In the GitHub app, open `models/<name>/out/`: `<name>.stl` renders as a rotatable 3D view,
+3. Claude iterates until `PASS`, commits `models/<category>/<name>/` and pushes a branch.
+4. In the GitHub app, open `models/<category>/<name>/out/`: `<name>.stl` renders as a rotatable 3D view,
    `preview.png` shows all views, `<name>.3mf` is the sliced print file
    (`git pull`, open it in Bambu Studio, press Print — it is already sliced for the H2C).
 
@@ -58,7 +58,7 @@ cad                 entry point (uv run python -m cadstudio)
 cadstudio/          pipeline: build, mesh_check, gravity, slicer, preview, report
 cadlib/             helpers for models: fasteners, fits, teardrops, ribs, labels
 config/printer.toml printer, plate, materials, qualities, audit thresholds
-models/<name>/      model.py + out/ (stl, step, 3mf, preview.png, report.md)
+models/<category>/<name>/      model.py + out/ (stl, step, 3mf, preview.png, report.md)
 templates/model.py  scaffold for ./cad new
 scripts/            setup.sh (SessionStart), install-slicer.sh, test-cloud-env.sh
 .claude/            settings (model, hook, permissions) and /design /tweak /look commands
