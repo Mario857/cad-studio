@@ -1,0 +1,96 @@
+{
+ "model": "receipt-organizer",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "715.43 cm3, bbox 175x188.1x111 mm, 1 body, 16148 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 715.43,
+    "triangles": 16148,
+    "bbox_mm": [
+     175.0,
+     188.1,
+     111.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.62 mm (p2), median 22.75 mm",
+   "facts": {
+    "p2_mm": 0.62,
+    "median_mm": 22.75,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -82.3,
+     102.4,
+     82.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 57.4 deg toward -Y incl. 400 g load (COM margin 67.4 mm)",
+   "facts": {
+    "part_g": 426.4,
+    "com_mm": [
+     -12.3,
+     61.4,
+     43.0
+    ],
+    "tip_deg": 57.4,
+    "margin_mm": 67.4,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.7 cm2, overhang 2.2 cm2, contact 326.8 cm2, h 111 mm [next: +X down 1053.5; -X down 2314.3]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 4.99
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 0.7 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "12h19m, 426.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 44358,
+    "grams": 426.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/receipt-organizer/out/receipt-organizer.stl",
+  "step": "models/receipt-organizer/out/receipt-organizer.step",
+  "print": "models/receipt-organizer/out/receipt-organizer.3mf",
+  "preview": "models/receipt-organizer/out/preview.png"
+ }
+}
