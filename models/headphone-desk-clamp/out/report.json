@@ -1,0 +1,81 @@
+{
+ "model": "headphone-desk-clamp",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "64.35 cm3, bbox 178x20x71 mm, 3 body, 4372 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 64.35,
+    "triangles": 4372,
+    "bbox_mm": [
+     178.0,
+     20.0,
+     71.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~6.00 mm (p2), median 14.0 mm",
+   "facts": {
+    "p2_mm": 6.0,
+    "median_mm": 14.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 0.6 cm2, contact 33.9 cm2, h 20 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h12m, 51.7 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 4343,
+    "grams": 51.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/headphone-desk-clamp/out/headphone-desk-clamp.stl",
+  "step": "models/headphone-desk-clamp/out/headphone-desk-clamp.step",
+  "print": "models/headphone-desk-clamp/out/headphone-desk-clamp.3mf",
+  "preview": "models/headphone-desk-clamp/out/preview.png"
+ }
+}
