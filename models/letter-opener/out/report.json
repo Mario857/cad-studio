@@ -1,0 +1,86 @@
+{
+ "model": "letter-opener",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "31.3 cm3, bbox 200x28.4x16.1 mm, 1 body, 5816 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 31.3,
+    "triangles": 5816,
+    "bbox_mm": [
+     200.0,
+     28.4,
+     16.1
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~8.24 mm (p2), median 15.48 mm",
+   "facts": {
+    "p2_mm": 8.24,
+    "median_mm": 15.48,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 1.7,
+    "thin_example_xyz": [
+     26.5,
+     -8.6,
+     0.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 3.1 cm2, contact 33.9 cm2, h 16 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "44m, 21.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2620,
+    "grams": 21.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/letter-opener/out/letter-opener.stl",
+  "step": "models/letter-opener/out/letter-opener.step",
+  "print": "models/letter-opener/out/letter-opener.3mf",
+  "preview": "models/letter-opener/out/preview.png"
+ }
+}
