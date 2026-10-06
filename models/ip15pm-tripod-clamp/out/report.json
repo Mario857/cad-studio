@@ -1,0 +1,86 @@
+{
+ "model": "ip15pm-tripod-clamp",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "66.73 cm3, bbox 90.3x54.5x140 mm, 2 body, 2450 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 66.73,
+    "triangles": 2450,
+    "bbox_mm": [
+     90.3,
+     54.5,
+     140.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.70 mm (p2), median 18.0 mm",
+   "facts": {
+    "p2_mm": 2.7,
+    "median_mm": 18.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 1.2,
+    "thin_example_xyz": [
+     56.7,
+     14.8,
+     39.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.2 cm2, overhang 1.3 cm2, contact 17.6 cm2, h 140 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h59m, 47.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10753,
+    "grams": 47.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-tripod-clamp/out/ip15pm-tripod-clamp.stl",
+  "step": "models/ip15pm-tripod-clamp/out/ip15pm-tripod-clamp.step",
+  "print": "models/ip15pm-tripod-clamp/out/ip15pm-tripod-clamp.3mf",
+  "preview": "models/ip15pm-tripod-clamp/out/preview.png"
+ }
+}
