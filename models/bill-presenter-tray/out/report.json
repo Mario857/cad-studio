@@ -1,0 +1,81 @@
+{
+ "model": "bill-presenter-tray",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "197.25 cm3, bbox 200x172x30 mm, 2 body, 16162 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 197.25,
+    "triangles": 16162,
+    "bbox_mm": [
+     200.0,
+     172.0,
+     30.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.01 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 2.01,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.7 cm2, contact 237.4 cm2, h 30 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h23m, 81.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8603,
+    "grams": 81.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/bill-presenter-tray/out/bill-presenter-tray.stl",
+  "step": "models/bill-presenter-tray/out/bill-presenter-tray.step",
+  "print": "models/bill-presenter-tray/out/bill-presenter-tray.3mf",
+  "preview": "models/bill-presenter-tray/out/preview.png"
+ }
+}
