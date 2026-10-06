@@ -1,0 +1,86 @@
+{
+ "model": "control-knob",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "3.61 cm3, bbox 19x19x18 mm, 1 body, 21706 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 3.61,
+    "triangles": 21706,
+    "bbox_mm": [
+     19.0,
+     19.0,
+     18.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.74 mm (p2), median 6.57 mm",
+   "facts": {
+    "p2_mm": 0.74,
+    "median_mm": 6.57,
+    "area_pct_below_fail": 0.4,
+    "area_pct_below_warn": 1.0,
+    "thin_example_xyz": [
+     -7.5,
+     -4.6,
+     5.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.3 cm2, overhang 0.9 cm2, contact 1.7 cm2, h 18 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "44m, 4.7 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2618,
+    "grams": 4.7,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/control-knob/out/control-knob.stl",
+  "step": "models/control-knob/out/control-knob.step",
+  "print": "models/control-knob/out/control-knob.3mf",
+  "preview": "models/control-knob/out/preview.png"
+ }
+}
