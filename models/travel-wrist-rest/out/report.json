@@ -1,0 +1,96 @@
+{
+ "model": "travel-wrist-rest",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "271.6 cm3, bbox 174x170x28.7 mm, 2 body, 4822 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 271.6,
+    "triangles": 4822,
+    "bbox_mm": [
+     174.0,
+     170.0,
+     28.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 2.8 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 2.8,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -96.2,
+     170.0,
+     24.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 77.3 deg toward -X incl. 1200 g load (COM margin 74.7 mm)",
+   "facts": {
+    "part_g": 162.1,
+    "com_mm": [
+     -74.9,
+     85.6,
+     16.9
+    ],
+    "tip_deg": 77.3,
+    "margin_mm": 74.7,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.8 cm2, contact 235.7 cm2, h 29 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "13h35m, 162.1 g (0.20mm Standard @BBL H2C + AzureFilm TPU 95A @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 48894,
+    "grams": 162.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm TPU 95A @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/travel-wrist-rest/out/travel-wrist-rest.stl",
+  "step": "models/travel-wrist-rest/out/travel-wrist-rest.step",
+  "print": "models/travel-wrist-rest/out/travel-wrist-rest.3mf",
+  "preview": "models/travel-wrist-rest/out/preview.png"
+ }
+}
