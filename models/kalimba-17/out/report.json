@@ -1,0 +1,86 @@
+{
+ "model": "kalimba-17",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "224.72 cm3, bbox 287.8x188x30 mm, 3 body, 10956 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 224.72,
+    "triangles": 10956,
+    "bbox_mm": [
+     287.8,
+     188.0,
+     30.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.50 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 1.5,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     50.7,
+     55.1,
+     8.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.6 cm2, overhang 2.6 cm2, contact 498.6 cm2, h 30 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.6 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h13m, 181.7 g (Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 22366,
+    "grams": 181.7,
+    "warnings": [],
+    "preset": "Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/kalimba-17/out/kalimba-17.stl",
+  "step": "models/kalimba-17/out/kalimba-17.step",
+  "print": "models/kalimba-17/out/kalimba-17.3mf",
+  "preview": "models/kalimba-17/out/preview.png"
+ }
+}
