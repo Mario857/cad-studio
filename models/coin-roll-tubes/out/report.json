@@ -1,0 +1,96 @@
+{
+ "model": "coin-roll-tubes",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "124.52 cm3, bbox 228.3x58.3x100.2 mm, 1 body, 46336 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 124.52,
+    "triangles": 46336,
+    "bbox_mm": [
+     228.3,
+     58.3,
+     100.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.96 mm (p2), median 2.0 mm",
+   "facts": {
+    "p2_mm": 1.96,
+    "median_mm": 2.0,
+    "area_pct_below_fail": 0.1,
+    "area_pct_below_warn": 0.5,
+    "thin_example_xyz": [
+     -96.3,
+     1.6,
+     30.6
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 34.0 deg toward +Y (COM margin 20.3 mm)",
+   "facts": {
+    "part_g": 112.0,
+    "com_mm": [
+     -3.4,
+     8.5,
+     30.1
+    ],
+    "tip_deg": 34.0,
+    "margin_mm": 20.3,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 3.0 cm2, contact 130.8 cm2, h 100 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h19m, 112.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 11945,
+    "grams": 112.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coin-roll-tubes/out/coin-roll-tubes.stl",
+  "step": "models/coin-roll-tubes/out/coin-roll-tubes.step",
+  "print": "models/coin-roll-tubes/out/coin-roll-tubes.3mf",
+  "preview": "models/coin-roll-tubes/out/preview.png"
+ }
+}
