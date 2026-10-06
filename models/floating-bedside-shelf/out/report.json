@@ -1,0 +1,81 @@
+{
+ "model": "floating-bedside-shelf",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "312.97 cm3, bbox 200x150x82 mm, 1 body, 2350 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 312.97,
+    "triangles": 2350,
+    "bbox_mm": [
+     200.0,
+     150.0,
+     82.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.12 mm (p2), median 6.51 mm",
+   "facts": {
+    "p2_mm": 3.12,
+    "median_mm": 6.51,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.1 cm2, overhang 5.2 cm2, contact 13.7 cm2, h 200 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "7h46m, 260.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 27949,
+    "grams": 260.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/floating-bedside-shelf/out/floating-bedside-shelf.stl",
+  "step": "models/floating-bedside-shelf/out/floating-bedside-shelf.step",
+  "print": "models/floating-bedside-shelf/out/floating-bedside-shelf.3mf",
+  "preview": "models/floating-bedside-shelf/out/preview.png"
+ }
+}
