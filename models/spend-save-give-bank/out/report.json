@@ -1,0 +1,96 @@
+{
+ "model": "spend-save-give-bank",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "283.56 cm3, bbox 192x124x122 mm, 4 body, 13698 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 283.56,
+    "triangles": 13698,
+    "bbox_mm": [
+     192.0,
+     124.0,
+     122.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.31 mm (p2), median 4.57 mm",
+   "facts": {
+    "p2_mm": 2.31,
+    "median_mm": 4.57,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -2.2,
+     -32.4,
+     44.2
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 48.9 deg toward +Y incl. 900 g load (COM margin 33.0 mm)",
+   "facts": {
+    "part_g": 205.1,
+    "com_mm": [
+     -0.0,
+     -1.4,
+     28.8
+    ],
+    "tip_deg": 48.9,
+    "margin_mm": 33.0,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.6 cm2, overhang 152.3 cm2, contact 112.0 cm2, h 122 mm [next: top down 1057.8; stable face 1467.1]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 229.89
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 0.6 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h49m, 205.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 24558,
+    "grams": 205.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/spend-save-give-bank/out/spend-save-give-bank.stl",
+  "step": "models/spend-save-give-bank/out/spend-save-give-bank.step",
+  "print": "models/spend-save-give-bank/out/spend-save-give-bank.3mf",
+  "preview": "models/spend-save-give-bank/out/preview.png"
+ }
+}
