@@ -1,0 +1,86 @@
+{
+ "model": "emergency-info-tag",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "9.19 cm3, bbox 70x40x4.2 mm, 1 body, 16446 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 9.19,
+    "triangles": 16446,
+    "bbox_mm": [
+     70.0,
+     40.0,
+     4.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.83 mm (p2), median 3.2 mm; 3.2% of surface < 1.2 mm near [8.6, -6.8, 3.8]",
+   "facts": {
+    "p2_mm": 0.83,
+    "median_mm": 3.2,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 3.2,
+    "thin_example_xyz": [
+     8.6,
+     -6.8,
+     3.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 1.1 cm2, overhang 1.4 cm2, contact 2.0 cm2, h 40 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 1.1 cm2 needs support but supports=off; wobbly on bed (tips at 4 deg)",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "46m, 6.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2746,
+    "grams": 6.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/emergency-info-tag/out/emergency-info-tag.stl",
+  "step": "models/emergency-info-tag/out/emergency-info-tag.step",
+  "print": "models/emergency-info-tag/out/emergency-info-tag.3mf",
+  "preview": "models/emergency-info-tag/out/preview.png"
+ }
+}
