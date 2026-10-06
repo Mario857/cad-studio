@@ -1,0 +1,91 @@
+{
+ "model": "cutting-board-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "357.83 cm3, bbox 130x143.5x75.5 mm, 1 body, 5452 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 357.83,
+    "triangles": 5452,
+    "bbox_mm": [
+     130.0,
+     143.5,
+     75.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~5.13 mm (p2), median 6.0 mm",
+   "facts": {
+    "p2_mm": 5.13,
+    "median_mm": 6.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 18.1 deg toward +Y incl. 3000 g load (COM margin 56.6 mm)",
+   "facts": {
+    "part_g": 136.8,
+    "com_mm": [
+     -0.0,
+     12.0,
+     173.3
+    ],
+    "tip_deg": 18.1,
+    "margin_mm": 56.6,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.3 cm2, contact 173.1 cm2, h 76 mm [next: +X down 230.5; -X down 230.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -2.98
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h00m, 136.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14401,
+    "grams": 136.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cutting-board-stand/out/cutting-board-stand.stl",
+  "step": "models/cutting-board-stand/out/cutting-board-stand.step",
+  "print": "models/cutting-board-stand/out/cutting-board-stand.3mf",
+  "preview": "models/cutting-board-stand/out/preview.png"
+ }
+}
