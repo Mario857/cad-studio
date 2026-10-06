@@ -67,14 +67,20 @@
   },
   {
    "name": "slice",
-   "status": "SKIP",
-   "summary": "--no-slice",
-   "facts": {}
+   "status": "OK",
+   "summary": "1h22m, 35.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 4912,
+    "grams": 35.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
   }
  ],
  "files": {
   "stl": "models/castanets/out/castanets.stl",
   "step": "models/castanets/out/castanets.step",
+  "print": "models/castanets/out/castanets.3mf",
   "preview": "models/castanets/out/preview.png"
  }
 }
