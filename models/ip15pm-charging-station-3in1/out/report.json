@@ -1,0 +1,96 @@
+{
+ "model": "ip15pm-charging-station-3in1",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "354.99 cm3, bbox 115x192x127.6 mm, 1 body, 13910 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 354.99,
+    "triangles": 13910,
+    "bbox_mm": [
+     115.0,
+     192.0,
+     127.6
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 11.21 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 11.21,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     45.2,
+     -31.6,
+     126.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 34.9 deg toward +X incl. 342 g load (COM margin 54.6 mm)",
+   "facts": {
+    "part_g": 131.0,
+    "com_mm": [
+     20.0,
+     -18.6,
+     78.2
+    ],
+    "tip_deg": 34.9,
+    "margin_mm": 54.6,
+    "weak_side": "+X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.3 cm2, contact 192.6 cm2, h 128 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h41m, 131.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 16851,
+    "grams": 131.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-charging-station-3in1/out/ip15pm-charging-station-3in1.stl",
+  "step": "models/ip15pm-charging-station-3in1/out/ip15pm-charging-station-3in1.step",
+  "print": "models/ip15pm-charging-station-3in1/out/ip15pm-charging-station-3in1.3mf",
+  "preview": "models/ip15pm-charging-station-3in1/out/preview.png"
+ }
+}
