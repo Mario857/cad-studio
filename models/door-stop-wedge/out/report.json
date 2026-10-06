@@ -1,0 +1,86 @@
+{
+ "model": "door-stop-wedge",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "60.32 cm3, bbox 120x40x25 mm, 1 body, 1094 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 60.32,
+    "triangles": 1094,
+    "bbox_mm": [
+     120.0,
+     40.0,
+     25.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.84 mm (p2), median 20.98 mm",
+   "facts": {
+    "p2_mm": 1.84,
+    "median_mm": 20.98,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     119.5,
+     17.5,
+     24.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.2 cm2, contact 45.1 cm2, h 25 mm [next: +Y down 17.0; -Y down 17.1]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -6.73
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "51m, 21.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3066,
+    "grams": 21.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/door-stop-wedge/out/door-stop-wedge.stl",
+  "step": "models/door-stop-wedge/out/door-stop-wedge.step",
+  "print": "models/door-stop-wedge/out/door-stop-wedge.3mf",
+  "preview": "models/door-stop-wedge/out/preview.png"
+ }
+}
