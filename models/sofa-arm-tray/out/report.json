@@ -1,0 +1,81 @@
+{
+ "model": "sofa-arm-tray",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "734.48 cm3, bbox 112x180x129 mm, 1 body, 65966 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 734.48,
+    "triangles": 65966,
+    "bbox_mm": [
+     112.0,
+     180.0,
+     129.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.20 mm (p2), median 15.38 mm",
+   "facts": {
+    "p2_mm": 3.2,
+    "median_mm": 15.38,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 3.9 cm2, overhang 220.5 cm2, contact 11.5 cm2, h 129 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 3.9 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h28m, 218.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 23297,
+    "grams": 218.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/sofa-arm-tray/out/sofa-arm-tray.stl",
+  "step": "models/sofa-arm-tray/out/sofa-arm-tray.step",
+  "print": "models/sofa-arm-tray/out/sofa-arm-tray.3mf",
+  "preview": "models/sofa-arm-tray/out/preview.png"
+ }
+}
