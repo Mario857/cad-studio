@@ -1,0 +1,86 @@
+{
+ "model": "pill-organizer-7day",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "35.15 cm3, bbox 142x63x18 mm, 8 body, 13708 tris \u2014 8 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 8,
+    "volume_cm3": 35.15,
+    "triangles": 13708,
+    "bbox_mm": [
+     142.0,
+     63.0,
+     18.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.02 mm (p2), median 2.88 mm",
+   "facts": {
+    "p2_mm": 1.02,
+    "median_mm": 2.88,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 2.5,
+    "thin_example_xyz": [
+     27.7,
+     3.4,
+     17.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.1 cm2, overhang 0.4 cm2, contact 70.6 cm2, h 18 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h02m, 28.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3731,
+    "grams": 28.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/pill-organizer-7day/out/pill-organizer-7day.stl",
+  "step": "models/pill-organizer-7day/out/pill-organizer-7day.step",
+  "print": "models/pill-organizer-7day/out/pill-organizer-7day.3mf",
+  "preview": "models/pill-organizer-7day/out/preview.png"
+ }
+}
