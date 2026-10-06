@@ -1,0 +1,86 @@
+{
+ "model": "seed-tray-dibber",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "316.39 cm3, bbox 240x232x22 mm, 2 body, 27264 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 316.39,
+    "triangles": 27264,
+    "bbox_mm": [
+     240.0,
+     232.0,
+     22.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~5.95 mm (p2), median 8.0 mm",
+   "facts": {
+    "p2_mm": 5.95,
+    "median_mm": 8.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     80.7,
+     4.0,
+     5.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.9 cm2, contact 277.6 cm2, h 22 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h21m, 124.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 15671,
+    "grams": 124.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/seed-tray-dibber/out/seed-tray-dibber.stl",
+  "step": "models/seed-tray-dibber/out/seed-tray-dibber.step",
+  "print": "models/seed-tray-dibber/out/seed-tray-dibber.3mf",
+  "preview": "models/seed-tray-dibber/out/preview.png"
+ }
+}
