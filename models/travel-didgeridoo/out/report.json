@@ -1,0 +1,81 @@
+{
+ "model": "travel-didgeridoo",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "793.16 cm3, bbox 267.6x275.1x179.7 mm, 10 body, 39058 tris \u2014 10 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 10,
+    "volume_cm3": 793.16,
+    "triangles": 39058,
+    "bbox_mm": [
+     267.6,
+     275.1,
+     179.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.39 mm (p2), median 2.39 mm",
+   "facts": {
+    "p2_mm": 2.39,
+    "median_mm": 2.39,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.4 cm2, overhang 26.6 cm2, contact 77.6 cm2, h 180 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "19h42m, 524.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 70910,
+    "grams": 524.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/travel-didgeridoo/out/travel-didgeridoo.stl",
+  "step": "models/travel-didgeridoo/out/travel-didgeridoo.step",
+  "print": "models/travel-didgeridoo/out/travel-didgeridoo.3mf",
+  "preview": "models/travel-didgeridoo/out/preview.png"
+ }
+}
