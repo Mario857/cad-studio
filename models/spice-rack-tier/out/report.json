@@ -1,0 +1,91 @@
+{
+ "model": "spice-rack-tier",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "324.33 cm3, bbox 250x202.4x113 mm, 1 body, 108 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 324.33,
+    "triangles": 108,
+    "bbox_mm": [
+     250.0,
+     202.4,
+     113.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 113.0 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 113.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 51.6 deg toward -Y incl. 2250 g load (COM margin 85.1 mm)",
+   "facts": {
+    "part_g": 330.1,
+    "com_mm": [
+     -0.0,
+     85.1,
+     67.4
+    ],
+    "tip_deg": 51.6,
+    "margin_mm": 85.1,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.0 cm2, overhang 0.0 cm2, contact 13.0 cm2, h 250 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "7h51m, 330.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 28244,
+    "grams": 330.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/spice-rack-tier/out/spice-rack-tier.stl",
+  "step": "models/spice-rack-tier/out/spice-rack-tier.step",
+  "print": "models/spice-rack-tier/out/spice-rack-tier.3mf",
+  "preview": "models/spice-rack-tier/out/preview.png"
+ }
+}
