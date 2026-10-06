@@ -1,0 +1,96 @@
+{
+ "model": "twist-vase",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "147.98 cm3, bbox 118.2x118.2x220 mm, 1 body, 26258 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 147.98,
+    "triangles": 26258,
+    "bbox_mm": [
+     118.2,
+     118.2,
+     220.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.33 mm (p2), median 2.02 mm",
+   "facts": {
+    "p2_mm": 1.33,
+    "median_mm": 2.02,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -7.7,
+     -32.8,
+     220.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 30.8 deg toward -Y incl. 400 g load (COM margin 41.5 mm)",
+   "facts": {
+    "part_g": 183.3,
+    "com_mm": [
+     -0.0,
+     -0.0,
+     69.7
+    ],
+    "tip_deg": 30.8,
+    "margin_mm": 41.5,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 10.8 cm2, contact 54.4 cm2, h 220 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h24m, 183.3 g (0.20mm Standard @BBL H2C + Bambu PLA Matte @BBL H2C)",
+   "facts": {
+    "seconds": 15862,
+    "grams": 183.3,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Matte @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/twist-vase/out/twist-vase.stl",
+  "step": "models/twist-vase/out/twist-vase.step",
+  "print": "models/twist-vase/out/twist-vase.3mf",
+  "preview": "models/twist-vase/out/preview.png"
+ }
+}
