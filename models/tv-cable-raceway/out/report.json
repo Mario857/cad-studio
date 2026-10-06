@@ -1,0 +1,86 @@
+{
+ "model": "tv-cable-raceway",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "75.36 cm3, bbox 207.9x293.2x18.8 mm, 4 body, 2248 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 75.36,
+    "triangles": 2248,
+    "bbox_mm": [
+     207.9,
+     293.2,
+     18.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~1.70 mm (p2), median 2.59 mm; 11.8% of surface < 1.2 mm near [-22.4, 44.8, 6.9]",
+   "facts": {
+    "p2_mm": 1.7,
+    "median_mm": 2.59,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 11.8,
+    "thin_example_xyz": [
+     -22.4,
+     44.8,
+     6.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 17.6 cm2, contact 213.4 cm2, h 19 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h04m, 68.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 7412,
+    "grams": 68.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/tv-cable-raceway/out/tv-cable-raceway.stl",
+  "step": "models/tv-cable-raceway/out/tv-cable-raceway.step",
+  "print": "models/tv-cable-raceway/out/tv-cable-raceway.3mf",
+  "preview": "models/tv-cable-raceway/out/preview.png"
+ }
+}
