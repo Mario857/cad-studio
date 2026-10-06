@@ -1,0 +1,91 @@
+{
+ "model": "can-dispenser",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "253.21 cm3, bbox 251.2x226x73.8 mm, 1 body, 1032 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 253.21,
+    "triangles": 1032,
+    "bbox_mm": [
+     251.2,
+     226.0,
+     73.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 3.02 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 3.02,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 69.4 deg toward -Y incl. 2100 g load (COM margin 112.8 mm)",
+   "facts": {
+    "part_g": 201.8,
+    "com_mm": [
+     -0.0,
+     -0.2,
+     42.5
+    ],
+    "tip_deg": 69.4,
+    "margin_mm": 112.8,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.6 cm2, contact 364.0 cm2, h 74 mm [next: -Y down 27.0; +Y down 710.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -4.1
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h07m, 201.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 21997,
+    "grams": 201.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/can-dispenser/out/can-dispenser.stl",
+  "step": "models/can-dispenser/out/can-dispenser.step",
+  "print": "models/can-dispenser/out/can-dispenser.3mf",
+  "preview": "models/can-dispenser/out/preview.png"
+ }
+}
