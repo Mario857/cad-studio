@@ -1,0 +1,86 @@
+{
+ "model": "rain-gauge",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "240.32 cm3, bbox 221x163.4x238 mm, 3 body, 43306 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 240.32,
+    "triangles": 43306,
+    "bbox_mm": [
+     221.0,
+     163.4,
+     238.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.26 mm (p2), median 2.43 mm",
+   "facts": {
+    "p2_mm": 2.26,
+    "median_mm": 2.43,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     5.4,
+     -29.2,
+     143.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.8 cm2, overhang 5.4 cm2, contact 87.9 cm2, h 238 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.8 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h59m, 131.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 25156,
+    "grams": 131.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/rain-gauge/out/rain-gauge.stl",
+  "step": "models/rain-gauge/out/rain-gauge.step",
+  "print": "models/rain-gauge/out/rain-gauge.3mf",
+  "preview": "models/rain-gauge/out/preview.png"
+ }
+}
