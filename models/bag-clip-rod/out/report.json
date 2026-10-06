@@ -1,0 +1,86 @@
+{
+ "model": "bag-clip-rod",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "12.34 cm3, bbox 34x110x12 mm, 2 body, 1914 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 12.34,
+    "triangles": 1914,
+    "bbox_mm": [
+     34.0,
+     110.0,
+     12.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 5.99 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 5.99,
+    "area_pct_below_fail": 0.2,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -4.5,
+     33.3,
+     11.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.9 cm2, contact 16.5 cm2, h 12 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "21m, 10.5 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 1285,
+    "grams": 10.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/bag-clip-rod/out/bag-clip-rod.stl",
+  "step": "models/bag-clip-rod/out/bag-clip-rod.step",
+  "print": "models/bag-clip-rod/out/bag-clip-rod.3mf",
+  "preview": "models/bag-clip-rod/out/preview.png"
+ }
+}
