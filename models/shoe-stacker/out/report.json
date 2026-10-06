@@ -1,0 +1,91 @@
+{
+ "model": "shoe-stacker",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "422.6 cm3, bbox 280x100x146.1 mm, 1 body, 1092 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 422.6,
+    "triangles": 1092,
+    "bbox_mm": [
+     280.0,
+     100.0,
+     146.1
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~4.03 mm (p2), median 7.79 mm",
+   "facts": {
+    "p2_mm": 4.03,
+    "median_mm": 7.79,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 24.1 deg toward +Y incl. 1500 g load (COM margin 49.6 mm)",
+   "facts": {
+    "part_g": 320.2,
+    "com_mm": [
+     131.0,
+     50.0,
+     111.0
+    ],
+    "tip_deg": 24.1,
+    "margin_mm": 49.6,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 1.1 cm2, contact 36.8 cm2, h 100 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "9h19m, 320.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 33553,
+    "grams": 320.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/shoe-stacker/out/shoe-stacker.stl",
+  "step": "models/shoe-stacker/out/shoe-stacker.step",
+  "print": "models/shoe-stacker/out/shoe-stacker.3mf",
+  "preview": "models/shoe-stacker/out/preview.png"
+ }
+}
