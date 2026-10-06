@@ -1,0 +1,81 @@
+{
+ "model": "furniture-glide",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "5.45 cm3, bbox 35x35x16 mm, 1 body, 4868 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 5.45,
+    "triangles": 4868,
+    "bbox_mm": [
+     35.0,
+     35.0,
+     16.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 3.13 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 3.13,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 6.3 cm2, overhang 6.3 cm2, contact 2.8 cm2, h 16 mm [next: +X down 98.0; +Y down 98.0]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 59.41
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 6.3 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "35m, 14.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2072,
+    "grams": 14.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/furniture-glide/out/furniture-glide.stl",
+  "step": "models/furniture-glide/out/furniture-glide.step",
+  "print": "models/furniture-glide/out/furniture-glide.3mf",
+  "preview": "models/furniture-glide/out/preview.png"
+ }
+}
