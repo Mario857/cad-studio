@@ -1,0 +1,91 @@
+{
+ "model": "cotton-swab-dispenser",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "124.24 cm3, bbox 119.2x182.6x64 mm, 2 body, 2200 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 124.24,
+    "triangles": 2200,
+    "bbox_mm": [
+     119.2,
+     182.6,
+     64.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 72.2 deg toward +X (COM margin 57.5 mm)",
+   "facts": {
+    "part_g": 102.0,
+    "com_mm": [
+     0.8,
+     28.7,
+     18.5
+    ],
+    "tip_deg": 72.2,
+    "margin_mm": 57.5,
+    "weak_side": "+X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 2.3 cm2, contact 197.1 cm2, h 64 mm [next: -Y down 832.0; +X down 1473.7]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -2.01
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h53m, 102.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10401,
+    "grams": 102.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cotton-swab-dispenser/out/cotton-swab-dispenser.stl",
+  "step": "models/cotton-swab-dispenser/out/cotton-swab-dispenser.step",
+  "print": "models/cotton-swab-dispenser/out/cotton-swab-dispenser.3mf",
+  "preview": "models/cotton-swab-dispenser/out/preview.png"
+ }
+}
