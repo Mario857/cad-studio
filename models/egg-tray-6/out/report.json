@@ -1,0 +1,96 @@
+{
+ "model": "egg-tray-6",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "427.64 cm3, bbox 167.2x115.2x70.9 mm, 1 body, 10004 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 427.64,
+    "triangles": 10004,
+    "bbox_mm": [
+     167.2,
+     115.2,
+     70.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.74 mm (p2), median 22.8 mm",
+   "facts": {
+    "p2_mm": 1.74,
+    "median_mm": 22.8,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     53.3,
+     -19.5,
+     7.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 59.7 deg toward -Y incl. 360 g load (COM margin 57.2 mm)",
+   "facts": {
+    "part_g": 155.1,
+    "com_mm": [
+     0.0,
+     -0.0,
+     33.4
+    ],
+    "tip_deg": 59.7,
+    "margin_mm": 57.2,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 16.0 cm2, contact 140.3 cm2, h 71 mm [next: -X down 646.9; +X down 646.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 18.86
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h35m, 155.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 16492,
+    "grams": 155.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/egg-tray-6/out/egg-tray-6.stl",
+  "step": "models/egg-tray-6/out/egg-tray-6.step",
+  "print": "models/egg-tray-6/out/egg-tray-6.3mf",
+  "preview": "models/egg-tray-6/out/preview.png"
+ }
+}
