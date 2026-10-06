@@ -1,0 +1,86 @@
+{
+ "model": "tin-whistle-d",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "40.49 cm3, bbox 51.3x23.3x232.7 mm, 2 body, 5308 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 40.49,
+    "triangles": 5308,
+    "bbox_mm": [
+     51.3,
+     23.3,
+     232.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.90 mm (p2), median 2.5 mm",
+   "facts": {
+    "p2_mm": 1.9,
+    "median_mm": 2.5,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -20.8,
+     8.0,
+     39.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.1 cm2, contact 2.3 cm2, h 233 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; wobbly on bed (tips at 6 deg)",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h52m, 32.0 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 24705,
+    "grams": 32.0,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/tin-whistle-d/out/tin-whistle-d.stl",
+  "step": "models/tin-whistle-d/out/tin-whistle-d.step",
+  "print": "models/tin-whistle-d/out/tin-whistle-d.3mf",
+  "preview": "models/tin-whistle-d/out/preview.png"
+ }
+}
