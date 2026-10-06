@@ -1,0 +1,81 @@
+{
+ "model": "travel-toothbrush-case",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "56.97 cm3, bbox 124.8x31.4x141.6 mm, 2 body, 7240 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 56.97,
+    "triangles": 7240,
+    "bbox_mm": [
+     124.8,
+     31.4,
+     141.6
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.45 mm (p2), median 1.6 mm",
+   "facts": {
+    "p2_mm": 1.45,
+    "median_mm": 1.6,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.1 cm2, overhang 2.7 cm2, contact 26.2 cm2, h 142 mm [next: stable face 150.8; top down 270.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 2.37
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h41m, 56.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 9664,
+    "grams": 56.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/travel-toothbrush-case/out/travel-toothbrush-case.stl",
+  "step": "models/travel-toothbrush-case/out/travel-toothbrush-case.step",
+  "print": "models/travel-toothbrush-case/out/travel-toothbrush-case.3mf",
+  "preview": "models/travel-toothbrush-case/out/preview.png"
+ }
+}
