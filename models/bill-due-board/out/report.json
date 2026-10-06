@@ -1,0 +1,86 @@
+{
+ "model": "bill-due-board",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "287.53 cm3, bbox 268x16x237.5 mm, 11 body, 92964 tris \u2014 11 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 11,
+    "volume_cm3": 287.53,
+    "triangles": 92964,
+    "bbox_mm": [
+     268.0,
+     16.0,
+     237.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.88 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 0.88,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     68.6,
+     -5.3,
+     98.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (-90, 0, 0): support 1.7 cm2, overhang 3.1 cm2, contact 563.0 cm2, h 16 mm",
+   "facts": {
+    "chosen": "fixed rot (-90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 1.7 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h09m, 138.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14927,
+    "grams": 138.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/bill-due-board/out/bill-due-board.stl",
+  "step": "models/bill-due-board/out/bill-due-board.step",
+  "print": "models/bill-due-board/out/bill-due-board.3mf",
+  "preview": "models/bill-due-board/out/preview.png"
+ }
+}
