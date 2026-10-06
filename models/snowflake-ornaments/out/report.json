@@ -1,0 +1,81 @@
+{
+ "model": "snowflake-ornaments",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "9.92 cm3, bbox 253.6x87.5x3 mm, 3 body, 34470 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 9.92,
+    "triangles": 34470,
+    "bbox_mm": [
+     253.6,
+     87.5,
+     3.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 3.1 cm2, contact 22.6 cm2, h 3 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "35m, 9.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2104,
+    "grams": 9.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/snowflake-ornaments/out/snowflake-ornaments.stl",
+  "step": "models/snowflake-ornaments/out/snowflake-ornaments.step",
+  "print": "models/snowflake-ornaments/out/snowflake-ornaments.3mf",
+  "preview": "models/snowflake-ornaments/out/preview.png"
+ }
+}
