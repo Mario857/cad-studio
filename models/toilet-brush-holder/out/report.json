@@ -1,0 +1,91 @@
+{
+ "model": "toilet-brush-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "604.36 cm3, bbox 273x275x300 mm, 3 body, 3688 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 604.36,
+    "triangles": 3688,
+    "bbox_mm": [
+     273.0,
+     275.0,
+     300.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.77 mm (p2), median 5.74 mm",
+   "facts": {
+    "p2_mm": 1.77,
+    "median_mm": 5.74,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 25.8 deg toward -Y incl. 150 g load (COM margin 83.4 mm)",
+   "facts": {
+    "part_g": 352.7,
+    "com_mm": [
+     7.8,
+     -29.6,
+     172.4
+    ],
+    "tip_deg": 25.8,
+    "margin_mm": 83.4,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.0 cm2, contact 182.2 cm2, h 300 mm [next: top down 1151.6; stable face 4434.7]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 4.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "10h51m, 352.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 39073,
+    "grams": 352.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/toilet-brush-holder/out/toilet-brush-holder.stl",
+  "step": "models/toilet-brush-holder/out/toilet-brush-holder.step",
+  "print": "models/toilet-brush-holder/out/toilet-brush-holder.3mf",
+  "preview": "models/toilet-brush-holder/out/preview.png"
+ }
+}
