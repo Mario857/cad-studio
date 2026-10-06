@@ -1,0 +1,96 @@
+{
+ "model": "battery-organizer",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "201.06 cm3, bbox 136.5x85.5x28.5 mm, 1 body, 18818 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 201.06,
+    "triangles": 18818,
+    "bbox_mm": [
+     136.5,
+     85.5,
+     28.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.50 mm (p2), median 9.03 mm",
+   "facts": {
+    "p2_mm": 2.5,
+    "median_mm": 9.03,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -56.9,
+     -6.4,
+     28.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 49.4 deg toward +Y incl. 600 g load (COM margin 42.0 mm)",
+   "facts": {
+    "part_g": 106.0,
+    "com_mm": [
+     -0.7,
+     0.4,
+     35.9
+    ],
+    "tip_deg": 49.4,
+    "margin_mm": 42.0,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.2 cm2, contact 114.9 cm2, h 28 mm [next: top down 505.9; -X down 542.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -5.03
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h30m, 106.0 g (0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C)",
+   "facts": {
+    "seconds": 8993,
+    "grams": 106.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/battery-organizer/out/battery-organizer.stl",
+  "step": "models/battery-organizer/out/battery-organizer.step",
+  "print": "models/battery-organizer/out/battery-organizer.3mf",
+  "preview": "models/battery-organizer/out/preview.png"
+ }
+}
