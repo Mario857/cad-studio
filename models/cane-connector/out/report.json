@@ -1,0 +1,86 @@
+{
+ "model": "cane-connector",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "176.32 cm3, bbox 269.6x194x70.7 mm, 6 body, 24896 tris \u2014 6 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 6,
+    "volume_cm3": 176.32,
+    "triangles": 24896,
+    "bbox_mm": [
+     269.6,
+     194.0,
+     70.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.58 mm (p2), median 3.85 mm",
+   "facts": {
+    "p2_mm": 0.58,
+    "median_mm": 3.85,
+    "area_pct_below_fail": 0.3,
+    "area_pct_below_warn": 2.2,
+    "thin_example_xyz": [
+     0.3,
+     15.8,
+     17.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 1.4 cm2, overhang 68.9 cm2, contact 58.9 cm2, h 71 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 1.4 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h14m, 148.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 22423,
+    "grams": 148.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cane-connector/out/cane-connector.stl",
+  "step": "models/cane-connector/out/cane-connector.step",
+  "print": "models/cane-connector/out/cane-connector.3mf",
+  "preview": "models/cane-connector/out/preview.png"
+ }
+}
