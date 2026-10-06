@@ -1,0 +1,81 @@
+{
+ "model": "ip15pm-filming-grip",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "161.16 cm3, bbox 120x35x124 mm, 1 body, 1326 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 161.16,
+    "triangles": 1326,
+    "bbox_mm": [
+     120.0,
+     35.0,
+     124.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~6.79 mm (p2), median 19.47 mm",
+   "facts": {
+    "p2_mm": 6.79,
+    "median_mm": 19.47,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 0.7 cm2, contact 32.4 cm2, h 35 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h34m, 92.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 9226,
+    "grams": 92.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-filming-grip/out/ip15pm-filming-grip.stl",
+  "step": "models/ip15pm-filming-grip/out/ip15pm-filming-grip.step",
+  "print": "models/ip15pm-filming-grip/out/ip15pm-filming-grip.3mf",
+  "preview": "models/ip15pm-filming-grip/out/preview.png"
+ }
+}
