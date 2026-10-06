@@ -1,0 +1,86 @@
+{
+ "model": "coin-dispenser-pocket",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "24.36 cm3, bbox 55x37.5x23.2 mm, 1 body, 9510 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 24.36,
+    "triangles": 9510,
+    "bbox_mm": [
+     55.0,
+     37.5,
+     23.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.14 mm (p2), median 8.32 mm",
+   "facts": {
+    "p2_mm": 1.14,
+    "median_mm": 8.32,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.4,
+    "thin_example_xyz": [
+     -10.7,
+     15.8,
+     22.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 2.1 cm2, overhang 2.4 cm2, contact 16.6 cm2, h 23 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 2.1 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h08m, 12.4 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 4099,
+    "grams": 12.4,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coin-dispenser-pocket/out/coin-dispenser-pocket.stl",
+  "step": "models/coin-dispenser-pocket/out/coin-dispenser-pocket.step",
+  "print": "models/coin-dispenser-pocket/out/coin-dispenser-pocket.3mf",
+  "preview": "models/coin-dispenser-pocket/out/preview.png"
+ }
+}
