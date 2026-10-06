@@ -1,0 +1,81 @@
+{
+ "model": "hydration-hose-clip",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "4.7 cm3, bbox 32x18.5x20 mm, 1 body, 1444 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 4.7,
+    "triangles": 1444,
+    "bbox_mm": [
+     32.0,
+     18.5,
+     20.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 2.64 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 2.64,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 1.5 cm2, h 20 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "24m, 4.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1438,
+    "grams": 4.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/hydration-hose-clip/out/hydration-hose-clip.stl",
+  "step": "models/hydration-hose-clip/out/hydration-hose-clip.step",
+  "print": "models/hydration-hose-clip/out/hydration-hose-clip.3mf",
+  "preview": "models/hydration-hose-clip/out/preview.png"
+ }
+}
