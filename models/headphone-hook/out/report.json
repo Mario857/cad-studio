@@ -1,0 +1,81 @@
+{
+ "model": "headphone-hook",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "32.0 cm3, bbox 70x30x50 mm, 1 body, 4588 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 32.0,
+    "triangles": 4588,
+    "bbox_mm": [
+     70.0,
+     30.0,
+     50.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~6.00 mm (p2), median 8.35 mm",
+   "facts": {
+    "p2_mm": 6.0,
+    "median_mm": 8.35,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.8 cm2, overhang 1.8 cm2, contact 7.6 cm2, h 30 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.8 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "42m, 30.0 g (0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C)",
+   "facts": {
+    "seconds": 2545,
+    "grams": 30.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/headphone-hook/out/headphone-hook.stl",
+  "step": "models/headphone-hook/out/headphone-hook.step",
+  "print": "models/headphone-hook/out/headphone-hook.3mf",
+  "preview": "models/headphone-hook/out/preview.png"
+ }
+}
