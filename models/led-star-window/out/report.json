@@ -1,0 +1,86 @@
+{
+ "model": "led-star-window",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "27.8 cm3, bbox 250.8x255.4x5.9 mm, 1 body, 8714 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 27.8,
+    "triangles": 8714,
+    "bbox_mm": [
+     250.8,
+     255.4,
+     5.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 2.0 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 2.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -0.0,
+     129.5,
+     2.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.1 cm2, overhang 9.2 cm2, contact 58.6 cm2, h 6 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "57m, 28.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3411,
+    "grams": 28.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/led-star-window/out/led-star-window.stl",
+  "step": "models/led-star-window/out/led-star-window.step",
+  "print": "models/led-star-window/out/led-star-window.3mf",
+  "preview": "models/led-star-window/out/preview.png"
+ }
+}
