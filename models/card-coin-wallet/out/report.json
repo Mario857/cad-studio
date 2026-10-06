@@ -1,0 +1,86 @@
+{
+ "model": "card-coin-wallet",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "25.42 cm3, bbox 87.4x119.9x11.5 mm, 2 body, 4694 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 25.42,
+    "triangles": 4694,
+    "bbox_mm": [
+     87.4,
+     119.9,
+     11.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~1.20 mm (p2), median 1.54 mm; 95.0% of surface < 1.2 mm near [43.7, -8.9, 4.7]",
+   "facts": {
+    "p2_mm": 1.2,
+    "median_mm": 1.54,
+    "area_pct_below_fail": 0.4,
+    "area_pct_below_warn": 95.0,
+    "thin_example_xyz": [
+     43.7,
+     -8.9,
+     4.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 4.0 cm2, overhang 4.2 cm2, contact 5.1 cm2, h 87 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 4.0 cm2 needs support but supports=off; wobbly on bed (tips at 5 deg)",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h05m, 25.6 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 11122,
+    "grams": 25.6,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/card-coin-wallet/out/card-coin-wallet.stl",
+  "step": "models/card-coin-wallet/out/card-coin-wallet.step",
+  "print": "models/card-coin-wallet/out/card-coin-wallet.3mf",
+  "preview": "models/card-coin-wallet/out/preview.png"
+ }
+}
