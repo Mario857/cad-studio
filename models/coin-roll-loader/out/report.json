@@ -1,0 +1,95 @@
+{
+ "model": "coin-roll-loader",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "335.51 cm3, bbox 204x204x105.2 mm, 9 body, 33682 tris \u2014 9 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 9,
+    "volume_cm3": 335.51,
+    "triangles": 33682,
+    "bbox_mm": [
+     204.0,
+     204.0,
+     105.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 5.27 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 5.27,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     0.7,
+     59.6,
+     29.2
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 65.0 deg toward -Y (COM margin 89.5 mm)",
+   "facts": {
+    "part_g": 163.0,
+    "com_mm": [
+     0.8,
+     -11.5,
+     41.8
+    ],
+    "tip_deg": 65.0,
+    "margin_mm": 89.5,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 1.2 cm2, overhang 3.6 cm2, contact 70.2 cm2, h 105 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 1.2 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "5h49m, 163.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 20926,
+    "grams": 163.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coin-roll-loader/out/coin-roll-loader.stl",
+  "step": "models/coin-roll-loader/out/coin-roll-loader.step",
+  "print": "models/coin-roll-loader/out/coin-roll-loader.3mf"
+ }
+}
