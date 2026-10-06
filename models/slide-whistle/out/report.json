@@ -1,0 +1,86 @@
+{
+ "model": "slide-whistle",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "67.4 cm3, bbox 85.5x251.3x228.1 mm, 4 body, 7870 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 67.4,
+    "triangles": 7870,
+    "bbox_mm": [
+     85.5,
+     251.3,
+     228.1
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 5.4 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 5.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -7.4,
+     -13.6,
+     188.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.6 cm2, contact 25.5 cm2, h 228 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "7h23m, 51.8 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 26559,
+    "grams": 51.8,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/slide-whistle/out/slide-whistle.stl",
+  "step": "models/slide-whistle/out/slide-whistle.step",
+  "print": "models/slide-whistle/out/slide-whistle.3mf",
+  "preview": "models/slide-whistle/out/preview.png"
+ }
+}
