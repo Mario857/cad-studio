@@ -1,0 +1,86 @@
+{
+ "model": "string-winder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "35.94 cm3, bbox 120x63x40.1 mm, 3 body, 25990 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 35.94,
+    "triangles": 25990,
+    "bbox_mm": [
+     120.0,
+     63.0,
+     40.1
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.63 mm (p2), median 6.84 mm",
+   "facts": {
+    "p2_mm": 1.63,
+    "median_mm": 6.84,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     51.6,
+     34.8,
+     -8.3
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.1 cm2, overhang 0.6 cm2, contact 28.5 cm2, h 40 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h06m, 24.7 g (Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 3974,
+    "grams": 24.7,
+    "warnings": [],
+    "preset": "Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/string-winder/out/string-winder.stl",
+  "step": "models/string-winder/out/string-winder.step",
+  "print": "models/string-winder/out/string-winder.3mf",
+  "preview": "models/string-winder/out/preview.png"
+ }
+}
