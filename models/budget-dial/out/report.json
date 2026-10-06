@@ -1,0 +1,86 @@
+{
+ "model": "budget-dial",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "145.99 cm3, bbox 228x190x8.8 mm, 7 body, 51724 tris \u2014 7 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 7,
+    "volume_cm3": 145.99,
+    "triangles": 51724,
+    "bbox_mm": [
+     228.0,
+     190.0,
+     8.8
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.94 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 0.94,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -27.7,
+     -29.9,
+     5.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 3.6 cm2, contact 289.9 cm2, h 9 mm [next: stable face 142.5; stable face 142.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -2.26
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h07m, 70.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 7642,
+    "grams": 70.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/budget-dial/out/budget-dial.stl",
+  "step": "models/budget-dial/out/budget-dial.step",
+  "print": "models/budget-dial/out/budget-dial.3mf",
+  "preview": "models/budget-dial/out/preview.png"
+ }
+}
