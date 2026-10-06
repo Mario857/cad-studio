@@ -1,0 +1,86 @@
+{
+ "model": "sill-gap-guard",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "52.47 cm3, bbox 20x250x14 mm, 1 body, 148 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 52.47,
+    "triangles": 148,
+    "bbox_mm": [
+     20.0,
+     250.0,
+     14.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.67 mm (p2), median 250.0 mm; 4.8% of surface < 1.2 mm near [-8.5, -41.7, -5.8]",
+   "facts": {
+    "p2_mm": 0.67,
+    "median_mm": 250.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 4.8,
+    "thin_example_xyz": [
+     -8.5,
+     -41.7,
+     -5.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 180, 0): support 0.0 cm2, overhang 48.0 cm2, contact 50.0 cm2, h 14 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 180, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "50m, 32.2 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 3010,
+    "grams": 32.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/sill-gap-guard/out/sill-gap-guard.stl",
+  "step": "models/garden/sill-gap-guard/out/sill-gap-guard.step",
+  "print": "models/garden/sill-gap-guard/out/sill-gap-guard.3mf",
+  "preview": "models/garden/sill-gap-guard/out/preview.png"
+ }
+}
