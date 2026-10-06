@@ -1,0 +1,86 @@
+{
+ "model": "receipt-wall-clip",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "131.9 cm3, bbox 60x114.6x100 mm, 3 body, 5070 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 131.9,
+    "triangles": 5070,
+    "bbox_mm": [
+     60.0,
+     114.6,
+     100.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.75 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 0.75,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     5.3,
+     -14.5,
+     48.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 1.6 cm2, overhang 4.0 cm2, contact 22.4 cm2, h 60 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 1.6 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h44m, 119.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 13449,
+    "grams": 119.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/receipt-wall-clip/out/receipt-wall-clip.stl",
+  "step": "models/receipt-wall-clip/out/receipt-wall-clip.step",
+  "print": "models/receipt-wall-clip/out/receipt-wall-clip.3mf",
+  "preview": "models/receipt-wall-clip/out/preview.png"
+ }
+}
