@@ -1,0 +1,86 @@
+{
+ "model": "gutter-light-clips",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "2.91 cm3, bbox 63x10x30 mm, 2 body, 1060 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 2.91,
+    "triangles": 1060,
+    "bbox_mm": [
+     63.0,
+     10.0,
+     30.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.80 mm (p2), median 10.0 mm",
+   "facts": {
+    "p2_mm": 1.8,
+    "median_mm": 10.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     37.0,
+     -1.7,
+     16.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 0.0 cm2, contact 2.9 cm2, h 10 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h20m, 25.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 4790,
+    "grams": 25.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/gutter-light-clips/out/gutter-light-clips.stl",
+  "step": "models/gutter-light-clips/out/gutter-light-clips.step",
+  "print": "models/gutter-light-clips/out/gutter-light-clips.3mf",
+  "preview": "models/gutter-light-clips/out/preview.png"
+ }
+}
