@@ -1,0 +1,96 @@
+{
+ "model": "tea-bag-caddy",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "49.91 cm3, bbox 82.8x90.8x50 mm, 1 body, 1360 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 49.91,
+    "triangles": 1360,
+    "bbox_mm": [
+     82.8,
+     90.8,
+     50.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.80 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 1.8,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     3.2,
+     -45.2,
+     22.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 62.7 deg toward -X incl. 40 g load (COM margin 41.0 mm)",
+   "facts": {
+    "part_g": 43.5,
+    "com_mm": [
+     -0.0,
+     0.0,
+     21.2
+    ],
+    "tip_deg": 62.7,
+    "margin_mm": 41.0,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.2 cm2, overhang 1.0 cm2, contact 73.6 cm2, h 50 mm [next: -X down 329.5; +X down 329.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -3.18
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h24m, 43.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 5024,
+    "grams": 43.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/tea-bag-caddy/out/tea-bag-caddy.stl",
+  "step": "models/tea-bag-caddy/out/tea-bag-caddy.step",
+  "print": "models/tea-bag-caddy/out/tea-bag-caddy.3mf",
+  "preview": "models/tea-bag-caddy/out/preview.png"
+ }
+}
