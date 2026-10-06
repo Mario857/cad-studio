@@ -1,0 +1,86 @@
+{
+ "model": "cash-capsule-keyring",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "23.6 cm3, bbox 71x28x54 mm, 2 body, 10686 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 23.6,
+    "triangles": 10686,
+    "bbox_mm": [
+     71.0,
+     28.0,
+     54.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.70 mm (p2), median 3.79 mm",
+   "facts": {
+    "p2_mm": 0.7,
+    "median_mm": 3.79,
+    "area_pct_below_fail": 0.1,
+    "area_pct_below_warn": 0.5,
+    "thin_example_xyz": [
+     -23.0,
+     -2.4,
+     18.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.4 cm2, overhang 6.0 cm2, contact 11.7 cm2, h 54 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h52m, 15.2 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 6729,
+    "grams": 15.2,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cash-capsule-keyring/out/cash-capsule-keyring.stl",
+  "step": "models/cash-capsule-keyring/out/cash-capsule-keyring.step",
+  "print": "models/cash-capsule-keyring/out/cash-capsule-keyring.3mf",
+  "preview": "models/cash-capsule-keyring/out/preview.png"
+ }
+}
