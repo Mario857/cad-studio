@@ -1,0 +1,86 @@
+{
+ "model": "drip-line-stake",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "14.24 cm3, bbox 66x8x148.7 mm, 2 body, 2556 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 14.24,
+    "triangles": 2556,
+    "bbox_mm": [
+     66.0,
+     8.0,
+     148.7
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.79 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 0.79,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     0.7,
+     4.6,
+     129.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 1.3 cm2, contact 25.4 cm2, h 8 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h06m, 107.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14732,
+    "grams": 107.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/drip-line-stake/out/drip-line-stake.stl",
+  "step": "models/drip-line-stake/out/drip-line-stake.step",
+  "print": "models/drip-line-stake/out/drip-line-stake.3mf",
+  "preview": "models/drip-line-stake/out/preview.png"
+ }
+}
