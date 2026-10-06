@@ -1,0 +1,86 @@
+{
+ "model": "gift-tag",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "24.74 cm3, bbox 126x117x2.6 mm, 6 body, 31222 tris \u2014 6 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 6,
+    "volume_cm3": 24.74,
+    "triangles": 31222,
+    "bbox_mm": [
+     126.0,
+     117.0,
+     2.6
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.13 mm (p2), median 2.0 mm",
+   "facts": {
+    "p2_mm": 1.13,
+    "median_mm": 2.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -15.1,
+     0.7,
+     2.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.4 cm2, contact 117.6 cm2, h 3 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "47m, 22.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2804,
+    "grams": 22.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/gift-tag/out/gift-tag.stl",
+  "step": "models/gift-tag/out/gift-tag.step",
+  "print": "models/gift-tag/out/gift-tag.3mf",
+  "preview": "models/gift-tag/out/preview.png"
+ }
+}
