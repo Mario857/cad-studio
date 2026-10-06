@@ -1,0 +1,91 @@
+{
+ "model": "drawer-bin",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "26.46 cm3, bbox 83.5x41.5x50 mm, 1 body, 3704 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 26.46,
+    "triangles": 3704,
+    "bbox_mm": [
+     83.5,
+     41.5,
+     50.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.60 mm (p2), median 2.93 mm",
+   "facts": {
+    "p2_mm": 1.6,
+    "median_mm": 2.93,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 45.5 deg toward +Y (COM margin 20.4 mm)",
+   "facts": {
+    "part_g": 31.8,
+    "com_mm": [
+     -0.3,
+     0.0,
+     20.0
+    ],
+    "tip_deg": 45.5,
+    "margin_mm": 20.4,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.2 cm2, contact 33.6 cm2, h 50 mm [next: +X down 140.9; -X down 150.1]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -5.65
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "39m, 31.8 g (0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C)",
+   "facts": {
+    "seconds": 2360,
+    "grams": 31.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/drawer-bin/out/drawer-bin.stl",
+  "step": "models/drawer-bin/out/drawer-bin.step",
+  "print": "models/drawer-bin/out/drawer-bin.3mf",
+  "preview": "models/drawer-bin/out/preview.png"
+ }
+}
