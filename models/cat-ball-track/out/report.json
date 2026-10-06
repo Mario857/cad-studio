@@ -1,0 +1,96 @@
+{
+ "model": "cat-ball-track",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "529.17 cm3, bbox 292x292x60 mm, 4 body, 294480 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 529.17,
+    "triangles": 294480,
+    "bbox_mm": [
+     292.0,
+     292.0,
+     60.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.61 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 2.61,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     -55.1,
+     -141.1,
+     4.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 77.7 deg toward -Y (COM margin 123.4 mm)",
+   "facts": {
+    "part_g": 331.8,
+    "com_mm": [
+     -17.2,
+     -18.8,
+     27.0
+    ],
+    "tip_deg": 77.7,
+    "margin_mm": 123.4,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 83.4 cm2, contact 529.2 cm2, h 60 mm [next: -X down 2788.9; +X down 2857.6]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 119.51
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "11h28m, 331.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 41273,
+    "grams": 331.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cat-ball-track/out/cat-ball-track.stl",
+  "step": "models/cat-ball-track/out/cat-ball-track.step",
+  "print": "models/cat-ball-track/out/cat-ball-track.3mf",
+  "preview": "models/cat-ball-track/out/preview.png"
+ }
+}
