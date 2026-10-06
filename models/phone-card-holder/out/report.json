@@ -1,0 +1,86 @@
+{
+ "model": "phone-card-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "6.92 cm3, bbox 87.8x58x3.9 mm, 1 body, 4338 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 6.92,
+    "triangles": 4338,
+    "bbox_mm": [
+     87.8,
+     58.0,
+     3.9
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.83 mm (p2), median 2.95 mm; 78.6% of surface < 1.2 mm near [-13.6, -8.3, 1.0]",
+   "facts": {
+    "p2_mm": 0.83,
+    "median_mm": 2.95,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 78.6,
+    "thin_example_xyz": [
+     -13.6,
+     -8.3,
+     1.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 49.7 cm2, h 4 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "26m, 7.6 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1533,
+    "grams": 7.6,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/phone-card-holder/out/phone-card-holder.stl",
+  "step": "models/phone-card-holder/out/phone-card-holder.step",
+  "print": "models/phone-card-holder/out/phone-card-holder.3mf",
+  "preview": "models/phone-card-holder/out/preview.png"
+ }
+}
