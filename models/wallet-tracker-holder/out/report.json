@@ -1,0 +1,86 @@
+{
+ "model": "wallet-tracker-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "8.9 cm3, bbox 85.6x54x2.4 mm, 1 body, 2392 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 8.9,
+    "triangles": 2392,
+    "bbox_mm": [
+     85.6,
+     54.0,
+     2.4
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.60 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 0.6,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.6,
+    "area_pct_below_warn": 0.9,
+    "thin_example_xyz": [
+     -23.0,
+     -15.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.6 cm2, contact 36.3 cm2, h 2 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "31m, 8.6 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1840,
+    "grams": 8.6,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/wallet-tracker-holder/out/wallet-tracker-holder.stl",
+  "step": "models/wallet-tracker-holder/out/wallet-tracker-holder.step",
+  "print": "models/wallet-tracker-holder/out/wallet-tracker-holder.3mf",
+  "preview": "models/wallet-tracker-holder/out/preview.png"
+ }
+}
