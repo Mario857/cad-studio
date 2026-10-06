@@ -1,0 +1,96 @@
+{
+ "model": "coin-ramp-sorter",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "249.9 cm3, bbox 290x142.8x95 mm, 2 body, 16600 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 249.9,
+    "triangles": 16600,
+    "bbox_mm": [
+     290.0,
+     142.8,
+     95.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.64 mm (p2), median 3.0 mm",
+   "facts": {
+    "p2_mm": 0.64,
+    "median_mm": 3.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     100.1,
+     -50.7,
+     2.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 65.3 deg toward +Y (COM margin 49.0 mm)",
+   "facts": {
+    "part_g": 217.6,
+    "com_mm": [
+     -19.6,
+     -14.4,
+     22.6
+    ],
+    "tip_deg": 65.3,
+    "margin_mm": 49.0,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.6 cm2, contact 327.4 cm2, h 95 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h37m, 217.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 23832,
+    "grams": 217.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/coin-ramp-sorter/out/coin-ramp-sorter.stl",
+  "step": "models/coin-ramp-sorter/out/coin-ramp-sorter.step",
+  "print": "models/coin-ramp-sorter/out/coin-ramp-sorter.3mf",
+  "preview": "models/coin-ramp-sorter/out/preview.png"
+ }
+}
