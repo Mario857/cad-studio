@@ -1,0 +1,96 @@
+{
+ "model": "ip15pm-magsafe-standby-dock",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "246.95 cm3, bbox 92x200x75 mm, 1 body, 5052 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 246.95,
+    "triangles": 5052,
+    "bbox_mm": [
+     92.0,
+     200.0,
+     75.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.50 mm (p2), median 15.37 mm",
+   "facts": {
+    "p2_mm": 2.5,
+    "median_mm": 15.37,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     23.6,
+     -22.1,
+     73.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 40.1 deg toward -X incl. 251 g load (COM margin 40.5 mm)",
+   "facts": {
+    "part_g": 79.8,
+    "com_mm": [
+     8.9,
+     -0.0,
+     48.1
+    ],
+    "tip_deg": 40.1,
+    "margin_mm": 40.5,
+    "weak_side": "-X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.9 cm2, contact 180.5 cm2, h 75 mm [next: -Y down 166.6; +Y down 166.6]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -3.61
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h51m, 79.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 10289,
+    "grams": 79.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-magsafe-standby-dock/out/ip15pm-magsafe-standby-dock.stl",
+  "step": "models/ip15pm-magsafe-standby-dock/out/ip15pm-magsafe-standby-dock.step",
+  "print": "models/ip15pm-magsafe-standby-dock/out/ip15pm-magsafe-standby-dock.3mf",
+  "preview": "models/ip15pm-magsafe-standby-dock/out/preview.png"
+ }
+}
