@@ -1,0 +1,86 @@
+{
+ "model": "mason-jar-trap-lid",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "32.17 cm3, bbox 123.3x100.3x15 mm, 2 body, 3444 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 32.17,
+    "triangles": 3444,
+    "bbox_mm": [
+     123.3,
+     100.3,
+     15.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.32 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 1.32,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -2.8,
+     2.5,
+     0.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (180, 0, 0): support 0.5 cm2, overhang 1.7 cm2, contact 71.6 cm2, h 15 mm",
+   "facts": {
+    "chosen": "fixed rot (180, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "47m, 23.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2799,
+    "grams": 23.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/mason-jar-trap-lid/out/mason-jar-trap-lid.stl",
+  "step": "models/garden/mason-jar-trap-lid/out/mason-jar-trap-lid.step",
+  "print": "models/garden/mason-jar-trap-lid/out/mason-jar-trap-lid.3mf",
+  "preview": "models/garden/mason-jar-trap-lid/out/preview.png"
+ }
+}
