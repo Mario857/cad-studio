@@ -1,0 +1,86 @@
+{
+ "model": "capo-screw",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "49.71 cm3, bbox 95.8x16x92 mm, 3 body, 46460 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 49.71,
+    "triangles": 46460,
+    "bbox_mm": [
+     95.8,
+     16.0,
+     92.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.48 mm (p2), median 13.63 mm",
+   "facts": {
+    "p2_mm": 1.48,
+    "median_mm": 13.63,
+    "area_pct_below_fail": 0.2,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     8.9,
+     -2.0,
+     51.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.3 cm2, overhang 1.5 cm2, contact 30.6 cm2, h 16 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h11m, 29.0 g (Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 4268,
+    "grams": 29.0,
+    "warnings": [],
+    "preset": "Guitar Core ABS+ 0.20mm @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/capo-screw/out/capo-screw.stl",
+  "step": "models/capo-screw/out/capo-screw.step",
+  "print": "models/capo-screw/out/capo-screw.3mf",
+  "preview": "models/capo-screw/out/preview.png"
+ }
+}
