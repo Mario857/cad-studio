@@ -1,0 +1,81 @@
+{
+ "model": "desk-bag-hook",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "54.38 cm3, bbox 50x76x121 mm, 2 body, 2396 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 54.38,
+    "triangles": 2396,
+    "bbox_mm": [
+     50.0,
+     76.0,
+     121.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~5.75 mm (p2), median 12.0 mm",
+   "facts": {
+    "p2_mm": 5.75,
+    "median_mm": 12.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.3 cm2, overhang 1.1 cm2, contact 29.2 cm2, h 50 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h16m, 46.6 g (0.20mm Standard @BBL H2C + Bambu PLA Tough+ @BBL H2C)",
+   "facts": {
+    "seconds": 4569,
+    "grams": 46.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Tough+ @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/desk-bag-hook/out/desk-bag-hook.stl",
+  "step": "models/desk-bag-hook/out/desk-bag-hook.step",
+  "print": "models/desk-bag-hook/out/desk-bag-hook.3mf",
+  "preview": "models/desk-bag-hook/out/preview.png"
+ }
+}
