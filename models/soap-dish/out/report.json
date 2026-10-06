@@ -1,0 +1,81 @@
+{
+ "model": "soap-dish",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "72.97 cm3, bbox 122x85x16 mm, 1 body, 1060 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 72.97,
+    "triangles": 1060,
+    "bbox_mm": [
+     122.0,
+     85.0,
+     16.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 6.95 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 6.95,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.0 cm2, contact 95.5 cm2, h 16 mm [next: -X down 53.6; +X down 113.5]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -5.92
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h17m, 49.1 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 4639,
+    "grams": 49.1,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/soap-dish/out/soap-dish.stl",
+  "step": "models/soap-dish/out/soap-dish.step",
+  "print": "models/soap-dish/out/soap-dish.3mf",
+  "preview": "models/soap-dish/out/preview.png"
+ }
+}
