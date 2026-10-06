@@ -1,0 +1,96 @@
+{
+ "model": "cat-treat-puzzle",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "902.07 cm3, bbox 287x307x46 mm, 6 body, 46634 tris \u2014 6 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 6,
+    "volume_cm3": 902.07,
+    "triangles": 46634,
+    "bbox_mm": [
+     287.0,
+     307.0,
+     46.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.61 mm (p2), median 20.0 mm",
+   "facts": {
+    "p2_mm": 2.61,
+    "median_mm": 20.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.2,
+    "thin_example_xyz": [
+     -74.0,
+     55.2,
+     30.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 70.5 deg toward +X incl. 1500 g load (COM margin 78.1 mm)",
+   "facts": {
+    "part_g": 241.8,
+    "com_mm": [
+     87.1,
+     1.2,
+     27.6
+    ],
+    "tip_deg": 70.5,
+    "margin_mm": 78.1,
+    "weak_side": "+X"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 5.7 cm2, contact 473.3 cm2, h 46 mm [next: +Y down 517.0; -Y down 537.4]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 2.51
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h36m, 241.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 23747,
+    "grams": 241.8,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cat-treat-puzzle/out/cat-treat-puzzle.stl",
+  "step": "models/cat-treat-puzzle/out/cat-treat-puzzle.step",
+  "print": "models/cat-treat-puzzle/out/cat-treat-puzzle.3mf",
+  "preview": "models/cat-treat-puzzle/out/preview.png"
+ }
+}
