@@ -1,0 +1,86 @@
+{
+ "model": "vinyl-record-shelf",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "302.04 cm3, bbox 168x75x80 mm, 2 body, 4560 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 302.04,
+    "triangles": 4560,
+    "bbox_mm": [
+     168.0,
+     75.0,
+     80.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.53 mm (p2), median 9.3 mm",
+   "facts": {
+    "p2_mm": 1.53,
+    "median_mm": 9.3,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     3.0,
+     57.5,
+     10.2
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.4 cm2, overhang 2.3 cm2, contact 16.4 cm2, h 168 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "6h34m, 211.4 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 23645,
+    "grams": 211.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/vinyl-record-shelf/out/vinyl-record-shelf.stl",
+  "step": "models/vinyl-record-shelf/out/vinyl-record-shelf.step",
+  "print": "models/vinyl-record-shelf/out/vinyl-record-shelf.3mf",
+  "preview": "models/vinyl-record-shelf/out/preview.png"
+ }
+}
