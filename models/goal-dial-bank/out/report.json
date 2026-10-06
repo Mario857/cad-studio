@@ -1,0 +1,96 @@
+{
+ "model": "goal-dial-bank",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "147.71 cm3, bbox 165x161.5x140 mm, 3 body, 15492 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 147.71,
+    "triangles": 15492,
+    "bbox_mm": [
+     165.0,
+     161.5,
+     140.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.69 mm (p2), median 2.4 mm",
+   "facts": {
+    "p2_mm": 0.69,
+    "median_mm": 2.4,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     37.5,
+     -40.4,
+     66.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 58.6 deg toward +Y incl. 800 g load (COM margin 41.4 mm)",
+   "facts": {
+    "part_g": 128.5,
+    "com_mm": [
+     0.1,
+     -1.8,
+     25.3
+    ],
+    "tip_deg": 58.6,
+    "margin_mm": 41.4,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.5 cm2, overhang 117.9 cm2, contact 87.2 cm2, h 140 mm [next: stable face 363.4; stable face 363.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 178.7
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.5 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h02m, 128.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 14505,
+    "grams": 128.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/goal-dial-bank/out/goal-dial-bank.stl",
+  "step": "models/goal-dial-bank/out/goal-dial-bank.step",
+  "print": "models/goal-dial-bank/out/goal-dial-bank.3mf",
+  "preview": "models/goal-dial-bank/out/preview.png"
+ }
+}
