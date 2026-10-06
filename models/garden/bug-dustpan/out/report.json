@@ -1,0 +1,81 @@
+{
+ "model": "bug-dustpan",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "53.02 cm3, bbox 192x210x12 mm, 2 body, 760 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 53.02,
+    "triangles": 760,
+    "bbox_mm": [
+     192.0,
+     210.0,
+     12.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.00 mm (p2), median 7.01 mm",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 7.01,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 0.0 cm2, contact 209.4 cm2, h 12 mm [next: -Y down 105.6; -X down 119.9]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -7.52
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "1h17m, 41.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 4635,
+    "grams": 41.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/garden/bug-dustpan/out/bug-dustpan.stl",
+  "step": "models/garden/bug-dustpan/out/bug-dustpan.step",
+  "print": "models/garden/bug-dustpan/out/bug-dustpan.3mf",
+  "preview": "models/garden/bug-dustpan/out/preview.png"
+ }
+}
