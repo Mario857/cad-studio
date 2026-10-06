@@ -1,0 +1,81 @@
+{
+ "model": "pole-camera-mount",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "33.63 cm3, bbox 61x30.6x30 mm, 1 body, 2780 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 33.63,
+    "triangles": 2780,
+    "bbox_mm": [
+     61.0,
+     30.6,
+     30.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.60 mm (p2), median 12.41 mm",
+   "facts": {
+    "p2_mm": 3.6,
+    "median_mm": 12.41,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.4 cm2, contact 10.6 cm2, h 30 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "49m, 24.0 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2956,
+    "grams": 24.0,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/pole-camera-mount/out/pole-camera-mount.stl",
+  "step": "models/pole-camera-mount/out/pole-camera-mount.step",
+  "print": "models/pole-camera-mount/out/pole-camera-mount.3mf",
+  "preview": "models/pole-camera-mount/out/preview.png"
+ }
+}
