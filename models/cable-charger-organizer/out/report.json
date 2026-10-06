@@ -1,0 +1,86 @@
+{
+ "model": "cable-charger-organizer",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "121.63 cm3, bbox 170.8x189.2x34 mm, 1 body, 1464 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 121.63,
+    "triangles": 1464,
+    "bbox_mm": [
+     170.8,
+     189.2,
+     34.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~2.00 mm (p2), median 3.1 mm; 10.0% of surface < 1.2 mm near [-23.3, 7.1, 0.0]",
+   "facts": {
+    "p2_mm": 2.0,
+    "median_mm": 3.1,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 10.0,
+    "thin_example_xyz": [
+     -23.3,
+     7.1,
+     0.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 2.2 cm2, contact 304.8 cm2, h 34 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h39m, 128.5 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 9516,
+    "grams": 128.5,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/cable-charger-organizer/out/cable-charger-organizer.stl",
+  "step": "models/cable-charger-organizer/out/cable-charger-organizer.step",
+  "print": "models/cable-charger-organizer/out/cable-charger-organizer.3mf",
+  "preview": "models/cable-charger-organizer/out/preview.png"
+ }
+}
