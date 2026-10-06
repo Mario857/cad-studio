@@ -1,0 +1,91 @@
+{
+ "model": "napkin-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "224.56 cm3, bbox 190x90x115 mm, 1 body, 4708 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 224.56,
+    "triangles": 4708,
+    "bbox_mm": [
+     190.0,
+     90.0,
+     115.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~4.00 mm (p2), median 6.7 mm",
+   "facts": {
+    "p2_mm": 4.0,
+    "median_mm": 6.7,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 36.1 deg toward +Y incl. 150 g load (COM margin 44.6 mm)",
+   "facts": {
+    "part_g": 122.6,
+    "com_mm": [
+     0.0,
+     0.0,
+     61.2
+    ],
+    "tip_deg": 36.1,
+    "margin_mm": 44.6,
+    "weak_side": "+Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 0.0 cm2, overhang 1.2 cm2, contact 166.9 cm2, h 115 mm [next: -X down 93.7; +X down 93.7]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": -1.53
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "3h49m, 122.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 13725,
+    "grams": 122.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/napkin-holder/out/napkin-holder.stl",
+  "step": "models/napkin-holder/out/napkin-holder.step",
+  "print": "models/napkin-holder/out/napkin-holder.3mf",
+  "preview": "models/napkin-holder/out/preview.png"
+ }
+}
