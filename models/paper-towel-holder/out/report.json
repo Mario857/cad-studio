@@ -1,0 +1,86 @@
+{
+ "model": "paper-towel-holder",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "207.71 cm3, bbox 28x174x297 mm, 3 body, 2260 tris \u2014 3 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "volume_cm3": 207.71,
+    "triangles": 2260,
+    "bbox_mm": [
+     28.0,
+     174.0,
+     297.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~3.72 mm (p2), median 8.69 mm",
+   "facts": {
+    "p2_mm": 3.72,
+    "median_mm": 8.69,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -2.0,
+     15.0,
+     -96.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.9 cm2, overhang 68.4 cm2, contact 95.4 cm2, h 28 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 0.9 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "4h31m, 148.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 16266,
+    "grams": 148.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/paper-towel-holder/out/paper-towel-holder.stl",
+  "step": "models/paper-towel-holder/out/paper-towel-holder.step",
+  "print": "models/paper-towel-holder/out/paper-towel-holder.3mf",
+  "preview": "models/paper-towel-holder/out/preview.png"
+ }
+}
