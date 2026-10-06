@@ -63,14 +63,15 @@ def short_traceback(error: Exception, model_path: Path) -> str:
 
 
 def resolve_meta(module) -> dict:
+    from .profiles import PresetError, resolve_material, resolve_quality
+
     meta = {**META_DEFAULTS, **getattr(module, "META", {})}
     defaults = settings()["defaults"]
-    meta["material"] = (meta["material"] or defaults["material"]).upper()
-    meta["quality"] = meta["quality"] or defaults["quality"]
-    if meta["material"] not in settings()["materials"]:
-        raise BuildError(f"unknown material {meta['material']!r}; options: {', '.join(settings()['materials'])}")
-    if meta["quality"] not in settings()["qualities"]:
-        raise BuildError(f"unknown quality {meta['quality']!r}; options: {', '.join(settings()['qualities'])}")
+    try:
+        meta["material"], _ = resolve_material(meta["material"] or defaults["material"])
+        meta["quality"], _, _ = resolve_quality(meta["quality"] or defaults["quality"])
+    except PresetError as error:
+        raise BuildError(str(error)) from None
     return meta
 
 

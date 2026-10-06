@@ -12,6 +12,7 @@ from pathlib import Path
 
 from .config import CACHE_DIR, REPO, settings, slicer_install
 from .gravity import PrintPlan
+from .profiles import PresetError, compatible, flatten, resolve_material, resolve_quality
 from .report import Check
 
 SLICE_INFO = "Metadata/slice_info.config"
@@ -26,27 +27,21 @@ def ensure_installed():
     return install
 
 
-def flatten(type_dir: Path, name: str) -> dict:
-    """The CLI ignores `inherits` for files passed on the command line, so resolve the chain here."""
-    path = type_dir / f"{name}.json"
-    if not path.exists():
-        raise FileNotFoundError(f"preset not found: {type_dir.name}/{name}")
-    leaf = json.loads(path.read_text())
-    parent = leaf.pop("inherits", None)
-    merged = flatten(type_dir, parent) if parent else {}
-    merged.update(leaf)
-    return merged
-
-
 def build_presets(profiles: Path, meta: dict, plan: PrintPlan, work: Path) -> tuple[Path, Path, Path, str]:
     cfg = settings()
-    machine = flatten(profiles / "machine", cfg["printer"]["machine"])
-    process_name = cfg["qualities"][meta["quality"]]
-    process = flatten(profiles / "process", process_name)
-    filament_name = cfg["materials"][meta["material"]]["filament"]
-    filament = flatten(profiles / "filament", filament_name)
+    machine_name = cfg["printer"]["machine"]
+    machine = flatten("machine", machine_name, profiles)
+    _, process_name, overrides = resolve_quality(meta["quality"])
+    process = flatten("process", process_name, profiles)
+    _, filament_name = resolve_material(meta["material"])
+    filament = flatten("filament", filament_name, profiles)
+    for kind, preset, name in (("process", process, process_name), ("filament", filament, filament_name)):
+        if not compatible(preset, machine_name):
+            raise PresetError(f"{kind} preset {name!r} is for {preset['compatible_printers']}, not {machine_name}")
+    for preset in (process, filament):
+        preset["from"] = "system"
 
-    process.update(cfg.get("quality_overrides", {}).get(meta["quality"], {}))
+    process.update(overrides)
     process["curr_bed_type"] = cfg["printer"]["plate"]
     process["enable_support"] = "1" if plan.supports else "0"
     if plan.supports:
@@ -84,7 +79,10 @@ def slice_model(name: str, meta: dict, plan: PrintPlan, work: Path, out: Path) -
 
     stl = work / f"{name}.stl"
     plan.mesh.export(stl)
-    machine, process, filament, preset_label = build_presets(install.profiles, meta, plan, work)
+    try:
+        machine, process, filament, preset_label = build_presets(install.profiles, meta, plan, work)
+    except PresetError as error:
+        return Check("slice", "FAIL", str(error))
     target = out / f"{name}.3mf"
     target.unlink(missing_ok=True)
     datadir = CACHE_DIR / "bambu-datadir"

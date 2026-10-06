@@ -29,8 +29,10 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
 
 - Units mm. Model coordinates = in-use orientation, Z up, part resting on z=0 if it stands.
 - `build()` returns a build123d `Part` (or list of parts → printed together).
-- `META`: `material` (PLA, PLA-MATTE, PLA-TOUGH, PETG, ABS, ASA, TPU, PC), `quality`
-  (draft | standard | strong | fine), `standing` (tip-over audit in use), `loads`
+- `META`: `material` (PLA, PLA-MATTE, PLA-TOUGH, PETG, ABS, ASA, TPU, PC, or the exact name of one of
+  the user's own presets), `quality` (draft | standard | strong | fine, or a user process preset name).
+  When the user names a brand/colour/preset, run `./cad materials` once and use the exact name.
+  `standing` (tip-over audit in use), `loads`
   (`[dict(at=(x,y,z), grams=g)]` carried in use), `print_orientation` ("auto" or `(rx, ry, rz)` deg),
   `supports`/`brim` ("auto" | "on" | "off"), `copies`.
 - Keep all dimensions as named UPPER_CASE parameters at the top so changes are one-line edits.

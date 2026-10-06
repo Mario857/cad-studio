@@ -35,6 +35,7 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
     from .build import BuildError, build
     from .gravity import plan_print, use_stability
     from .mesh_check import integrity, load_mesh, wall_thickness
+    from .profiles import density
 
     report = Report(name)
     out = out_dir(name)
@@ -50,8 +51,7 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
     if report.add(integrity(mesh, result.brep_valid)).status == "FAIL":
         return report
     report.add(wall_thickness(mesh))
-    density = settings()["materials"][result.meta["material"]]["density"]
-    estimated_grams = mesh.volume / 1000 * density * audit_cfg()["fill_fraction"]
+    estimated_grams = mesh.volume / 1000 * density(result.meta["material"]) * audit_cfg()["fill_fraction"]
     use_index = len(report.checks)
     report.add(use_stability(mesh, result.meta, estimated_grams))
 
@@ -112,6 +112,46 @@ def cmd_list(_args) -> int:
     return 0
 
 
+def cmd_materials(_args) -> int:
+    from .profiles import PresetError, compatible, flatten, user_index
+
+    cfg = settings()
+    machine = cfg["printer"]["machine"]
+
+    def usable(kind: str) -> str:
+        names = []
+        for name in user_index(kind):
+            try:
+                if compatible(flatten(kind, name), machine):
+                    names.append(name)
+            except PresetError:
+                names.append(name)
+        return "; ".join(names)
+
+    print("materials (META material=):")
+    print("  aliases: " + ", ".join(f"{k}={v['filament']}" for k, v in cfg["materials"].items()))
+    print("  user presets: " + usable("filament"))
+    print("qualities (META quality=):")
+    print("  aliases: " + ", ".join(f"{k}={v}" for k, v in cfg["qualities"].items()))
+    print("  user presets: " + usable("process"))
+    print(f"machine: {machine} (presets for other nozzles hidden)")
+    return 0
+
+
+def cmd_profiles_sync(_args) -> int:
+    from .profiles import PresetError, sync_from_bambu
+
+    try:
+        imported, skipped = sync_from_bambu()
+    except PresetError as error:
+        print(error)
+        return 1
+    print(f"imported {len(imported)} presets into profiles/; skipped {len(skipped)} (not for H2C):")
+    for line in skipped:
+        print(f"  skip {line}")
+    return 0
+
+
 def cmd_doctor(_args) -> int:
     import build123d
     import trimesh
@@ -143,6 +183,9 @@ def main() -> int:
     preview.set_defaults(run=cmd_preview)
 
     commands.add_parser("list", help="models and last verdict").set_defaults(run=cmd_list)
+    commands.add_parser("materials", help="filament/process presets usable in META").set_defaults(run=cmd_materials)
+    commands.add_parser("profiles-sync", help="import your Bambu Studio user presets (macOS)").set_defaults(
+        run=cmd_profiles_sync)
     commands.add_parser("doctor", help="toolchain status").set_defaults(run=cmd_doctor)
 
     args = parser.parse_args()

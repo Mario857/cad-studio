@@ -1,0 +1,91 @@
+{
+    "compatible_printers": [
+        "Bambu Lab H2C 0.8 nozzle"
+    ],
+    "eng_plate_temp": [
+        "100"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "105"
+    ],
+    "fan_cooling_layer_time": [
+        "35"
+    ],
+    "fan_max_speed": [
+        "25"
+    ],
+    "filament_cost": [
+        "9"
+    ],
+    "filament_density": [
+        "1.05"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "65",
+        "80",
+        "65",
+        "80"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+    ],
+    "filament_flow_ratio": [
+        "0.97",
+        "0.97",
+        "0.97"
+    ],
+    "filament_max_volumetric_speed": [
+        "14",
+        "18",
+        "18"
+    ],
+    "filament_settings_id": [
+        "AzureFilm ABS PLUS @BBL H2C 0.8 nozzle"
+    ],
+    "filament_shrink": [
+        "99.6%"
+    ],
+    "filament_vendor": [
+        "AzureFilm"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "100"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "105"
+    ],
+    "inherits": "Generic ABS @BBL H2C",
+    "name": "AzureFilm ABS PLUS @BBL H2C 0.8 nozzle",
+    "nozzle_temperature": [
+        "255",
+        "255",
+        "255"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "255",
+        "255",
+        "255"
+    ],
+    "nozzle_temperature_range_high": [
+        "265"
+    ],
+    "overhang_fan_speed": [
+        "50"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "temperature_vitrification": [
+        "85"
+    ],
+    "textured_plate_temp": [
+        "100"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "105"
+    ],
+    "version": "2.3.0.0"
+}

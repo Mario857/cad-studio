@@ -1,0 +1,24 @@
+{
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+    ],
+    "filament_settings_id": [
+        "Hyperspeed PETG"
+    ],
+    "from": "User",
+    "inherits": "Generic PETG HF @BBL H2C 0.4 nozzle",
+    "name": "Hyperspeed PETG",
+    "nozzle_temperature": [
+        "250",
+        "nil",
+        "nil"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250",
+        "nil",
+        "nil"
+    ],
+    "version": "2.8.0.4"
+}

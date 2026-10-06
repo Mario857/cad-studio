@@ -1,0 +1,154 @@
+{
+    "additional_cooling_fan_speed": [
+        "30"
+    ],
+    "close_additional_fan_first_x_layers": [
+        "2"
+    ],
+    "close_fan_the_first_x_layers": [
+        "2"
+    ],
+    "compatible_printers": [
+        "Bambu Lab H2C 0.6 nozzle"
+    ],
+    "cool_plate_temp": [
+        "35"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "35"
+    ],
+    "eng_plate_temp": [
+        "40"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "40"
+    ],
+    "fan_cooling_layer_time": [
+        "50"
+    ],
+    "fan_max_speed": [
+        "70"
+    ],
+    "fan_min_speed": [
+        "50"
+    ],
+    "filament_cost": [
+        "25"
+    ],
+    "filament_density": [
+        "1.21"
+    ],
+    "filament_deretraction_speed": [
+        "15",
+        "15",
+        "15"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "70",
+        "70",
+        "70",
+        "70"
+    ],
+    "filament_dev_ams_drying_time": [
+        "8",
+        "8",
+        "8",
+        "8"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+    ],
+    "filament_max_volumetric_speed": [
+        "4",
+        "5",
+        "5"
+    ],
+    "filament_retract_when_changing_layer": [
+        "1",
+        "1",
+        "1"
+    ],
+    "filament_retraction_length": [
+        "1.2",
+        "1.2",
+        "1.2"
+    ],
+    "filament_retraction_speed": [
+        "20",
+        "20",
+        "20"
+    ],
+    "filament_settings_id": [
+        "AzureFilm TPU 95A @BBL H2C 0.6 nozzle"
+    ],
+    "filament_vendor": [
+        "AzureFilm"
+    ],
+    "filament_wipe": [
+        "1",
+        "1",
+        "1"
+    ],
+    "filament_wipe_distance": [
+        "2",
+        "2",
+        "2"
+    ],
+    "filament_z_hop": [
+        "0.2",
+        "0.2",
+        "0.2"
+    ],
+    "filament_z_hop_types": [
+        "Normal Lift",
+        "Normal Lift",
+        "Normal Lift"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "40"
+    ],
+    "inherits": "Generic TPU @BBL H2C",
+    "name": "AzureFilm TPU 95A @BBL H2C 0.6 nozzle",
+    "nozzle_temperature_range_high": [
+        "245"
+    ],
+    "nozzle_temperature_range_low": [
+        "215"
+    ],
+    "overhang_fan_speed": [
+        "90"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "slow_down_min_speed": [
+        "10",
+        "10",
+        "10"
+    ],
+    "supertack_plate_temp": [
+        "35"
+    ],
+    "supertack_plate_temp_initial_layer": [
+        "35"
+    ],
+    "temperature_vitrification": [
+        "60"
+    ],
+    "textured_plate_temp": [
+        "45"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "45"
+    ],
+    "version": "2.3.0.0"
+}

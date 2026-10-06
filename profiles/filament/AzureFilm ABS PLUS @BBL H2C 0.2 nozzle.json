@@ -1,0 +1,102 @@
+{
+    "eng_plate_temp": [
+        "100"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "105"
+    ],
+    "fan_cooling_layer_time": [
+        "35"
+    ],
+    "fan_max_speed": [
+        "50"
+    ],
+    "fan_min_speed": [
+        "20"
+    ],
+    "filament_cost": [
+        "9"
+    ],
+    "filament_density": [
+        "1.05"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "65",
+        "80",
+        "65",
+        "80"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "filament_flow_ratio": [
+        "0.97",
+        "0.97"
+    ],
+    "filament_max_volumetric_speed": [
+        "nil",
+        "2.5"
+    ],
+    "filament_retraction_length": [
+        "0.3",
+        "0.3"
+    ],
+    "filament_settings_id": [
+        "AzureFilm ABS PLUS @BBL H2C 0.2 nozzle"
+    ],
+    "filament_shrink": [
+        "99.6%"
+    ],
+    "filament_vendor": [
+        "AzureFilm"
+    ],
+    "filament_wipe": [
+        "1",
+        "1"
+    ],
+    "filament_wipe_distance": [
+        "1",
+        "1"
+    ],
+    "filament_z_hop_types": [
+        "Spiral Lift",
+        "Spiral Lift"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "100"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "105"
+    ],
+    "inherits": "Generic ABS @BBL H2C 0.2 nozzle",
+    "name": "AzureFilm ABS PLUS @BBL H2C 0.2 nozzle",
+    "nozzle_temperature": [
+        "250",
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250",
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "265"
+    ],
+    "overhang_fan_speed": [
+        "80"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "temperature_vitrification": [
+        "85"
+    ],
+    "textured_plate_temp": [
+        "100"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "105"
+    ],
+    "version": "2.3.0.0"
+}

@@ -68,3 +68,14 @@ scripts/            setup.sh (SessionStart), install-slicer.sh, test-cloud-env.s
 
 Edit `config/printer.toml`: nozzle profile (`machine`), `plate`, material → filament preset,
 quality → process preset (+ overrides like the `strong` quality), audit thresholds.
+
+## Your own Bambu Studio presets
+
+`profiles/filament/` and `profiles/process/` hold the user presets from Bambu Studio (H2C ones only).
+Use them by exact name in `META`, e.g. `material="Hyperspeed PETG", quality="Small stuff"`;
+`./cad materials` lists everything usable with the configured nozzle. Inheritance from Bambu system
+presets (including per-nozzle `"nil"` entries) is resolved at slice time, so they work in the cloud too.
+Supports are still switched on/off by the gravity audit (META `supports`); the rest of the process
+preset is kept.
+
+After creating or editing presets in Bambu Studio on the Mac: `./cad profiles-sync`, commit, push.

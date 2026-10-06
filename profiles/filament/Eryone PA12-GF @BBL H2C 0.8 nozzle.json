@@ -1,0 +1,125 @@
+{
+    "compatible_printers": [
+        "Bambu Lab H2C 0.8 nozzle"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "105"
+    ],
+    "fan_cooling_layer_time": [
+        "10"
+    ],
+    "fan_max_speed": [
+        "15"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "filament_cost": [
+        "35"
+    ],
+    "filament_density": [
+        "1.13"
+    ],
+    "filament_dev_ams_drying_temperature": [
+        "65",
+        "80",
+        "65",
+        "80"
+    ],
+    "filament_dev_ams_drying_time": [
+        "12",
+        "8",
+        "12",
+        "8"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+    ],
+    "filament_flow_ratio": [
+        "0.97",
+        "0.97",
+        "0.97"
+    ],
+    "filament_max_volumetric_speed": [
+        "11",
+        "14",
+        "14"
+    ],
+    "filament_retraction_length": [
+        "0.8",
+        "0.8",
+        "0.8"
+    ],
+    "filament_retraction_speed": [
+        "30",
+        "30",
+        "30"
+    ],
+    "filament_settings_id": [
+        "Eryone PA12-GF @BBL H2C 0.8 nozzle"
+    ],
+    "filament_shrink": [
+        "99.7%"
+    ],
+    "filament_type": [
+        "PA-GF"
+    ],
+    "filament_vendor": [
+        "Eryone"
+    ],
+    "filament_wipe": [
+        "1",
+        "1",
+        "1"
+    ],
+    "filament_wipe_distance": [
+        "1",
+        "1",
+        "1"
+    ],
+    "filament_z_hop_types": [
+        "Spiral Lift",
+        "Spiral Lift",
+        "Spiral Lift"
+    ],
+    "from": "User",
+    "hot_plate_temp_initial_layer": [
+        "105"
+    ],
+    "inherits": "Generic PA-CF @BBL H2C",
+    "name": "Eryone PA12-GF @BBL H2C 0.8 nozzle",
+    "nozzle_temperature": [
+        "270",
+        "270",
+        "270"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "275",
+        "275",
+        "275"
+    ],
+    "nozzle_temperature_range_high": [
+        "285"
+    ],
+    "nozzle_temperature_range_low": [
+        "255"
+    ],
+    "overhang_fan_threshold": [
+        "25%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "10"
+    ],
+    "temperature_vitrification": [
+        "150"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "105"
+    ],
+    "version": "2.3.0.0"
+}

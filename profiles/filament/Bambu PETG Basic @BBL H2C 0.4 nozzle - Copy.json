@@ -1,0 +1,32 @@
+{
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive E3D High Flow"
+    ],
+    "filament_max_volumetric_speed": [
+        "11",
+        "nil",
+        "nil"
+    ],
+    "filament_settings_id": [
+        "Bambu PETG Basic @BBL H2C 0.4 nozzle - Copy"
+    ],
+    "from": "User",
+    "inherits": "Bambu PETG Basic @BBL H2C 0.4 nozzle",
+    "name": "Bambu PETG Basic @BBL H2C 0.4 nozzle - Copy",
+    "nozzle_temperature": [
+        "255",
+        "nil",
+        "nil"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "255",
+        "nil",
+        "nil"
+    ],
+    "nozzle_temperature_range_low": [
+        "255"
+    ],
+    "version": "2.8.0.4"
+}

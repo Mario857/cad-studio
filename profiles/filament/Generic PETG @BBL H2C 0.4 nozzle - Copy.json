@@ -1,0 +1,16 @@
+{
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "filament_settings_id": [
+        "Generic PETG @BBL H2C 0.4 nozzle - Copy"
+    ],
+    "from": "User",
+    "inherits": "Generic PETG @BBL H2C 0.4 nozzle",
+    "name": "Generic PETG @BBL H2C 0.4 nozzle - Copy",
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "version": "2.7.0.8"
+}

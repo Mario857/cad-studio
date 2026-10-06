@@ -1,0 +1,16 @@
+{
+    "filament_extruder_variant": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+    ],
+    "filament_prime_volume": [
+        "45"
+    ],
+    "filament_settings_id": [
+        "Bambu PLA Basic @BBL H2C - Copy"
+    ],
+    "from": "User",
+    "inherits": "Bambu PLA Basic @BBL H2C",
+    "name": "Bambu PLA Basic @BBL H2C - Copy",
+    "version": "2.7.0.8"
+}
