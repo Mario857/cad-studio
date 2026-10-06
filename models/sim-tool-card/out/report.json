@@ -1,0 +1,86 @@
+{
+ "model": "sim-tool-card",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "9.03 cm3, bbox 85.6x54x2.2 mm, 1 body, 9488 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 9.03,
+    "triangles": 9488,
+    "bbox_mm": [
+     85.6,
+     54.0,
+     2.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.65 mm (p2), median 2.24 mm; 8.0% of surface < 1.2 mm near [-10.0, -6.6, 0.0]",
+   "facts": {
+    "p2_mm": 0.65,
+    "median_mm": 2.24,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 8.0,
+    "thin_example_xyz": [
+     -10.0,
+     -6.6,
+     0.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.0 cm2, contact 42.1 cm2, h 2 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "36m, 9.3 g (0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2146,
+    "grams": 9.3,
+    "warnings": [],
+    "preset": "0.12mm High Quality @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/sim-tool-card/out/sim-tool-card.stl",
+  "step": "models/sim-tool-card/out/sim-tool-card.step",
+  "print": "models/sim-tool-card/out/sim-tool-card.3mf",
+  "preview": "models/sim-tool-card/out/preview.png"
+ }
+}
