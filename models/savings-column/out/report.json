@@ -1,0 +1,86 @@
+{
+ "model": "savings-column",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "961.88 cm3, bbox 150x202.4x300 mm, 5 body, 203344 tris \u2014 5 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 5,
+    "volume_cm3": 961.88,
+    "triangles": 203344,
+    "bbox_mm": [
+     150.0,
+     202.4,
+     300.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.09 mm (p2), median 6.89 mm",
+   "facts": {
+    "p2_mm": 2.09,
+    "median_mm": 6.89,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -12.0,
+     -16.1,
+     56.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "as modeled: support 6.0 cm2, overhang 30.4 cm2, contact 203.0 cm2, h 300 mm [next: top down 1961.5; stable face 2265.2]",
+   "facts": {
+    "chosen": "as modeled",
+    "score": 97.19
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim on; 6.0 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "13h44m, 418.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 49464,
+    "grams": 418.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/savings-column/out/savings-column.stl",
+  "step": "models/savings-column/out/savings-column.step",
+  "print": "models/savings-column/out/savings-column.3mf",
+  "preview": "models/savings-column/out/preview.png"
+ }
+}
