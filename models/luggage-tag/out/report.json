@@ -1,0 +1,86 @@
+{
+ "model": "luggage-tag",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "18.8 cm3, bbox 90x109.8x4.4 mm, 2 body, 4596 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 18.8,
+    "triangles": 4596,
+    "bbox_mm": [
+     90.0,
+     109.8,
+     4.4
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.87 mm (p2), median 2.8 mm",
+   "facts": {
+    "p2_mm": 0.87,
+    "median_mm": 2.8,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 1.1,
+    "thin_example_xyz": [
+     18.4,
+     34.0,
+     0.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 85.9 cm2, h 4 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "34m, 16.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2017,
+    "grams": 16.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/luggage-tag/out/luggage-tag.stl",
+  "step": "models/luggage-tag/out/luggage-tag.step",
+  "print": "models/luggage-tag/out/luggage-tag.3mf",
+  "preview": "models/luggage-tag/out/preview.png"
+ }
+}
