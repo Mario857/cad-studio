@@ -1,0 +1,96 @@
+{
+ "model": "ip15pm-kitchen-recipe-stand",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "136.2 cm3, bbox 150x100x70 mm, 1 body, 4264 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 136.2,
+    "triangles": 4264,
+    "bbox_mm": [
+     150.0,
+     100.0,
+     70.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.57 mm (p2), median 7.91 mm",
+   "facts": {
+    "p2_mm": 2.57,
+    "median_mm": 7.91,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0,
+    "thin_example_xyz": [
+     -73.7,
+     3.7,
+     9.9
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "OK",
+   "summary": "tips at 41.2 deg toward -Y incl. 251 g load (COM margin 31.4 mm)",
+   "facts": {
+    "part_g": 63.9,
+    "com_mm": [
+     0.0,
+     31.8,
+     35.9
+    ],
+    "tip_deg": 41.2,
+    "margin_mm": 31.4,
+    "weak_side": "-Y"
+   }
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.3 cm2, overhang 1.5 cm2, contact 147.5 cm2, h 70 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "2h25m, 63.9 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 8722,
+    "grams": 63.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/ip15pm-kitchen-recipe-stand/out/ip15pm-kitchen-recipe-stand.stl",
+  "step": "models/ip15pm-kitchen-recipe-stand/out/ip15pm-kitchen-recipe-stand.step",
+  "print": "models/ip15pm-kitchen-recipe-stand/out/ip15pm-kitchen-recipe-stand.3mf",
+  "preview": "models/ip15pm-kitchen-recipe-stand/out/preview.png"
+ }
+}
