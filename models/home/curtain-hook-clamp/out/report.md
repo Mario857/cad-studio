@@ -1,14 +1,14 @@
-# curtain-hook-clamp — PASS (1 warn)
+# curtain-hook-clamp — PASS (2 warn)
 
 | check | status | result |
 |---|---|---|
 | build | OK | B-rep valid |
-| mesh | WARN | 7.14 cm3, bbox 20x62.8x29 mm, 2 body, 3510 tris — 2 separate bodies (intended?) |
-| walls | OK | thinnest ~0.19 mm (p2), median 4.03 mm |
+| mesh | WARN | 10.52 cm3, bbox 12x50.8x63 mm, 4 body, 6640 tris — 4 separate bodies (intended?) |
+| walls | OK | thinnest ~1.22 mm (p2), median 4.0 mm |
 | use | SKIP | not free-standing (META standing=False) |
-| orient | OK | fixed rot (0, 90, 0): support 0.3 cm2, overhang 0.5 cm2, contact 5.0 cm2, h 20 mm |
-| support | OK | supports off, brim off |
-| slice | OK | 24m, 4.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle) |
+| orient | OK | fixed rot (0, 90, 0): support 0.7 cm2, overhang 1.1 cm2, contact 9.0 cm2, h 12 mm |
+| support | WARN | supports off, brim off; 0.7 cm2 needs support but supports=off |
+| slice | OK | 21m, 6.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle) |
 
 ## Files
 
