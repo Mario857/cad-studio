@@ -3,12 +3,12 @@
 | check | status | result |
 |---|---|---|
 | build | OK | B-rep valid |
-| mesh | OK | 5.84 cm3, bbox 32.2x20x38 mm, 1 body, 2254 tris |
-| walls | OK | thinnest ~0.18 mm (p2), median 4.0 mm |
+| mesh | OK | 4.02 cm3, bbox 32.2x12x22 mm, 1 body, 1536 tris |
+| walls | OK | thinnest ~2.30 mm (p2), median 5.29 mm |
 | use | SKIP | not free-standing (META standing=False) |
-| orient | OK | fixed rot (90, 0, 0): support 0.1 cm2, overhang 0.1 cm2, contact 4.0 cm2, h 20 mm |
+| orient | OK | fixed rot (90, 0, 0): support 0.1 cm2, overhang 0.1 cm2, contact 3.5 cm2, h 12 mm |
 | support | OK | supports off, brim off |
-| slice | OK | 22m, 3.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle) |
+| slice | OK | 14m, 2.5 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle) |
 
 ## Files
 
