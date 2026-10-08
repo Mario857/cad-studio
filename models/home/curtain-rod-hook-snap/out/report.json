@@ -1,0 +1,81 @@
+{
+ "model": "curtain-rod-hook-snap",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "3.31 cm3, bbox 14x23.1x37.3 mm, 1 body, 2108 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 3.31,
+    "triangles": 2108,
+    "bbox_mm": [
+     14.0,
+     23.1,
+     37.3
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.40 mm (p2), median 4.0 mm",
+   "facts": {
+    "p2_mm": 2.4,
+    "median_mm": 4.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.1 cm2, overhang 0.3 cm2, contact 1.8 cm2, h 14 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "17m, 3.4 g (0.20mm Standard @BBL H2C + Bambu ASA @BBL H2C)",
+   "facts": {
+    "seconds": 1019,
+    "grams": 3.4,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu ASA @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-rod-hook-snap/out/curtain-rod-hook-snap.stl",
+  "step": "models/home/curtain-rod-hook-snap/out/curtain-rod-hook-snap.step",
+  "print": "models/home/curtain-rod-hook-snap/out/curtain-rod-hook-snap.3mf",
+  "preview": "models/home/curtain-rod-hook-snap/out/preview.png"
+ }
+}
