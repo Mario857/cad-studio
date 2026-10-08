@@ -1,0 +1,86 @@
+{
+ "model": "curtain-hook-clamp",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "10.52 cm3, bbox 12x50.8x63 mm, 4 body, 6640 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 10.52,
+    "triangles": 6640,
+    "bbox_mm": [
+     12.0,
+     50.8,
+     63.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.22 mm (p2), median 4.0 mm",
+   "facts": {
+    "p2_mm": 1.22,
+    "median_mm": 4.0,
+    "area_pct_below_fail": 0.6,
+    "area_pct_below_warn": 0.8,
+    "thin_example_xyz": [
+     2.0,
+     5.6,
+     61.8
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 90, 0): support 0.7 cm2, overhang 1.1 cm2, contact 9.0 cm2, h 12 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.7 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "21m, 6.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1283,
+    "grams": 6.7,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-hook-clamp/out/curtain-hook-clamp.stl",
+  "step": "models/home/curtain-hook-clamp/out/curtain-hook-clamp.step",
+  "print": "models/home/curtain-hook-clamp/out/curtain-hook-clamp.3mf",
+  "preview": "models/home/curtain-hook-clamp/out/preview.png"
+ }
+}

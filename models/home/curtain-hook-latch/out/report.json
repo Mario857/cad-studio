@@ -1,0 +1,86 @@
+{
+ "model": "curtain-hook-latch",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "8.66 cm3, bbox 35.8x26.5x20 mm, 2 body, 3482 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 8.66,
+    "triangles": 3482,
+    "bbox_mm": [
+     35.8,
+     26.5,
+     20.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.12 mm (p2), median 4.18 mm",
+   "facts": {
+    "p2_mm": 1.12,
+    "median_mm": 4.18,
+    "area_pct_below_fail": 0.4,
+    "area_pct_below_warn": 1.5,
+    "thin_example_xyz": [
+     13.6,
+     3.3,
+     9.1
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.8 cm2, overhang 1.5 cm2, contact 4.7 cm2, h 20 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 0.8 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "26m, 5.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 1578,
+    "grams": 5.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-hook-latch/out/curtain-hook-latch.stl",
+  "step": "models/home/curtain-hook-latch/out/curtain-hook-latch.step",
+  "print": "models/home/curtain-hook-latch/out/curtain-hook-latch.3mf",
+  "preview": "models/home/curtain-hook-latch/out/preview.png"
+ }
+}
