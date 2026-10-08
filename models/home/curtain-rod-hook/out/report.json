@@ -1,0 +1,86 @@
+{
+ "model": "curtain-rod-hook",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "5.75 cm3, bbox 20.6x15x62 mm, 1 body, 2580 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 5.75,
+    "triangles": 2580,
+    "bbox_mm": [
+     20.6,
+     15.0,
+     62.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~2.33 mm (p2), median 5.6 mm",
+   "facts": {
+    "p2_mm": 2.33,
+    "median_mm": 5.6,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.3,
+    "thin_example_xyz": [
+     20.3,
+     -2.4,
+     11.7
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (90, 0, 0): support 0.0 cm2, overhang 0.3 cm2, contact 3.3 cm2, h 15 mm",
+   "facts": {
+    "chosen": "fixed rot (90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "17m, 6.2 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 1029,
+    "grams": 6.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-rod-hook/out/curtain-rod-hook.stl",
+  "step": "models/home/curtain-rod-hook/out/curtain-rod-hook.step",
+  "print": "models/home/curtain-rod-hook/out/curtain-rod-hook.3mf",
+  "preview": "models/home/curtain-rod-hook/out/preview.png"
+ }
+}
