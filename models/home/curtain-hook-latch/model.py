@@ -4,8 +4,12 @@ HOW IT WORKS
   Profile lies in the XY plane and is extruded 20 mm along Z (= print Z, so layer lines never cross
   the load-bearing curve; the whole hook prints flat-profile, zero supports).  X = out from the frame
   face (base back at x=0), Y = up in use, rod axis at x=25 (25 mm out), cradle hole Ø10.5.
-  Base 20 x 38 x 4 mm, 2 countersunk Ø3.8 holes (90 deg csk, Ø7.4 head) for 3.5 mm self-tapping
-  screws, heads on the +X face.  Rod drops into the cradle through a 10 mm top opening; a latch
+  Base 20 x 26 x 4 mm, ONE countersunk Ø3.8 hole (90 deg csk, Ø7.4 head) for a 3.5 mm self-tapping
+  screw (10 mm recommended, 12 mm max), at y=0 / z=10 = directly under the cradle centre line, head on
+  the +X face.  A 5 mm wide screwdriver corridor (45 deg roofed, along X at y=0, z 7.5..12.5) runs from the
+  screw head through the tower, the cradle bore and the far ring wall, so the driver enters from the
+  far side before the rod is hung (side strips of the tower/ring stay intact; detent bump is
+  clear of the detent bump, which sits at y 2.8-4.8).  Rod drops into the cradle through a 10 mm top opening; a latch
   arm on a print-in-place vertical pin hinge (pin Ø3, hole Ø3.6 = 0.3 mm radial clearance, 0.3 mm
   Z clearance) swings from ~90 deg open down over the opening.  Press it down: the finger on the
   latch tip rides over a 0.7 mm 45 deg bump on the post (interference 0.4 mm) and clicks shut.
@@ -20,8 +24,13 @@ PROS/CONS
     detent, not a lock; pull on the latch tip with a finger to open.
 HOLD STRENGTH (estimate)
   Latch click-open force ~5-10 N (finger flex ~1.5 % strain); fine for a light rod (<0.5 kg).
-  Load-bearing arm 5.25 mm thick x 20 mm, bending along layers: holds >10 kg before failing; real
-  limit is the two screws in uPVC (~20-30 kg pull-out each wall) - far above the curtain load.
+  Load-bearing arm 5.25 mm thick x 20 mm, bending along layers: holds >10 kg before failing.
+  ONE-SCREW RATIONALE: the screw sits on the load line (y=0) so the rod load goes through it as shear;
+  prying from the 25 mm lever is taken by the flat base bearing 13 mm below the screw: screw tension
+  ~ F*25/13 = 1.9 F.  uPVC wall pull-out of a 3.5 screw ~20-30 kg, so ~10 kg rod load is the
+  estimate limit (curtains are 1-3 kg): ample.  ROTATION CAVEAT: one screw is a pivot - an
+  off-centre (Z) or sideways load can twist the hook about the screw axis; align it square to the
+  frame edge, tighten firmly (flat face friction) and avoid using it for heavy/side-pulled loads.
 RECOMMENDED SLICER SETTINGS
   Orientation: as exported (profile flat on bed, 20 mm tall, Z = extrusion), 2 copies side by side.
   Layer 0.20 mm (0.16 gives cleaner 0.3 mm hinge gap), 4 walls, 40 % gyroid (or 100 % infill
@@ -52,8 +61,10 @@ META = dict(
 # Parameters
 W = 20.0                 # hook width (Z)
 BASE_T = 4.0
-BASE_L = 38.0
-SCREW_Y = 14.0
+BASE_L = 26.0
+SCREW_Y = 0.0
+CORR_W = 5.0            # screwdriver corridor width (Y)
+CORR_Z0, CORR_Z1 = 7.5, 12.5
 SCREW_D = 3.8
 CSK_D = 7.4
 ROD_X = 25.0
@@ -98,14 +109,20 @@ def build():
     hook += prism(TOWER_X0, OPEN_X0, -RING_R, TOWER_Y1)
     hook += prism(POST_X0, POST_X1, 0, POST_Y1)
     # detent bump on the post's outer face
-    bump = extrude(Polygon((POST_X1 - 0.1, 2.0), (POST_X1 + BUMP, 3.0), (POST_X1 - 0.1, 4.0),
+    bump = extrude(Polygon((POST_X1 - 0.1, 2.8), (POST_X1 + BUMP, 3.8), (POST_X1 - 0.1, 4.8),
                            align=None), amount=W)
     hook += bump
     hook -= cyl(ROD_X, 0, HOLE_R, -1, W + 1)
     hook -= prism(OPEN_X0, OPEN_X1, 0, 30, -1, W + 1)
     hook -= prism(OPEN_X1, 40, POST_Y1, 30, -1, W + 1)   # trim ring crown flush with post top
     # countersunk screw holes (heads on +X face)
-    for y in (-SCREW_Y, SCREW_Y):
+    # screwdriver corridor along X (house profile: flat floor, 45 deg roof) from the head through the far wall
+    cw = CORR_W / 2
+    prof = Polygon((SCREW_Y - cw, CORR_Z0), (SCREW_Y + cw, CORR_Z0), (SCREW_Y + cw, CORR_Z1),
+                   (SCREW_Y, CORR_Z1 + cw), (SCREW_Y - cw, CORR_Z1), align=None)
+    corr = Pos(BASE_T, 0, 0) * (Rot(0, 90, 0) * Rot(0, 0, 90) * extrude(Plane.XY * prof, 40))
+    hook -= corr
+    for y in (SCREW_Y,):
         hook -= Pos(-0.5, y, W / 2) * Rot(0, 90, 0) * Cylinder(SCREW_D / 2, BASE_T + 1, align=(Align.CENTER, Align.CENTER, Align.MIN))
         hook -= Pos(BASE_T - 1.8, y, W / 2) * Rot(0, 90, 0) * Cone(SCREW_D / 2, CSK_D / 2, 1.8, align=(Align.CENTER, Align.CENTER, Align.MIN))
     # latch swing clearance in the slot layer (0..90 deg), then the pin

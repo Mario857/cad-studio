@@ -11,16 +11,16 @@
   {
    "name": "mesh",
    "status": "WARN",
-   "summary": "10.01 cm3, bbox 35.8x38x20 mm, 2 body, 4088 tris \u2014 2 separate bodies (intended?)",
+   "summary": "8.66 cm3, bbox 35.8x26.5x20 mm, 2 body, 3482 tris \u2014 2 separate bodies (intended?)",
    "facts": {
     "watertight": true,
     "winding_ok": true,
     "bodies": 2,
-    "volume_cm3": 10.01,
-    "triangles": 4088,
+    "volume_cm3": 8.66,
+    "triangles": 3482,
     "bbox_mm": [
      35.8,
-     38.0,
+     26.5,
      20.0
     ]
    }
@@ -28,16 +28,16 @@
   {
    "name": "walls",
    "status": "OK",
-   "summary": "thinnest ~1.30 mm (p2), median 4.0 mm",
+   "summary": "thinnest ~1.12 mm (p2), median 4.18 mm",
    "facts": {
-    "p2_mm": 1.3,
-    "median_mm": 4.0,
-    "area_pct_below_fail": 0.9,
-    "area_pct_below_warn": 1.0,
+    "p2_mm": 1.12,
+    "median_mm": 4.18,
+    "area_pct_below_fail": 0.4,
+    "area_pct_below_warn": 1.5,
     "thin_example_xyz": [
-     33.8,
-     2.9,
-     8.9
+     13.6,
+     3.3,
+     9.1
     ]
    }
   },
@@ -50,7 +50,7 @@
   {
    "name": "orient",
    "status": "OK",
-   "summary": "fixed rot (0, 0, 0): support 0.8 cm2, overhang 0.9 cm2, contact 5.2 cm2, h 20 mm",
+   "summary": "fixed rot (0, 0, 0): support 0.8 cm2, overhang 1.5 cm2, contact 4.7 cm2, h 20 mm",
    "facts": {
     "chosen": "fixed rot (0, 0, 0)",
     "score": 0.0
@@ -68,10 +68,10 @@
   {
    "name": "slice",
    "status": "OK",
-   "summary": "26m, 6.2 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "summary": "26m, 5.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
    "facts": {
-    "seconds": 1577,
-    "grams": 6.2,
+    "seconds": 1578,
+    "grams": 5.6,
     "warnings": [],
     "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
    }
