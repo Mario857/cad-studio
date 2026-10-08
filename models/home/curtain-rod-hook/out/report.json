@@ -67,14 +67,20 @@
   },
   {
    "name": "slice",
-   "status": "SKIP",
-   "summary": "--no-slice",
-   "facts": {}
+   "status": "OK",
+   "summary": "17m, 6.2 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 1029,
+    "grams": 6.2,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
   }
  ],
  "files": {
   "stl": "models/home/curtain-rod-hook/out/curtain-rod-hook.stl",
   "step": "models/home/curtain-rod-hook/out/curtain-rod-hook.step",
+  "print": "models/home/curtain-rod-hook/out/curtain-rod-hook.3mf",
   "preview": "models/home/curtain-rod-hook/out/preview.png"
  }
 }
