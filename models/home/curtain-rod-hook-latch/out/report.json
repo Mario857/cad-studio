@@ -1,0 +1,86 @@
+{
+ "model": "curtain-rod-hook-latch",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "5.01 cm3, bbox 14x53.5x39 mm, 2 body, 3510 tris \u2014 2 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 2,
+    "volume_cm3": 5.01,
+    "triangles": 3510,
+    "bbox_mm": [
+     14.0,
+     53.5,
+     39.0
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.57 mm (p2), median 4.37 mm",
+   "facts": {
+    "p2_mm": 1.57,
+    "median_mm": 4.37,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.4,
+    "thin_example_xyz": [
+     9.4,
+     49.1,
+     15.4
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, -90, 0): support 0.1 cm2, overhang 0.2 cm2, contact 3.2 cm2, h 14 mm",
+   "facts": {
+    "chosen": "fixed rot (0, -90, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "19m, 4.6 g (0.20mm Standard @BBL H2C + Bambu ASA @BBL H2C)",
+   "facts": {
+    "seconds": 1135,
+    "grams": 4.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu ASA @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-rod-hook-latch/out/curtain-rod-hook-latch.stl",
+  "step": "models/home/curtain-rod-hook-latch/out/curtain-rod-hook-latch.step",
+  "print": "models/home/curtain-rod-hook-latch/out/curtain-rod-hook-latch.3mf",
+  "preview": "models/home/curtain-rod-hook-latch/out/preview.png"
+ }
+}
