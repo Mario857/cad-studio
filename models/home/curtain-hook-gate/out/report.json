@@ -1,0 +1,86 @@
+{
+ "model": "curtain-hook-gate",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "WARN",
+   "summary": "21.25 cm3, bbox 140.1x20x33.5 mm, 4 body, 3972 tris \u2014 4 separate bodies (intended?)",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 4,
+    "volume_cm3": 21.25,
+    "triangles": 3972,
+    "bbox_mm": [
+     140.1,
+     20.0,
+     33.5
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~1.26 mm (p2), median 5.62 mm",
+   "facts": {
+    "p2_mm": 1.26,
+    "median_mm": 5.62,
+    "area_pct_below_fail": 0.6,
+    "area_pct_below_warn": 1.5,
+    "thin_example_xyz": [
+     -4.6,
+     -3.3,
+     27.5
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (-90, 0, 0): support 0.5 cm2, overhang 2.2 cm2, contact 13.1 cm2, h 20 mm",
+   "facts": {
+    "chosen": "fixed rot (-90, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim on",
+   "facts": {
+    "supports": false,
+    "brim": true
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "40m, 12.6 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "facts": {
+    "seconds": 2426,
+    "grams": 12.6,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/home/curtain-hook-gate/out/curtain-hook-gate.stl",
+  "step": "models/home/curtain-hook-gate/out/curtain-hook-gate.step",
+  "print": "models/home/curtain-hook-gate/out/curtain-hook-gate.3mf",
+  "preview": "models/home/curtain-hook-gate/out/preview.png"
+ }
+}
