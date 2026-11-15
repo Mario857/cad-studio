@@ -17,6 +17,25 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
   in the model docstring.
 - Final reply: ≤ 6 lines (what was made, key dims, print time/grams, assumptions, path to `.3mf`).
 
+## Real-world waste prevention (a part that passes `./cad check` can still be trash)
+
+The audit proves it slices and prints. It does NOT prove it fits or works. Before the full design:
+
+1. **Read `docs/lessons.md`** (short) and `models/*/*/PRINTLOG.md` only for the model you are tweaking.
+2. **Classify every dimension in the docstring** as `MEASURED` (user gave it / it is a standard, e.g. M4, 608 bearing),
+   or `UNVERIFIED` (guessed, from a photo/memory, or a product spec you cannot check). Write the tag on the line.
+3. **Gate on risk** (the check prints a `spec` line counting UNVERIFIED items):
+   - 0 unverified, low mass (< ~30 g): design the real part directly.
+   - Any UNVERIFIED mating dimension (bore, slot, rod, frame thickness, shaft): do NOT make the final part first.
+     Make a **fit gauge/coupon** (graded sizes, numbered, ≤ ~15 min, ≤ ~10 g, only the mating feature) as its own
+     model, and tell the user what to measure/try. Design the real part afterwards with the confirmed value.
+   - Printed ≥ 60 min or ≥ 40 g and not yet validated: ask for / make a scaled or cut-down test slice first
+     (e.g. just the clip, 10 mm of the rail).
+4. **State the failure modes** in the docstring (`Risks:` line: what breaks first, how the user will find out).
+5. **After the user prints it**, they run `./cad log <name> ok|fail|tweak "<note>"`. On `fail`/`tweak`, distil a
+   rule into `docs/lessons.md`. Parts with an `ok` log are `validated`: change their dimensions only with a reason.
+6. Never present guessed dimensions as final in the reply: list them (one line) so the user can correct them.
+
 ## Workflow
 
 1. `./cad new <kebab-name> --category <dir>` (dirs: bathroom christmas garden home kitchen money music office outdoor pet phone) → edit `models/<category>/<name>/model.py` (docstring spec, `META`, params, `build()`).

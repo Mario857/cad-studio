@@ -25,7 +25,7 @@ free tools in this repo do the rest and hand back a ~10-line verdict:
    `preview.png` shows all views, `<name>.3mf` is the sliced print file
    (`git pull`, open it in Bambu Studio, press Print — it is already sliced for the H2C).
 
-Other commands: `/tweak <name> <change>`, `/look <name>` (visual review, costs image tokens).
+Other commands: `/printed <name> ok|fail|tweak <note>` (log the real print result → lessons), `/tweak <name> <change>`, `/look <name>` (visual review, costs image tokens).
 
 ## Locally
 

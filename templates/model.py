@@ -1,7 +1,10 @@
 """{{NAME}}: one-line description.
 
 Spec: what it is for, key dimensions, what it mates with.
+Dimensions: tag each MEASURED (given by user / a standard) or UNVERIFIED (guessed, from photo/memory).
+  e.g.  rod diameter 19.0  MEASURED;  frame lip 4.5  UNVERIFIED
 Assumptions: anything guessed (state it so it can be corrected).
+Risks: what breaks first in real use, and how the user will find out (e.g. "snap arm may crack at the root").
 """
 
 from build123d import *

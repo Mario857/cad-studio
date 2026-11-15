@@ -36,6 +36,21 @@ def cmd_new(args) -> int:
     return 0
 
 
+def spec_check(name: str, grams: float | None = None) -> Check:
+    """Docstring discipline: assumptions + risks stated, UNVERIFIED dimensions counted (gate for fit gauges)."""
+    text = (model_dir(name) / "model.py").read_text()
+    doc = text.split('"""')[1] if text.count('"""') >= 2 else ""
+    unverified = len(re.findall(r"UNVERIFIED", doc))
+    missing = [k for k in ("Assumptions", "Risks") if k not in doc]
+    facts = {"unverified": unverified}
+    if missing:
+        return Check("spec", "WARN", f"docstring lacks {' + '.join(missing)} (see CLAUDE.md waste prevention)", facts)
+    if unverified:
+        return Check("spec", "WARN", f"{unverified} UNVERIFIED dim(s): print a fit gauge/coupon first, "
+                     "ask user to confirm", facts)
+    return Check("spec", "OK", "all dims MEASURED, assumptions+risks stated", facts)
+
+
 def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
     from .build import BuildError, build
     from .gravity import plan_print, use_stability
@@ -56,6 +71,7 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
     if report.add(integrity(mesh, result.brep_valid)).status == "FAIL":
         return report
     report.add(wall_thickness(mesh))
+    report.add(spec_check(name))
     estimated_grams = mesh.volume / 1000 * density(result.meta["material"]) * audit_cfg()["fill_fraction"]
     use_index = len(report.checks)
     report.add(use_stability(mesh, result.meta, estimated_grams))
@@ -113,7 +129,34 @@ def cmd_list(_args) -> int:
         report = path.parent / "out" / "report.json"
         verdict = json.loads(report.read_text())["verdict"] if report.exists() else "-"
         doc = (path.read_text().split('"""')[1].strip().splitlines() or [""])[0] if '"""' in path.read_text() else ""
-        print(f"{path.parent.parent.name + "/" + path.parent.name:<36} {verdict:<5} {doc}")
+        printed = last_print_result(path)
+        print(f"{path.parent.parent.name + "/" + path.parent.name:<36} {verdict:<5} {printed:<6} {doc}")
+    return 0
+
+
+def last_print_result(path) -> str:
+    log = path.parent / "PRINTLOG.md"
+    if not log.exists():
+        return "-"
+    rows = [l for l in log.read_text().splitlines() if l.startswith("- ")]
+    return rows[-1].split()[2] if rows else "-"
+
+
+def cmd_log(args) -> int:
+    """Record a real-world print result: ./cad log <name> ok|fail|tweak "note"."""
+    import datetime
+
+    path = model_dir(args.name) / "PRINTLOG.md"
+    if not path.parent.exists():
+        print(f"unknown model: {args.name}")
+        return 1
+    if not path.exists():
+        path.write_text(f"# {args.name} — real-world print log\n\n")
+    with path.open("a") as handle:
+        handle.write(f"- {datetime.date.today()} {args.result} {args.note}\n")
+    print(f"logged {args.result} for {args.name}")
+    if args.result != "ok":
+        print("next: distil the cause into docs/lessons.md (symptom -> cause -> rule), then /tweak the model")
     return 0
 
 
@@ -188,7 +231,13 @@ def main() -> int:
     preview.add_argument("name")
     preview.set_defaults(run=cmd_preview)
 
-    commands.add_parser("list", help="models and last verdict").set_defaults(run=cmd_list)
+    log = commands.add_parser("log", help="record a real print result (ok | fail | tweak)")
+    log.add_argument("name")
+    log.add_argument("result", choices=["ok", "fail", "tweak"])
+    log.add_argument("note", help="what happened / what to change")
+    log.set_defaults(run=cmd_log)
+
+    commands.add_parser("list", help="models, last verdict, last real-print result").set_defaults(run=cmd_list)
     commands.add_parser("materials", help="filament/process presets usable in META").set_defaults(run=cmd_materials)
     commands.add_parser("profiles-sync", help="import your Bambu Studio user presets (macOS)").set_defaults(
         run=cmd_profiles_sync)
