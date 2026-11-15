@@ -14,7 +14,10 @@ TEMPLATE = REPO / "templates" / "model.py"
 
 
 def rel(path) -> str:
-    return str(path.relative_to(REPO))
+    try:
+        return str(path.relative_to(REPO))
+    except ValueError:
+        return str(path)
 
 
 def cmd_new(args) -> int:
@@ -70,6 +73,9 @@ def run_check(name: str, do_slice: bool, do_preview: bool, do_sweep: bool = Fals
     mesh = load_mesh(result.stl)
     if report.add(integrity(mesh, result.brep_valid)).status == "FAIL":
         return report
+    from .lifecycle import cost_check, status_check
+
+    report.add(status_check(name, result.meta.get("status")))
     report.add(wall_thickness(mesh))
     report.add(spec_check(name))
     from .interference import check_fit
@@ -93,6 +99,8 @@ def run_check(name: str, do_slice: bool, do_preview: bool, do_sweep: bool = Fals
         sliced = report.add(slice_model(name, result.meta, plan, work_dir(name), out))
         if sliced.facts.get("grams"):
             report.checks[use_index] = use_stability(mesh, result.meta, sliced.facts["grams"])
+        if sliced.facts.get("grams"):
+            report.add(cost_check(name, result.meta, report.checks, sliced))
         if (out / f"{name}.3mf").exists():
             report.files["print"] = rel(out / f"{name}.3mf")
     else:
@@ -137,12 +145,15 @@ def cmd_preview(args) -> int:
 
 
 def cmd_list(_args) -> int:
+    from .lifecycle import effective_status
+
     for path in sorted(MODELS_DIR.glob("*/*/model.py")):
         report = path.parent / "out" / "report.json"
         verdict = json.loads(report.read_text())["verdict"] if report.exists() else "-"
         doc = (path.read_text().split('"""')[1].strip().splitlines() or [""])[0] if '"""' in path.read_text() else ""
         printed = last_print_result(path)
-        print(f"{path.parent.parent.name + "/" + path.parent.name:<36} {verdict:<5} {printed:<6} {doc}")
+        status = effective_status(path.parent)
+        print(f"{path.parent.parent.name + "/" + path.parent.name:<36} {verdict:<5} {status:<9} {printed:<6} {doc}")
     return 0
 
 
@@ -169,7 +180,6 @@ def cmd_log(args) -> int:
     print(f"logged {args.result} for {args.name}")
     if args.result != "ok":
         print("next: distil the cause into docs/lessons.md (symptom -> cause -> rule), then /tweak the model")
-    return 0
 
 
 def cmd_materials(_args) -> int:

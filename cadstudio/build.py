@@ -22,6 +22,7 @@ META_DEFAULTS = {
     "copies": 1,
     "mates": [],
     "assembly": False,
+    "status": None,  # draft | proto | validated (a PRINTLOG.md ending in `ok` implies validated)
 }
 
 
@@ -62,7 +63,7 @@ def short_traceback(error: Exception, model_path: Path) -> str:
         frame for frame in traceback.extract_tb(error.__traceback__)
         if frame.filename == str(model_path) or "/cadlib/" in frame.filename
     ]
-    lines = [f"  {Path(f.filename).relative_to(REPO)}:{f.lineno} {f.line}" for f in frames[-4:]]
+    lines = [f"  {f.filename}:{f.lineno} {f.line}" for f in frames[-4:]]
     return "\n".join([f"{type(error).__name__}: {error}", *lines])
 
 

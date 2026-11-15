@@ -37,41 +37,49 @@ bottom_shell_layers = "5"
 
 # strength_*_mpa: typical printed tensile strength along layers (xy) / across layers (z) for the strength check.
 [materials.PLA]
+price_per_kg = 20  # EUR
 filament = "Bambu PLA Basic @BBL H2C"
 density = 1.26
 strength_xy_mpa = 50
 strength_z_mpa = 25
 [materials.PLA-MATTE]
+price_per_kg = 22  # EUR
 filament = "Bambu PLA Matte @BBL H2C"
 density = 1.32
 strength_xy_mpa = 45
 strength_z_mpa = 22
 [materials.PLA-TOUGH]
+price_per_kg = 28  # EUR
 filament = "Bambu PLA Tough+ @BBL H2C"
 density = 1.26
 strength_xy_mpa = 45
 strength_z_mpa = 25
 [materials.PETG]
+price_per_kg = 22  # EUR
 filament = "Bambu PETG HF @BBL H2C"
 density = 1.25
 strength_xy_mpa = 45
 strength_z_mpa = 22
 [materials.ABS]
+price_per_kg = 22  # EUR
 filament = "Bambu ABS @BBL H2C"
 density = 1.05
 strength_xy_mpa = 38
 strength_z_mpa = 18
 [materials.ASA]
+price_per_kg = 28  # EUR
 filament = "Bambu ASA @BBL H2C"
 density = 1.07
 strength_xy_mpa = 38
 strength_z_mpa = 18
 [materials.TPU]
+price_per_kg = 35  # EUR
 filament = "Bambu TPU 95A HF @BBL H2C"
 density = 1.22
 strength_xy_mpa = 25
 strength_z_mpa = 12
 [materials.PC]
+price_per_kg = 45  # EUR
 filament = "Bambu PC @BBL H2C"
 density = 1.20
 strength_xy_mpa = 60
@@ -96,3 +104,10 @@ tip_fail_deg = 4
 fill_fraction = 0.5
 # Bed contact below this area (cm²) adds a brim.
 brim_below_cm2 = 3.0
+
+[cost]
+# First-print risk is HIGH at >= risk_minutes or >= risk_grams when the part is unvalidated or has UNVERIFIED facts.
+currency = "EUR"
+default_price_per_kg = 25
+risk_minutes = 60
+risk_grams = 40
