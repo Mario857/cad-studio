@@ -15,6 +15,7 @@ META_DEFAULTS = {
     "quality": None,
     "standing": False,
     "loads": [],
+    "force": [],
     "print_orientation": "auto",
     "supports": "auto",
     "brim": "auto",

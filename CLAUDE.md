@@ -57,6 +57,9 @@ The audit proves it slices and prints. It does NOT prove it fits or works. Befor
   (`[dict(at=(x,y,z), grams=g)]` carried in use), `print_orientation` ("auto" or `(rx, ry, rz)` deg),
   `supports`/`brim` ("auto" | "on" | "off"), `copies`, `assembly` (True = listed parts are in use positions: FAIL on overlap > 0.5 mm3),
   `mates` (`[dict(a=0, b=1, clearance=(min, max))]` part indices: WARN if the measured gap is outside the band).
+  `supports`/`brim` ("auto" | "on" | "off"), `copies`.
+- `force=[dict(at=(x,y,z), newtons=N, dir=(dx,dy,dz))]` (+ `loads`) enables the approximate `strength` check (WARN SF<3, FAIL <1.5).
+- `./cad check <name> --sweep` rebuilds with CLEAR/GAP/TOL float params ±0.1 mm and re-checks mesh + walls.
 - Keep all dimensions as named UPPER_CASE parameters at the top so changes are one-line edits.
 
 ## FDM design rules (the audit enforces most of these)

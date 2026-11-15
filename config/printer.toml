@@ -35,32 +35,52 @@ sparse_infill_density = "40%"
 top_shell_layers = "6"
 bottom_shell_layers = "5"
 
+# strength_*_mpa: typical printed tensile strength along layers (xy) / across layers (z) for the strength check.
 [materials.PLA]
 filament = "Bambu PLA Basic @BBL H2C"
 density = 1.26
+strength_xy_mpa = 50
+strength_z_mpa = 25
 [materials.PLA-MATTE]
 filament = "Bambu PLA Matte @BBL H2C"
 density = 1.32
+strength_xy_mpa = 45
+strength_z_mpa = 22
 [materials.PLA-TOUGH]
 filament = "Bambu PLA Tough+ @BBL H2C"
 density = 1.26
+strength_xy_mpa = 45
+strength_z_mpa = 25
 [materials.PETG]
 filament = "Bambu PETG HF @BBL H2C"
 density = 1.25
+strength_xy_mpa = 45
+strength_z_mpa = 22
 [materials.ABS]
 filament = "Bambu ABS @BBL H2C"
 density = 1.05
+strength_xy_mpa = 38
+strength_z_mpa = 18
 [materials.ASA]
 filament = "Bambu ASA @BBL H2C"
 density = 1.07
+strength_xy_mpa = 38
+strength_z_mpa = 18
 [materials.TPU]
 filament = "Bambu TPU 95A HF @BBL H2C"
 density = 1.22
+strength_xy_mpa = 25
+strength_z_mpa = 12
 [materials.PC]
 filament = "Bambu PC @BBL H2C"
 density = 1.20
+strength_xy_mpa = 60
+strength_z_mpa = 30
 
 [audit]
+# Strength estimate: required safety factor (WARN below it), FAIL below the second value.
+safety_factor = 3
+safety_factor_fail = 1.5
 # Wall thickness (mm): below fail_ = FAIL, below warn_ = WARN.
 fail_wall_mm = 0.6
 warn_wall_mm = 1.2

@@ -51,7 +51,7 @@ def spec_check(name: str, grams: float | None = None) -> Check:
     return Check("spec", "OK", "all dims MEASURED, assumptions+risks stated", facts)
 
 
-def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
+def run_check(name: str, do_slice: bool, do_preview: bool, do_sweep: bool = False) -> Report:
     from .build import BuildError, build
     from .gravity import plan_print, use_stability
     from .mesh_check import integrity, load_mesh, wall_thickness
@@ -82,6 +82,9 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
 
     plan, checks = plan_print(mesh, result.meta)
     report.checks += checks
+    from .strength import strength_check
+
+    report.add(strength_check(mesh, result.meta, plan))
 
     blocked = any(c.status == "FAIL" for c in report.checks)
     if do_slice and plan.chosen.fits and not blocked:
@@ -97,6 +100,11 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
         report.add(Check("slice", "SKIP", reason))
         (out / f"{name}.3mf").unlink(missing_ok=True)
 
+    if do_sweep:
+        from .sweep import sweep_check
+
+        report.add(sweep_check(name))
+
     if do_preview:
         from .preview import render
 
@@ -105,7 +113,7 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
 
 
 def cmd_check(args) -> int:
-    report = run_check(args.name, do_slice=not args.no_slice, do_preview=not args.no_preview)
+    report = run_check(args.name, do_slice=not args.no_slice, do_preview=not args.no_preview, do_sweep=args.sweep)
     report.write(out_dir(args.name))
     print(report.terminal())
     return 1 if report.verdict == "FAIL" else 0
@@ -237,6 +245,7 @@ def main() -> int:
     check.add_argument("name")
     check.add_argument("--no-slice", action="store_true", help="skip slicing (fast geometry iteration)")
     check.add_argument("--no-preview", action="store_true")
+    check.add_argument("--sweep", action="store_true", help="rebuild with CLEAR/GAP/TOL params +-0.1 mm, re-check mesh/walls")
     check.set_defaults(run=cmd_check)
 
     preview = commands.add_parser("preview", help="render out/preview.png only")
