@@ -1,0 +1,86 @@
+{
+ "model": "calibration-coupon",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "7.68 cm3, bbox 72x64.5x5.2 mm, 1 body, 20958 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "volume_cm3": 7.68,
+    "triangles": 20958,
+    "bbox_mm": [
+     72.0,
+     64.5,
+     5.2
+    ]
+   }
+  },
+  {
+   "name": "walls",
+   "status": "WARN",
+   "summary": "thinnest ~0.80 mm (p2), median 1.2 mm; 79.6% of surface < 1.2 mm near [23.2, 0.4, 0.0]",
+   "facts": {
+    "p2_mm": 0.8,
+    "median_mm": 1.2,
+    "area_pct_below_fail": 0.6,
+    "area_pct_below_warn": 79.6,
+    "thin_example_xyz": [
+     23.2,
+     0.4,
+     0.0
+    ]
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 3.0 cm2, overhang 3.6 cm2, contact 43.2 cm2, h 5 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "WARN",
+   "summary": "supports off, brim off; 3.0 cm2 needs support but supports=off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "16m, 9.0 g (0.24mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C)",
+   "facts": {
+    "seconds": 963,
+    "grams": 9.0,
+    "warnings": [],
+    "preset": "0.24mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/misc/calibration-coupon/out/calibration-coupon.stl",
+  "step": "models/misc/calibration-coupon/out/calibration-coupon.step",
+  "print": "models/misc/calibration-coupon/out/calibration-coupon.3mf",
+  "preview": "models/misc/calibration-coupon/out/preview.png"
+ }
+}

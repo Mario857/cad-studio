@@ -192,6 +192,9 @@ def main() -> int:
     commands.add_parser("materials", help="filament/process presets usable in META").set_defaults(run=cmd_materials)
     commands.add_parser("profiles-sync", help="import your Bambu Studio user presets (macOS)").set_defaults(
         run=cmd_profiles_sync)
+    from .calibrate import add_commands
+
+    add_commands(commands)
     commands.add_parser("doctor", help="toolchain status").set_defaults(run=cmd_doctor)
 
     args = parser.parse_args()
