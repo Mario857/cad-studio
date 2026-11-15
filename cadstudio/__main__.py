@@ -216,6 +216,14 @@ def cmd_doctor(_args) -> int:
     return 0 if install else 1
 
 
+def cmd_objects(args) -> int:
+    from cadlib.objects import list_objects
+
+    found = list_objects(" ".join(args.query))
+    print("\n".join(str(o) for o in found) or "no match")
+    return 0 if found else 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(prog="./cad", description="Design -> audit -> slice for the Bambu Lab H2C")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -245,6 +253,9 @@ def main() -> int:
     commands.add_parser("materials", help="filament/process presets usable in META").set_defaults(run=cmd_materials)
     commands.add_parser("profiles-sync", help="import your Bambu Studio user presets (macOS)").set_defaults(
         run=cmd_profiles_sync)
+    objects = commands.add_parser("objects", help="real-world mating-object dimensions (search by name)")
+    objects.add_argument("query", nargs="*")
+    objects.set_defaults(run=cmd_objects)
     commands.add_parser("doctor", help="toolchain status").set_defaults(run=cmd_doctor)
 
     args = parser.parse_args()

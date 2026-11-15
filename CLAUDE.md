@@ -81,6 +81,9 @@ Cutters point down (-Z) from z=0: place on the surface, then subtract.
   `insert_hole(size, depth=None)`, `pin_hole(d, depth)`; sizes "M2".."M8"; `METRIC[size]` dims
 - `clearance(size, fit="slide")`, `hole_d(nominal)`, `FIT` = press .10 / snug .15 / slide .25 / loose .40
 - `at(x, y, z, rx, ry, rz) * shape`, `ON_BED` align tuple
+- `obj("aa-battery")["d"]` / `./cad objects [query]` = real-world mating dimensions (batteries, coins, bearings, phone, fasteners...).
+  Check it BEFORE guessing a dimension; add new verified objects to `cadlib/objects.py`.
+- Any entry with status UNVERIFIED must be tagged UNVERIFIED in the model docstring (MEASURE BEFORE PRINTING).
 
 ## build123d cheat sheet (algebra mode)
 
