@@ -8,7 +8,7 @@ from functools import cache
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-MODELS_DIR = REPO / "models"
+MODELS_DIR = Path(os.environ.get("CAD_MODELS_DIR") or REPO / "models")
 CONFIG_FILE = REPO / "config" / "printer.toml"
 CACHE_DIR = Path(os.environ.get("CAD_CACHE_DIR", Path.home() / ".cache" / "cad-studio"))
 
