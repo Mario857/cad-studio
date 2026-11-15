@@ -34,7 +34,8 @@ The audit proves it slices and prints. It does NOT prove it fits or works. Befor
 4. **State the failure modes** in the docstring (`Risks:` line: what breaks first, how the user will find out).
 5. **After the user prints it**, they run `./cad log <name> ok|fail|tweak "<note>"`. On `fail`/`tweak`, distil a
    rule into `docs/lessons.md`. Parts with an `ok` log are `validated`: change their dimensions only with a reason.
-6. Never present guessed dimensions as final in the reply: list them (one line) so the user can correct them.
+6. Pick material from `docs/materials.md` and the mechanism from `docs/mechanisms.md` (read only the relevant rows); `/design` runs the full staged protocol incl. an independent review subagent.
+7. Never present guessed dimensions as final in the reply: list them (one line) so the user can correct them.
 
 ## Workflow
 
