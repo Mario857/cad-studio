@@ -83,6 +83,9 @@ def build(name: str) -> BuildResult:
 
     module, path = load_module(name)
     meta = resolve_meta(module)
+    from cadlib.fit import set_material
+
+    set_material(meta["material"])  # per-material offsets from config/calibration.toml
     if not hasattr(module, "build"):
         raise BuildError(f"models/{name}/model.py must define build()")
     try:

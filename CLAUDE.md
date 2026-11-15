@@ -41,6 +41,8 @@ The audit proves it slices and prints. It does NOT prove it fits or works. Befor
 1. `./cad new <kebab-name> --category <dir>` (dirs: bathroom christmas garden home kitchen money music office outdoor pet phone) → edit `models/<category>/<name>/model.py` (docstring spec, `META`, params, `build()`).
 2. `./cad check <name> --no-slice` → fix every FAIL; fix WARNs unless the reason is stated in META/docstring.
 3. `./cad check <name>` (slices; first run on a fresh cloud session may wait for the slicer install).
+   Unsure of a fit (nut trap, snap, press-fit)? `./cad coupon <name> --feature "<desc>"` scaffolds a graded-size
+   `<name>-fit-gauge`; printer/material offsets: `./cad calibrate` (see its docstring), stored in `config/calibration.toml`.
 4. Commit `models/<category>/<name>/` including `out/` (`.3mf` is the print file) with message
    `<name>: <what changed>` and push. One commit per finished design, not per iteration.
 

@@ -256,6 +256,9 @@ def main() -> int:
     objects = commands.add_parser("objects", help="real-world mating-object dimensions (search by name)")
     objects.add_argument("query", nargs="*")
     objects.set_defaults(run=cmd_objects)
+    from .calibrate import add_commands
+
+    add_commands(commands)
     commands.add_parser("doctor", help="toolchain status").set_defaults(run=cmd_doctor)
 
     args = parser.parse_args()
