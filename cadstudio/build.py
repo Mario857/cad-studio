@@ -19,6 +19,8 @@ META_DEFAULTS = {
     "supports": "auto",
     "brim": "auto",
     "copies": 1,
+    "mates": [],
+    "assembly": False,
 }
 
 
@@ -35,6 +37,7 @@ class BuildResult:
     brep_valid: bool
     brep_volume_mm3: float
     notes: list[str] = field(default_factory=list)
+    parts: list = field(default_factory=list)  # individual parts when build() returned a list
 
 
 def load_module(name: str):
@@ -87,7 +90,8 @@ def build(name: str) -> BuildResult:
     except Exception as error:
         raise BuildError(short_traceback(error, path)) from None
 
-    if isinstance(shape, (list, tuple)):
+    parts = list(shape) if isinstance(shape, (list, tuple)) else []
+    if parts:
         shape = Compound(children=list(shape))
     if hasattr(shape, "part") and not isinstance(shape, Shape):
         shape = shape.part  # BuildPart context
@@ -107,4 +111,4 @@ def build(name: str) -> BuildResult:
     stl = target / f"{name}.stl"
     export_step(shape, str(step))
     export_stl(shape, str(stl), tolerance=0.01, angular_tolerance=0.15)
-    return BuildResult(name, meta, stl, step, valid, volume, notes)
+    return BuildResult(name, meta, stl, step, valid, volume, notes, parts)
