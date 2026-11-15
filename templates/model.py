@@ -14,9 +14,11 @@ META = dict(
     quality="standard",        # draft | standard | strong | fine
     standing=False,            # True if it must stand on its own in use (tip-over audit)
     loads=[],                  # extra masses in use: [dict(at=(x, y, z), grams=200)]
+    force=[],                  # strength check: [dict(at=(x, y, z), newtons=20, dir=(0, 0, -1))]
     print_orientation="auto",  # or (rx, ry, rz) degrees applied to the model before printing
     supports="auto",           # auto | on | off
     brim="auto",               # auto | on | off
+    # ./cad check <name> --sweep perturbs UPPER_CASE float params named *CLEAR*/*GAP*/*TOL* by +-0.1 mm.
 )
 
 # Parameters

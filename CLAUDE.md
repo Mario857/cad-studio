@@ -35,6 +35,8 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
   `standing` (tip-over audit in use), `loads`
   (`[dict(at=(x,y,z), grams=g)]` carried in use), `print_orientation` ("auto" or `(rx, ry, rz)` deg),
   `supports`/`brim` ("auto" | "on" | "off"), `copies`.
+- `force=[dict(at=(x,y,z), newtons=N, dir=(dx,dy,dz))]` (+ `loads`) enables the approximate `strength` check (WARN SF<3, FAIL <1.5).
+- `./cad check <name> --sweep` rebuilds with CLEAR/GAP/TOL float params ±0.1 mm and re-checks mesh + walls.
 - Keep all dimensions as named UPPER_CASE parameters at the top so changes are one-line edits.
 
 ## FDM design rules (the audit enforces most of these)
