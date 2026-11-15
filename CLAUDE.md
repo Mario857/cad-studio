@@ -34,7 +34,8 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
   When the user names a brand/colour/preset, run `./cad materials` once and use the exact name.
   `standing` (tip-over audit in use), `loads`
   (`[dict(at=(x,y,z), grams=g)]` carried in use), `print_orientation` ("auto" or `(rx, ry, rz)` deg),
-  `supports`/`brim` ("auto" | "on" | "off"), `copies`.
+  `supports`/`brim` ("auto" | "on" | "off"), `copies`, `assembly` (True = listed parts are in use positions: FAIL on overlap > 0.5 mm3),
+  `mates` (`[dict(a=0, b=1, clearance=(min, max))]` part indices: WARN if the measured gap is outside the band).
 - Keep all dimensions as named UPPER_CASE parameters at the top so changes are one-line edits.
 
 ## FDM design rules (the audit enforces most of these)

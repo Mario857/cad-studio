@@ -56,6 +56,10 @@ def run_check(name: str, do_slice: bool, do_preview: bool) -> Report:
     if report.add(integrity(mesh, result.brep_valid)).status == "FAIL":
         return report
     report.add(wall_thickness(mesh))
+    from .interference import check_fit
+
+    if (fit := check_fit(result)):
+        report.add(fit)
     estimated_grams = mesh.volume / 1000 * density(result.meta["material"]) * audit_cfg()["fill_fraction"]
     use_index = len(report.checks)
     report.add(use_stability(mesh, result.meta, estimated_grams))

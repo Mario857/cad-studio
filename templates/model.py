@@ -17,6 +17,10 @@ META = dict(
     print_orientation="auto",  # or (rx, ry, rz) degrees applied to the model before printing
     supports="auto",           # auto | on | off
     brim="auto",               # auto | on | off
+    # Multi-part fits (build() returns a list): assembly=True means the parts are in USE positions
+    # -> FAIL on overlaps > 0.5 mm3. mates WARN if the min gap leaves the band (indices into the list).
+    # assembly=False,
+    # mates=[dict(a=0, b=1, clearance=(0.2, 0.6))],
 )
 
 # Parameters
