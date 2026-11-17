@@ -123,6 +123,11 @@ def ground_plane(size: float):
 
 def aim(obj, direction: Vector):
     """Point the object's -Z (camera/light forward) along `direction`, keeping world Z up where possible."""
+    if abs(direction.normalized().z) > 0.999:
+        # Straight down / up has no "up" to keep: fix the roll so plan views read like a drawing
+        # (top: +X right, +Y up; bottom: the part turned over about X, +X still right).
+        obj.rotation_euler = (0.0, 0.0, 0.0) if direction.z < 0 else (math.pi, 0.0, 0.0)
+        return
     obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
 
 
