@@ -19,12 +19,18 @@ def load_mesh(path) -> trimesh.Trimesh:
     return mesh
 
 
-def integrity(mesh: trimesh.Trimesh, brep_valid: bool) -> Check:
-    bodies = mesh.split(only_watertight=False)
+def integrity(mesh: trimesh.Trimesh, brep_valid: bool, declared: int = 1) -> Check:
+    """`declared` = how many separate pieces build() says it returns (1, or the length of its list)."""
+    shells = mesh.split(only_watertight=False)
+    # A sealed internal void is its own inward-facing shell (negative volume): not a body.
+    cavities = [s for s in shells if s.is_watertight and s.volume < 0]
+    bodies = [s for s in shells if not (s.is_watertight and s.volume < 0)]
     facts = {
         "watertight": bool(mesh.is_watertight),
         "winding_ok": bool(mesh.is_winding_consistent),
         "bodies": len(bodies),
+        "declared": declared,
+        "cavities": len(cavities),
         "volume_cm3": round(float(mesh.volume) / 1000, 2),
         "triangles": len(mesh.faces),
         "bbox_mm": [round(float(v), 1) for v in mesh.extents],
@@ -38,10 +44,18 @@ def integrity(mesh: trimesh.Trimesh, brep_valid: bool) -> Check:
         problems.append("invalid B-rep")
     size = "x".join(f"{v:g}" for v in facts["bbox_mm"])
     summary = f"{facts['volume_cm3']} cm3, bbox {size} mm, {facts['bodies']} body, {facts['triangles']} tris"
+    if cavities:
+        summary += f", {len(cavities)} sealed cavity"
     if problems:
         return Check("mesh", "FAIL", "; ".join(problems), facts)
-    if facts["bodies"] > 1:
-        return Check("mesh", "WARN", f"{summary} — {facts['bodies']} separate bodies (intended?)", facts)
+    if len(bodies) > declared:
+        loose = min(bodies, key=lambda body: abs(body.volume))
+        where = ", ".join(f"{v:.1f}" for v in loose.bounds.mean(axis=0))
+        facts["smallest_body_mm3"] = round(abs(float(loose.volume)), 2)
+        hint = "return a list if they are separate parts" if declared == 1 else "a part is in several pieces"
+        return Check("mesh", "WARN", f"{summary} — {len(bodies)} bodies but build() declares {declared} part"
+                     f"{'s' if declared > 1 else ''}: smallest is {facts['smallest_body_mm3']} mm3 at ({where}); "
+                     f"stray solid / missing union, or {hint}", facts)
     return Check("mesh", "OK", summary, facts)
 
 

@@ -71,7 +71,7 @@ def run_check(name: str, do_slice: bool, do_preview: bool, do_sweep: bool = Fals
     report.files.update(stl=rel(result.stl), step=rel(result.step))
 
     mesh = load_mesh(result.stl)
-    if report.add(integrity(mesh, result.brep_valid)).status == "FAIL":
+    if report.add(integrity(mesh, result.brep_valid, declared=len(result.parts) or 1)).status == "FAIL":
         return report
     from .lifecycle import cost_check, status_check
 
@@ -141,6 +141,30 @@ def cmd_preview(args) -> int:
     mesh = load_mesh(result.stl)
     plan, _ = plan_print(mesh, result.meta)
     print(rel(render(mesh, plan.mesh, out_dir(args.name) / "preview.png")))
+    return 0
+
+
+def cmd_render(args) -> int:
+    """Blender review sheet: 8 ray-traced views incl. a section cut -> out/render.png (see render.py)."""
+    from .build import BuildError, build
+    from .gravity import plan_print
+    from .mesh_check import load_mesh
+    from .render import RenderError, render
+
+    try:
+        result = build(args.name)
+    except BuildError as error:
+        print(f"build FAIL: {error}")
+        return 1
+    mesh = load_mesh(result.stl)
+    plan, _ = plan_print(mesh, result.meta)
+    try:
+        files = render(args.name.split("/")[-1], mesh, plan.mesh, out_dir(args.name), work_dir(args.name) / "render",
+                       cut=args.cut, hero=args.hero, tile_px=args.size, samples=args.samples)
+    except RenderError as error:
+        print(f"render FAIL: {error}")
+        return 1
+    print("\n".join(rel(path) for path in files))
     return 0
 
 
@@ -231,6 +255,13 @@ def cmd_doctor(_args) -> int:
     install = slicer_install()
     print(f"slicer   {install.binary if install else 'missing (Linux: scripts/install-slicer.sh)'}")
     print(f"printer  {settings()['printer']['machine']}")
+    from .render import RenderError, runner
+
+    try:
+        found = runner()
+        print(f"render   {found[1] + ' (./cad render)' if found else 'unavailable (needs uv or CAD_BLENDER_BIN)'}")
+    except RenderError as error:
+        print(f"render   {error}")
     return 0 if install else 1
 
 
@@ -261,6 +292,14 @@ def main() -> int:
     preview = commands.add_parser("preview", help="render out/preview.png only")
     preview.add_argument("name")
     preview.set_defaults(run=cmd_preview)
+
+    render = commands.add_parser("render", help="Blender review sheet out/render.png (8 views, section cut)")
+    render.add_argument("name")
+    render.add_argument("--cut", metavar="AXIS[=MM]", help="section plane: x, y or z, optionally =<mm> (default: mid, long axis)")
+    render.add_argument("--hero", action="store_true", help="also render one large perspective shot -> out/hero.png")
+    render.add_argument("--size", type=int, default=512, help="tile size in px (default 512)")
+    render.add_argument("--samples", type=int, default=24, help="Cycles samples per tile (default 24)")
+    render.set_defaults(run=cmd_render)
 
     log = commands.add_parser("log", help="record a real print result (ok | fail | tweak)")
     log.add_argument("name")

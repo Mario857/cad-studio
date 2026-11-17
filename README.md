@@ -8,13 +8,15 @@ free tools in this repo do the rest and hand back a ~10-line verdict:
 | stage | what it checks / does |
 |---|---|
 | build | runs `models/<category>/<name>/model.py`, exports STEP + STL, B-rep validity |
-| mesh | watertight, winding, separate bodies, volume, size |
+| mesh | watertight, winding, volume, size, stray bodies (more bodies than `build()` returns parts) |
 | walls | ray-cast wall thickness (fail < 0.6 mm, warn < 1.2 mm) |
+| fit | parts of one print that overlap, touch or sit < 0.2 mm apart (they would print fused); assembly overlaps, mate gaps |
 | use (gravity) | in-use tip-over angle incl. carried loads, weak side to widen |
 | orient (gravity) | searches stable resting poses for least support / overhang, best bed contact |
 | support | floating bodies, auto tree supports, auto brim for small/tall footprints |
 | slice | headless Bambu Studio, H2C presets → ready-to-print `.3mf`, time + grams |
 | preview | 4-view PNG for you (Claude doesn't read it unless asked: images cost tokens) |
+| render (on demand) | `./cad render`: ray-traced 8-view sheet with a section cut, via Blender (not part of `check`) |
 
 ## From your phone
 
@@ -33,6 +35,7 @@ Other commands: `/printed <name> ok|fail|tweak <note>` (log the real print resul
 ./cad new my-part          # scaffold from templates/model.py
 ./cad check my-part        # full pipeline (add --no-slice for fast iteration)
 ./cad preview my-part      # only the PNG
+./cad render my-part       # Blender review sheet -> out/render.png (--cut z=12, --hero for out/hero.png)
 ./cad list                 # models + last verdict
 ./cad doctor               # toolchain status
 scripts/test-cloud-env.sh  # replay a fresh cloud session in Docker (x86_64 Ubuntu 24.04)
@@ -41,6 +44,18 @@ scripts/test-cloud-env.sh  # replay a fresh cloud session in Docker (x86_64 Ubun
 Requires [uv](https://docs.astral.sh/uv/); macOS uses the installed Bambu Studio app, Linux/cloud installs
 the pinned Bambu Studio AppImage automatically (`scripts/install-slicer.sh`, ~250 MB, background on
 session start).
+
+## Rendered review sheet (`./cad render`)
+
+`out/render.png` shows eight ray-traced views: iso front/back, front, side, top, bottom, a capped
+section cut and the as-printed pose, with one colour per body. `--cut x|y|z[=mm]` moves the section
+(default: through the middle of the biggest body), `--hero` adds a large perspective shot (`out/hero.png`).
+
+No Blender install is needed: the first run lets uv fetch the pinned `bpy` wheel (Blender as a Python
+module, ~250 MB on macOS, ~430 MB on Linux) into uv's own cache; the project environment is untouched.
+To use an installed Blender instead: `CAD_BLENDER_BIN=/Applications/Blender.app/Contents/MacOS/Blender`.
+It renders on the CPU with Cycles, so it works headless in cloud sessions (about 5-10 s per view on
+a 2-core cloud machine). `CAD_TEST_BLENDER=1 uv run pytest tests/test_render.py` runs a real render.
 
 ## Keeping Claude cheap
 
@@ -55,10 +70,10 @@ session start).
 
 ```
 cad                 entry point (uv run python -m cadstudio)
-cadstudio/          pipeline: build, mesh_check, gravity, slicer, preview, report
+cadstudio/          pipeline: build, mesh_check, gravity, slicer, preview, report; render + blender_scene (Blender sheet)
 cadlib/             helpers for models: fasteners, fits, teardrops, ribs, labels
 config/printer.toml printer, plate, materials, qualities, audit thresholds
-models/<category>/<name>/      model.py + out/ (stl, step, 3mf, preview.png, report.md)
+models/<category>/<name>/      model.py + out/ (stl, step, 3mf, preview.png, report.md, render.png on demand)
 templates/model.py  scaffold for ./cad new
 scripts/            setup.sh (SessionStart), install-slicer.sh, test-cloud-env.sh
 .claude/            settings (model, hook, permissions) and /design /tweak /look commands

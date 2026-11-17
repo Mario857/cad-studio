@@ -7,7 +7,8 @@ everything else (build, mesh + wall checks, gravity audit, print orientation, su
 ## Token budget rules (important — sessions are paid per token)
 
 - Do NOT read anything in `models/*/out/` except `report.md`; never open STL/3MF/STEP/G-code or `.work/`.
-- Do NOT open `preview.png` unless the user asks you to look at it.
+- Do NOT open `preview.png` / `render.png` / `hero.png` unless the user asks you to look at it; `./cad render`
+  (Blender sheet, slow) only on request or via `/look`.
 - Do NOT explore `cadstudio/`, `cadlib/`, `.venv/` or build123d sources — the API you need is below.
   If a build123d call fails, fix it from the error message; look up source only after two failed tries.
 - Do NOT read other models unless the user references them.
@@ -61,6 +62,8 @@ The audit proves it slices and prints. It does NOT prove it fits or works. Befor
   `supports`/`brim` ("auto" | "on" | "off"), `copies`.
 - `force=[dict(at=(x,y,z), newtons=N, dir=(dx,dy,dz))]` (+ `loads`) enables the approximate `strength` check (WARN SF<3, FAIL <1.5).
 - `./cad check <name> --sweep` rebuilds with CLEAR/GAP/TOL float params ±0.1 mm and re-checks mesh + walls.
+- A list is sliced exactly as placed: `fit` WARNs when parts overlap, touch or are < 0.2 mm apart (they print
+  fused; threshold `fuse_gap_mm`, skipped with `assembly=True`). `mesh` WARNs on more bodies than declared parts (stray solid).
 - Keep all dimensions as named UPPER_CASE parameters at the top so changes are one-line edits.
 
 ## FDM design rules (the audit enforces most of these)

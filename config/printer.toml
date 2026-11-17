@@ -102,6 +102,8 @@ tip_warn_deg = 12
 tip_fail_deg = 4
 # Printed-mass estimate before slicing: fraction of solid volume (walls + 15% infill).
 fill_fraction = 0.5
+# Parts of one print closer than this (mm) fuse together: `fit` WARNs (not applied when META assembly=True).
+fuse_gap_mm = 0.2
 # Bed contact below this area (cm²) adds a brim.
 brim_below_cm2 = 3.0
 

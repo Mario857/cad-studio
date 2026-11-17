@@ -33,7 +33,7 @@ def literal_floats(tree: ast.Module) -> dict[str, float]:
 
 
 def build_variant(name: str, path: Path, overrides: dict[str, float]):
-    """Exec the model with literal overrides; return (mesh, brep_valid)."""
+    """Exec the model with literal overrides; return (mesh, brep_valid, declared part count)."""
     from build123d import Compound, Shape, export_stl
 
     from .build import BuildError, short_traceback
@@ -51,7 +51,9 @@ def build_variant(name: str, path: Path, overrides: dict[str, float]):
         shape = module.build()
     except Exception as error:
         raise BuildError(short_traceback(error, path)) from None
+    declared = 1
     if isinstance(shape, (list, tuple)):
+        declared = len(shape) or 1
         shape = Compound(children=list(shape))
     if hasattr(shape, "part") and not isinstance(shape, Shape):
         shape = shape.part
@@ -60,7 +62,7 @@ def build_variant(name: str, path: Path, overrides: dict[str, float]):
     with tempfile.TemporaryDirectory() as tmp:
         stl = Path(tmp) / "variant.stl"
         export_stl(shape, str(stl), tolerance=0.01, angular_tolerance=0.15)
-        return load_mesh(stl), bool(shape.is_valid)
+        return load_mesh(stl), bool(shape.is_valid), declared
 
 
 def evaluate(name: str, path: Path, overrides: dict[str, float]) -> tuple[int, str]:
@@ -69,10 +71,10 @@ def evaluate(name: str, path: Path, overrides: dict[str, float]) -> tuple[int, s
     from .mesh_check import integrity, wall_thickness
 
     try:
-        mesh, valid = build_variant(name, path, overrides)
+        mesh, valid, declared = build_variant(name, path, overrides)
     except BuildError as error:
         return 2, f"build error: {str(error).splitlines()[0]}"
-    checks = [integrity(mesh, valid)]
+    checks = [integrity(mesh, valid, declared=declared)]
     if checks[0].status != "FAIL":
         checks.append(wall_thickness(mesh))
     worst = max(checks, key=lambda c: RANK[c.status])

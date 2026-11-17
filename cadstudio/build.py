@@ -40,6 +40,7 @@ class BuildResult:
     brep_volume_mm3: float
     notes: list[str] = field(default_factory=list)
     parts: list = field(default_factory=list)  # individual parts when build() returned a list
+    pieces: list = field(default_factory=list)  # parts, or the solids of a single shape made of several
 
 
 def load_module(name: str):
@@ -116,4 +117,8 @@ def build(name: str) -> BuildResult:
     stl = target / f"{name}.stl"
     export_step(shape, str(step))
     export_stl(shape, str(stl), tolerance=0.01, angular_tolerance=0.15)
-    return BuildResult(name, meta, stl, step, valid, volume, notes, parts)
+    pieces = parts
+    if not pieces:
+        solids = list(shape.solids())
+        pieces = solids if len(solids) > 1 else []
+    return BuildResult(name, meta, stl, step, valid, volume, notes, parts, pieces)
