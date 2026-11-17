@@ -1,0 +1,121 @@
+{
+ "model": "travel-laptop-stand-fit-gauge",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "7.14 cm3, bbox 123x19x5.6 mm, 1 body, 7886 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 1,
+    "declared": 1,
+    "cavities": 0,
+    "volume_cm3": 7.14,
+    "triangles": 7886,
+    "bbox_mm": [
+     123.0,
+     19.0,
+     5.6
+    ]
+   }
+  },
+  {
+   "name": "status",
+   "status": "OK",
+   "summary": "draft",
+   "facts": {
+    "status": "draft"
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.55 mm (p2), median 5.0 mm",
+   "facts": {
+    "p2_mm": 0.55,
+    "median_mm": 5.0,
+    "area_pct_below_fail": 0.2,
+    "area_pct_below_warn": 1.5,
+    "thin_example_xyz": [
+     11.0,
+     5.1,
+     5.5
+    ]
+   }
+  },
+  {
+   "name": "spec",
+   "status": "WARN",
+   "summary": "1 UNVERIFIED dim(s): print a fit gauge/coupon first, ask user to confirm",
+   "facts": {
+    "unverified": 1
+   }
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.1 cm2, contact 13.5 cm2, h 6 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "strength",
+   "status": "SKIP",
+   "summary": "no META force/loads declared",
+   "facts": {}
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "11m, 5.3 g (0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C)",
+   "facts": {
+    "seconds": 655,
+    "grams": 5.3,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PLA Basic @BBL H2C"
+   }
+  },
+  {
+   "name": "cost",
+   "status": "OK",
+   "summary": "cost: ~5 g, 11 min, ~EUR 0.11; first print risk: MEDIUM",
+   "facts": {
+    "grams": 5.3,
+    "minutes": 11,
+    "price": 0.11,
+    "risk": "MEDIUM"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/office/travel-laptop-stand-fit-gauge/out/travel-laptop-stand-fit-gauge.stl",
+  "step": "models/office/travel-laptop-stand-fit-gauge/out/travel-laptop-stand-fit-gauge.step",
+  "print": "models/office/travel-laptop-stand-fit-gauge/out/travel-laptop-stand-fit-gauge.3mf",
+  "preview": "models/office/travel-laptop-stand-fit-gauge/out/preview.png"
+ }
+}
