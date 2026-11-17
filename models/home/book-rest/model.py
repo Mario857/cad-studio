@@ -12,7 +12,8 @@ Spec
   diagonal it self-adapts to page stacks of ~3..50 mm.
 - Print-in-place: everything is modelled assembled in the 70-deg position (Z up, in-use pose) and
   printed exactly like that, no supports. Panel and prop stand on the bed inside their base slots
-  (GAP clearance); the two clips lie flat on the bed inside the base window.
+  (GAP clearance); the two clips lie flat on the bed inside the base window, which goes right
+  through the base (a floored pocket would fuse the clips to it).
   The 70-deg pose is printable: panel leans 20 deg, prop 19 deg, catch underside 40 deg from vertical.
 
 Assumptions
@@ -71,6 +72,7 @@ PROP_FOOT_Y = 85.0       # prop foot position (front slot) behind the hinge line
 WIN_X = 124.0            # clip / material-saving window in the base
 WIN_Y0 = 14.0
 WIN_Y1 = 76.0
+WIN_R = 3.0              # window corner radius (small enough to clear the clip corners by > GAP)
 
 CLIP_H = 10.0            # clip extrusion (printed flat)
 CLIP_JT = 2.4            # back jaw thickness
@@ -208,8 +210,9 @@ def build():
     ps2 = moved_prop_sketch()
     slot2 = extrude(offset(ps2, GAP), amount=PROP_W / 2 + GAP, both=True)
 
-    window = Pos(0, (WIN_Y0 + WIN_Y1) / 2, BASE_T + 1) * Box(WIN_X, WIN_Y1 - WIN_Y0, BASE_T + 4)
-    window = fillet(window.edges().filter_by(Axis.Z), 5)
+    # Through-window (z -2 .. BASE_T + 2): the clips print on the bed inside it.
+    window = Pos(0, (WIN_Y0 + WIN_Y1) / 2, BASE_T / 2) * Box(WIN_X, WIN_Y1 - WIN_Y0, BASE_T + 4)
+    window = fillet(window.edges().filter_by(Axis.Z), WIN_R)
     base = base - hinge_cut - slot1 - slot2 - window
 
     # Back panel with catch

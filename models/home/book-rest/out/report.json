@@ -10,14 +10,16 @@
   },
   {
    "name": "mesh",
-   "status": "WARN",
-   "summary": "421.71 cm3, bbox 220x202x169.1 mm, 5 body, 2316 tris \u2014 5 separate bodies (intended?)",
+   "status": "OK",
+   "summary": "410.14 cm3, bbox 220x202x169.1 mm, 5 body, 2320 tris",
    "facts": {
     "watertight": true,
     "winding_ok": true,
     "bodies": 5,
-    "volume_cm3": 421.71,
-    "triangles": 2316,
+    "declared": 5,
+    "cavities": 0,
+    "volume_cm3": 410.14,
+    "triangles": 2320,
     "bbox_mm": [
      220.0,
      202.0,
@@ -26,41 +28,63 @@
    }
   },
   {
+   "name": "status",
+   "status": "OK",
+   "summary": "draft",
+   "facts": {
+    "status": "draft"
+   }
+  },
+  {
    "name": "walls",
    "status": "OK",
-   "summary": "thinnest ~1.50 mm (p2), median 6.83 mm",
+   "summary": "thinnest ~1.60 mm (p2), median 7.94 mm",
    "facts": {
-    "p2_mm": 1.5,
-    "median_mm": 6.83,
+    "p2_mm": 1.6,
+    "median_mm": 7.94,
     "area_pct_below_fail": 0.0,
     "area_pct_below_warn": 0.0,
     "thin_example_xyz": [
-     6.9,
-     126.4,
-     0.1
+     -6.9,
+     127.3,
+     0.4
     ]
    }
   },
   {
+   "name": "spec",
+   "status": "WARN",
+   "summary": "docstring lacks Risks (see CLAUDE.md waste prevention)",
+   "facts": {
+    "unverified": 0
+   }
+  },
+  {
+   "name": "fit",
+   "status": "OK",
+   "summary": "5 parts print separately, closest pair 0.60 mm",
+   "facts": {}
+  },
+  {
    "name": "use",
    "status": "OK",
-   "summary": "tips at 46.0 deg toward -Y incl. 600 g load (COM margin 76.6 mm)",
+   "summary": "tips at 45.6 deg toward -Y incl. 600 g load (COM margin 76.3 mm)",
    "facts": {
-    "part_g": 213.8,
+    "part_g": 201.8,
     "com_mm": [
      -0.1,
-     17.0,
-     73.9
+     16.7,
+     74.6
     ],
-    "tip_deg": 46.0,
-    "margin_mm": 76.6,
+    "tip_deg": 45.6,
+    "margin_mm": 76.3,
     "weak_side": "-Y"
    }
   },
   {
    "name": "orient",
    "status": "OK",
-   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.7 cm2, contact 441.8 cm2, h 169 mm",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 1.7 cm2, contact 365.0 cm2, h 169 mm",
    "facts": {
     "chosen": "fixed rot (0, 0, 0)",
     "score": 0.0
@@ -76,21 +100,47 @@
    }
   },
   {
+   "name": "strength",
+   "status": "OK",
+   "summary": "~0.4 MPa peak vs 25 MPa Z (across layers), safety factor ~64.2 near [-9.0, 139.6, 1.5] [rough beam estimate, solid section; no strength data for 'AzureFilm ABS PLUS @BBL H2C 0.4 nozzle', PLA values used]",
+   "facts": {
+    "stress_mpa": 0.39,
+    "allowed_mpa": 25.0,
+    "safety_factor": 64.22,
+    "at_xyz": [
+     -9.0,
+     139.6,
+     1.5
+    ]
+   }
+  },
+  {
    "name": "slice",
    "status": "OK",
-   "summary": "6h30m, 213.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "summary": "6h14m, 201.8 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
    "facts": {
-    "seconds": 23398,
-    "grams": 213.8,
+    "seconds": 22456,
+    "grams": 201.8,
     "warnings": [],
     "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  },
+  {
+   "name": "cost",
+   "status": "WARN",
+   "summary": "cost: ~202 g, 374 min, ~EUR 5.04; first print risk: HIGH; print a small prototype coupon of the critical features first",
+   "facts": {
+    "grams": 201.8,
+    "minutes": 374,
+    "price": 5.04,
+    "risk": "HIGH"
    }
   }
  ],
  "files": {
-  "stl": "models/book-rest/out/book-rest.stl",
-  "step": "models/book-rest/out/book-rest.step",
-  "print": "models/book-rest/out/book-rest.3mf",
-  "preview": "models/book-rest/out/preview.png"
+  "stl": "models/home/book-rest/out/book-rest.stl",
+  "step": "models/home/book-rest/out/book-rest.step",
+  "print": "models/home/book-rest/out/book-rest.3mf",
+  "preview": "models/home/book-rest/out/preview.png"
  }
 }
