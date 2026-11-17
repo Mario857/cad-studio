@@ -36,6 +36,9 @@ RECOMMENDED SLICER SETTINGS
   Layer 0.20 mm (0.16 gives cleaner 0.3 mm hinge gap), 4 walls, 40 % gyroid (or 100 % infill
   - parts are small), 4 top/bottom layers, supports OFF, brim OFF (add 3 mm brim if ABS warps),
   enclosed chamber, no fan.  After printing, flex the latch once to break any hinge fusing.
+PRINT POSE: the latch is printed LATCH_PRINT_DEG (45 deg) open.  Closed, its finger overlaps the detent
+  bump by the 0.4 mm interference and the two would print welded together; part-open, nothing but the
+  0.3 mm hinge clearance is close.  Swing it shut after printing.
 KNOWN WARNS: 2 bodies = hook + print-in-place latch (intended). 'needs support' 0.8 cm2 = the 6 mm
   ear roof over the latch cavity (z 13.7) and the 0.3 mm gap, a <=8 mm bridge: prints fine with bridge
   settings, no supports.  Latch is 13.4 mm of the 20 mm width; the rod is retained by it.
@@ -82,6 +85,7 @@ KNUCKLE_R = 4.0
 ARM_Y0, ARM_Y1 = 6.0, 9.0
 ARM_X1 = 35.8
 BUMP = 0.7
+LATCH_PRINT_DEG = 45.0  # latch pose on the bed, degrees open about the pin (0 = closed: fuses to the bump)
 RIM = 0.6               # vertical rim of the pin foot (avoids a knife edge)
 HEAD = 0.9              # pin retaining-cone flare (45 deg)
 
@@ -144,4 +148,5 @@ def build():
     # conical retaining head: latch hole flares to the bed (45 deg), pin flares to match
     latch -= cyl(*PIN, PIN_R + CL + HEAD, -1, RIM)
     latch -= Pos(*PIN, RIM) * Cone(PIN_R + CL + HEAD, PIN_R + CL, HEAD, align=ON_BED)
+    latch = Pos(*PIN, 0) * Rot(0, 0, LATCH_PRINT_DEG) * Pos(-PIN[0], -PIN[1], 0) * latch
     return [hook, latch]
