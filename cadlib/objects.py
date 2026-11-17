@@ -73,6 +73,12 @@ _add("iphone-case", dict(wall_per_side=2.5, grams=30), "models/phone/ip15pm-mags
 _add("magsafe-puck", dict(d=56.0, t=5.5, centre_from_phone_bottom=80.0),
      "models/phone/ip15pm-magsafe-desk-stand docstring", "UNVERIFIED", "third-party pucks differ")
 
+# --- laptop ---
+_add("macbook-pro-13", dict(w=304.1, d=212.4, t=15.6, grams=1400), "Apple tech specs, MacBook Pro 13-inch M1 2020",
+     "STANDARD", "closed, lid shut; base-only front-edge thickness is not published: measure it")
+_add("macbook-pro-15", dict(w=349.3, d=240.7, t=15.5, grams=1830), "Apple tech specs, MacBook Pro 15-inch 2019",
+     "STANDARD", "closed, lid shut; base-only front-edge thickness is not published: measure it")
+
 # --- home / hardware documented in existing models (not independently verified) ---
 _add("curtain-rod", dict(d=9.0), "models/home/curtain-hook-* docstrings (user's rod)", "UNVERIFIED",
      "measure with calipers")
