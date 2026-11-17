@@ -1,0 +1,127 @@
+{
+ "model": "travel-laptop-stand-joint-coupon",
+ "verdict": "PASS",
+ "checks": [
+  {
+   "name": "build",
+   "status": "OK",
+   "summary": "B-rep valid",
+   "facts": {}
+  },
+  {
+   "name": "mesh",
+   "status": "OK",
+   "summary": "22.3 cm3, bbox 58x64x13 mm, 3 body, 5038 tris",
+   "facts": {
+    "watertight": true,
+    "winding_ok": true,
+    "bodies": 3,
+    "declared": 3,
+    "cavities": 0,
+    "volume_cm3": 22.3,
+    "triangles": 5038,
+    "bbox_mm": [
+     58.0,
+     64.0,
+     13.0
+    ]
+   }
+  },
+  {
+   "name": "status",
+   "status": "OK",
+   "summary": "draft",
+   "facts": {
+    "status": "draft"
+   }
+  },
+  {
+   "name": "walls",
+   "status": "OK",
+   "summary": "thinnest ~0.60 mm (p2), median 10.0 mm",
+   "facts": {
+    "p2_mm": 0.6,
+    "median_mm": 10.0,
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.1,
+    "thin_example_xyz": [
+     -17.2,
+     3.9,
+     12.4
+    ]
+   }
+  },
+  {
+   "name": "spec",
+   "status": "OK",
+   "summary": "all dims MEASURED, assumptions+risks stated",
+   "facts": {
+    "unverified": 0
+   }
+  },
+  {
+   "name": "fit",
+   "status": "OK",
+   "summary": "3 parts print separately, all > 0.2 mm apart",
+   "facts": {}
+  },
+  {
+   "name": "use",
+   "status": "SKIP",
+   "summary": "not free-standing (META standing=False)",
+   "facts": {}
+  },
+  {
+   "name": "orient",
+   "status": "OK",
+   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 0.6 cm2, contact 18.2 cm2, h 13 mm",
+   "facts": {
+    "chosen": "fixed rot (0, 0, 0)",
+    "score": 0.0
+   }
+  },
+  {
+   "name": "support",
+   "status": "OK",
+   "summary": "supports off, brim off",
+   "facts": {
+    "supports": false,
+    "brim": false
+   }
+  },
+  {
+   "name": "strength",
+   "status": "SKIP",
+   "summary": "no META force/loads declared",
+   "facts": {}
+  },
+  {
+   "name": "slice",
+   "status": "OK",
+   "summary": "26m, 12.9 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "facts": {
+    "seconds": 1575,
+    "grams": 12.9,
+    "warnings": [],
+    "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
+   }
+  },
+  {
+   "name": "cost",
+   "status": "OK",
+   "summary": "cost: ~13 g, 26 min, ~EUR 0.28; first print risk: MEDIUM",
+   "facts": {
+    "grams": 12.9,
+    "minutes": 26,
+    "price": 0.28,
+    "risk": "MEDIUM"
+   }
+  }
+ ],
+ "files": {
+  "stl": "models/office/travel-laptop-stand-joint-coupon/out/travel-laptop-stand-joint-coupon.stl",
+  "step": "models/office/travel-laptop-stand-joint-coupon/out/travel-laptop-stand-joint-coupon.step",
+  "print": "models/office/travel-laptop-stand-joint-coupon/out/travel-laptop-stand-joint-coupon.3mf",
+  "preview": "models/office/travel-laptop-stand-joint-coupon/out/preview.png"
+ }
+}
