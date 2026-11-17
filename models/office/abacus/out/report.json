@@ -10,19 +10,29 @@
   },
   {
    "name": "mesh",
-   "status": "WARN",
-   "summary": "274.42 cm3, bbox 288.2x218x12 mm, 104 body, 141368 tris \u2014 104 separate bodies (intended?)",
+   "status": "OK",
+   "summary": "274.42 cm3, bbox 288.2x224x12 mm, 104 body, 141368 tris",
    "facts": {
     "watertight": true,
     "winding_ok": true,
     "bodies": 104,
+    "declared": 104,
+    "cavities": 0,
     "volume_cm3": 274.42,
     "triangles": 141368,
     "bbox_mm": [
      288.2,
-     218.0,
+     224.0,
      12.0
     ]
+   }
+  },
+  {
+   "name": "status",
+   "status": "OK",
+   "summary": "draft",
+   "facts": {
+    "status": "draft"
    }
   },
   {
@@ -32,14 +42,23 @@
    "facts": {
     "p2_mm": 3.58,
     "median_mm": 5.2,
-    "area_pct_below_fail": 0.5,
-    "area_pct_below_warn": 0.5,
-    "thin_example_xyz": [
-     -102.3,
-     93.0,
-     8.1
-    ]
+    "area_pct_below_fail": 0.0,
+    "area_pct_below_warn": 0.0
    }
+  },
+  {
+   "name": "spec",
+   "status": "WARN",
+   "summary": "docstring lacks Risks (see CLAUDE.md waste prevention)",
+   "facts": {
+    "unverified": 0
+   }
+  },
+  {
+   "name": "fit",
+   "status": "OK",
+   "summary": "104 parts print separately, closest pair 2.58 mm",
+   "facts": {}
   },
   {
    "name": "use",
@@ -66,21 +85,38 @@
    }
   },
   {
+   "name": "strength",
+   "status": "SKIP",
+   "summary": "no META force/loads declared",
+   "facts": {}
+  },
+  {
    "name": "slice",
    "status": "OK",
-   "summary": "5h57m, 129.7 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
+   "summary": "5h59m, 130.1 g (0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle)",
    "facts": {
-    "seconds": 21402,
-    "grams": 129.7,
+    "seconds": 21516,
+    "grams": 130.1,
     "warnings": [],
     "preset": "0.20mm Standard @BBL H2C + AzureFilm ABS PLUS @BBL H2C 0.4 nozzle"
+   }
+  },
+  {
+   "name": "cost",
+   "status": "WARN",
+   "summary": "cost: ~130 g, 359 min, ~EUR 3.25; first print risk: HIGH; print a small prototype coupon of the critical features first",
+   "facts": {
+    "grams": 130.1,
+    "minutes": 359,
+    "price": 3.25,
+    "risk": "HIGH"
    }
   }
  ],
  "files": {
-  "stl": "models/abacus/out/abacus.stl",
-  "step": "models/abacus/out/abacus.step",
-  "print": "models/abacus/out/abacus.3mf",
-  "preview": "models/abacus/out/preview.png"
+  "stl": "models/office/abacus/out/abacus.stl",
+  "step": "models/office/abacus/out/abacus.step",
+  "print": "models/office/abacus/out/abacus.3mf",
+  "preview": "models/office/abacus/out/preview.png"
  }
 }

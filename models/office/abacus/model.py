@@ -43,6 +43,8 @@ PLATE_T = 12.0
 COL_W = 22.0             # end plate column width
 FOOT_L = 80.0
 FOOT_H = 12.0
+FOOT_RAMP = 8.0          # height of the sloped shoulder between foot and column
+KIT_GAP = 2.0            # min spacing between the two head-to-toe end plates on the bed
 RAIL = 10.0
 TENON_W = 6.0
 TENON_L = 6.0
@@ -56,9 +58,10 @@ PLATE_H = RAIL_TOP_Y + 8.0
 
 
 def _end_plate() -> Part:
-    prof = Polygon((-FOOT_L / 2, 0), (FOOT_L / 2, 0), (FOOT_L / 2, FOOT_H), (COL_W / 2 + 8, FOOT_H + 8),
-                   (COL_W / 2, FOOT_H + 8), (COL_W / 2, PLATE_H), (-COL_W / 2, PLATE_H),
-                   (-COL_W / 2, FOOT_H + 8), (-COL_W / 2 - 8, FOOT_H + 8), (-FOOT_L / 2, FOOT_H), align=None)
+    prof = Polygon((-FOOT_L / 2, 0), (FOOT_L / 2, 0), (FOOT_L / 2, FOOT_H), (COL_W / 2 + 8, FOOT_H + FOOT_RAMP),
+                   (COL_W / 2, FOOT_H + FOOT_RAMP), (COL_W / 2, PLATE_H), (-COL_W / 2, PLATE_H),
+                   (-COL_W / 2, FOOT_H + FOOT_RAMP), (-COL_W / 2 - 8, FOOT_H + FOOT_RAMP), (-FOOT_L / 2, FOOT_H),
+                   align=None)
     p = extrude(prof, PLATE_T)
     p = chamfer(p.edges().group_by(Axis.Z)[0], 0.4)
     for i in range(ROWS):
@@ -90,8 +93,9 @@ def build():  # kit: 2 end plates, 2 rails, ROWS*BEADS beads
     plate = _end_plate()
     x0, y0 = -146.0 + FOOT_L / 2, -PLATE_H / 2 - 8
     parts.append(Pos(x0, y0, 0) * plate)
-    xb = x0 + COL_W + 8 + 2                 # clears plate A's foot fillet ramp by 2 mm
-    parts.append(Pos(xb, y0 + PLATE_H + FOOT_H + 4, 0) * Rot(0, 0, 180) * plate)
+    xb = x0 + COL_W + 8 + 2                 # column B sits beside column A, just past A's ramp stub
+    # Head-to-toe: each column end stops KIT_GAP short of the other plate's foot ramp (it used to run into it).
+    parts.append(Pos(xb, y0 + PLATE_H + FOOT_H + FOOT_RAMP + KIT_GAP, 0) * Rot(0, 0, 180) * plate)
     rail = _rail()
     xr = xb + FOOT_L / 2 + 3 + RAIL / 2
     parts.append(Pos(xr, 0, 0) * rail)
