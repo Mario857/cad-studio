@@ -11,18 +11,18 @@
   {
    "name": "mesh",
    "status": "OK",
-   "summary": "289.01 cm3, bbox 193.8x261x32 mm, 6 body, 7672 tris",
+   "summary": "300.15 cm3, bbox 218.1x257x32 mm, 9 body, 15266 tris",
    "facts": {
     "watertight": true,
     "winding_ok": true,
-    "bodies": 6,
-    "declared": 6,
+    "bodies": 9,
+    "declared": 9,
     "cavities": 0,
-    "volume_cm3": 289.01,
-    "triangles": 7672,
+    "volume_cm3": 300.15,
+    "triangles": 15266,
     "bbox_mm": [
-     193.8,
-     261.0,
+     218.1,
+     257.0,
      32.0
     ]
    }
@@ -38,10 +38,10 @@
   {
    "name": "walls",
    "status": "OK",
-   "summary": "thinnest ~4.00 mm (p2), median 10.35 mm",
+   "summary": "thinnest ~4.00 mm (p2), median 10.0 mm",
    "facts": {
     "p2_mm": 4.0,
-    "median_mm": 10.35,
+    "median_mm": 10.0,
     "area_pct_below_fail": 0.0,
     "area_pct_below_warn": 0.0
    }
@@ -57,7 +57,7 @@
   {
    "name": "fit",
    "status": "OK",
-   "summary": "6 parts print separately, all > 0.2 mm apart",
+   "summary": "9 parts print separately, all > 0.2 mm apart",
    "facts": {}
   },
   {
@@ -69,7 +69,7 @@
   {
    "name": "orient",
    "status": "OK",
-   "summary": "fixed rot (0, 0, 0): support 0.0 cm2, overhang 5.5 cm2, contact 244.2 cm2, h 32 mm",
+   "summary": "fixed rot (0, 0, 0): support 0.4 cm2, overhang 6.9 cm2, contact 263.5 cm2, h 32 mm",
    "facts": {
     "chosen": "fixed rot (0, 0, 0)",
     "score": 0.0
@@ -93,10 +93,10 @@
   {
    "name": "slice",
    "status": "OK",
-   "summary": "3h24m, 139.8 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
+   "summary": "3h42m, 148.5 g (0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C)",
    "facts": {
-    "seconds": 12260,
-    "grams": 139.8,
+    "seconds": 13339,
+    "grams": 148.5,
     "warnings": [],
     "preset": "0.20mm Standard @BBL H2C + Bambu PETG HF @BBL H2C"
    }
@@ -104,11 +104,11 @@
   {
    "name": "cost",
    "status": "WARN",
-   "summary": "cost: ~140 g, 204 min, ~EUR 3.08; first print risk: HIGH; print a small prototype coupon of the critical features first",
+   "summary": "cost: ~148 g, 222 min, ~EUR 3.27; first print risk: HIGH; print a small prototype coupon of the critical features first",
    "facts": {
-    "grams": 139.8,
-    "minutes": 204,
-    "price": 3.08,
+    "grams": 148.5,
+    "minutes": 222,
+    "price": 3.27,
     "risk": "HIGH"
    }
   }

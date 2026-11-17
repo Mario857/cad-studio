@@ -2,7 +2,7 @@
 
 Why: the stand is a HIGH first-print risk (3 h, 123 g) and two of its fits are not print-proven.
 Three pieces, same material and settings as the stand, each printed the way the stand prints it:
-  1. Socket strip: three square sockets for the 10 mm spreader tenon, numbered
+  1. Socket strip: three square sockets for the 10 mm square tenon (spreaders and height keys), numbered
        1 = 10.2 (press)   2 = 10.3 (snug, what the stand uses)   3 = 10.5 (slide)
      Sockets are vertical, as in the stand's feet (12 mm deep here, 20 mm in the stand).
   2. Tenon stub: a 10 x 10 double-ended tenon with the stand's tip and bed-edge chamfers, printed lying
